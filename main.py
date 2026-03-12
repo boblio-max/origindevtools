@@ -1,4 +1,6 @@
 import os
+from folder_tool import folder_tool
+from fmt import fmt
 
 print(".OR Dev Tools")
 
@@ -13,12 +15,14 @@ def printLogs():
     if not logs:
         print("No logs available.")
 
+def add_logs(log:str):
+    logs.append(log)
 def helpMe(error=None):
     if error:
         logs.append(error)
     print(".OR Dev Tools")
     print("Commands:")
-    print(" - origin folder <template>")
+    print(" - origin create <template>")
     print("   Available templates: tinyCli, standard, web")
     print(" - origin log")
     print(" - origin help")
@@ -40,7 +44,7 @@ def match(com: str):
             helpMe("Incomplete origin command")
             return "/"
             
-        if commands[1] == "folder":
+        if commands[1] == "create":
             types = "folder"
             if len(commands) > 2:
                 comm = " ".join(commands[2:])
@@ -49,6 +53,13 @@ def match(com: str):
                 return "/"
         elif commands[1] == "help":
             helpMe()
+        elif commands[1] == "fmt":
+            types = "fmt"
+            if len(commands) > 2:
+                comm = " ".join(commands[2:])
+            else:
+                helpMe("Missing folder template name")
+                return "/"
         elif commands[1] == "log":
             printLogs()
         else:
@@ -69,57 +80,16 @@ def orchestration_layer(com: str):
     
     if com_val == "exit" and types == "none":
         return False
-        
+    
     if types == "folder":
         folder_tool(com_val)
+    if types == "fmt":
+        fmt(com_val)
     elif types != "None":
         helpMe("NoToolFound")
         
     return True
 
-def folder_tool(com: str):
-    com = com.strip()
-    if not com:
-        print("Error: No template specified.")
-        return
-        
-    print(f"Generating folder structure for template: '{com}'...")
-    
-    if com == "tinyCli":
-        with open("cli.py", "w") as file:
-            file.write("# Tiny CLI template\n")
-        with open("pyproject.toml", "w") as file:
-            file.write("[project]\nname = \"tinycli\"\n")
-        with open("README.md", "w") as file:
-            file.write("# Tiny CLI\n")
-        print("-> Created cli.py, pyproject.toml, README.md")
-        
-    elif com == "standard":
-        os.makedirs("tests", exist_ok=True)
-        with open("main.py", "w") as file:
-            file.write("def main():\n    print('Hello World')\n\nif __name__ == '__main__':\n    main()\n")
-        with open("tests/__init__.py", "w") as file:
-            pass
-        with open("requirements.txt", "w") as file:
-            pass
-        with open("README.md", "w") as file:
-            file.write("# Standard Project\n")
-        print("-> Created tests directory, main.py, requirements.txt, README.md")
-        
-    elif com == "web":
-        os.makedirs("templates", exist_ok=True)
-        os.makedirs("static", exist_ok=True)
-        with open("app.py", "w") as file:
-            file.write("# Web App Main\n")
-        with open("requirements.txt", "w") as file:
-            file.write("flask\n")
-        with open("README.md", "w") as file:
-            file.write("# Web Project\n")
-        print("-> Created templates and static directories, app.py, requirements.txt, README.md")
-        
-    else:
-        print(f"Unknown template: '{com}'. Available templates: tinyCli, standard, web")
-        logs.append(f"Failed to find template {com}")
 
 if __name__ == "__main__":
     while True:
@@ -134,3 +104,4 @@ if __name__ == "__main__":
         except Exception as e:
             print(f"An error occurred: {e}")
             logs.append(str(e))
+
