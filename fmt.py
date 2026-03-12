@@ -1,21 +1,28 @@
 import os
 
-def fmt(file:str):
-    code = ""
-    with open(file, "r") as f:
-        lines = f.readlines()
-    
-    lines = code.splitlines()
+
+def fmt(file: str):
+    with open(file, "r", encoding="utf-8") as f:
+        text = f.read()
+
+    lines = text.splitlines()
     indent = 0
     result = []
 
-    for line in lines:
-        line = line.strip()
+    for raw in lines:
+        line = raw.strip()
 
         if line.endswith("}"):
-            indent -= 1
+            indent = max(indent - 1, 0)
 
-        result.append("    " * indent + line)
+        result.append(("    " * indent) + line)
 
         if line.endswith("{"):
             indent += 1
+
+    out = "\n".join(result) + ("\n" if text.endswith("\n") else "")
+
+    with open(file, "w", encoding="utf-8") as f:
+        f.write(out)
+
+    print(f"{file} formatted successfully")

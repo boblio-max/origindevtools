@@ -15,7 +15,7 @@ def format_code(code):
 
         if line.endswith("{"):
             indent += 1
-
+    print(result)
     return "\n".join(result)
 
 

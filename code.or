@@ -1,6 +1,6 @@
 fn main(){
-let x=5
-if(x>3){
-print(x)
-}
+    let x=5
+    if(x>3){
+        print(x)
+    }
 }
