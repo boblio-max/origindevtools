@@ -120,3 +120,5 @@ def print_command_header(name: str, description: str):
         f"  [origin.accent]origin {name}[/] [origin.dim]|[/] {description}"
     )
     console.print(f"  [origin.dim]{'-' * 60}[/]")
+
+print_banner()
