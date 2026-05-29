@@ -4,7 +4,10 @@ from pathlib import Path
 import shutil
 import webbrowser
 
-os.system('cls' if os.name == 'nt' else 'clear')
+
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 title = """
 ========================================================
  ▄██████▄     ▄████████  ▄█    ▄██████▄    ▄█   ███▄▄▄▄
@@ -17,191 +20,186 @@ title = """
  ▀██████▀    ▀█     █▀   █▀   ▀████████▀  █▀    ▀█   █▀
 ========================================================
 """
-def run_or(file):
-    try:
-        if file.endswith(".or"):
-            if shutil.which("origin"):
-                file_path = Path(file).resolve()
-                print(f"Running {file_path}...")
-                result = subprocess.run(
-                    ["cmd", "/c", "origin", file_path],
-                    capture_output=True,
-                    text=True
-                )
-                print(result.stdout)
-            else:
-                print("Origin is not installed or not in PATH. Please install Origin to run .or files (From the Website).")
-                yn = input("Open Origin's Website...")
-                if yn.lower() in ["y", "yes"]:
-                    print("Opening docs-origin.onrender.com..")
-                    webbrowser.open("https://www.docs-origin.onrender.com/download.html")
-                else:
-                    pass
-        else:
-            print("Mismatch file type.")
-    except Exception as e:
-        print(f"An error occurred: {e}")
 
-def run_python(file):
+def run_command(cmd, file_path):
     try:
-        if file.endswith(".py"):
-            if shutil.which("python") or shutil.which("python3"):
-                file_path = Path(file).resolve()
-                print(f"Running {file_path}...")
-                result = subprocess.run(
-                    ["python", file_path],
-                    capture_output=True,
-                    text=True
-                )
-                print(result.stdout)
-            else:
-                print("Python is not installed or not in PATH. Please install Python to run .py files (From the Website).")
-                yn = input("Open Python's Website...")
-                if yn.lower() in ["y", "yes"]:
-                    print("Opening python.org..")
-                    webbrowser.open("https://www.python.org/downloads/")
-                else:
-                    pass
-        else:
-            print("Mismatch file type.")
+        print(f"Running {file_path}...")
+        # Use shell=True for 'origin' as it might be a batch file/cmd on Windows
+        # But for general use, we'll try direct execution first
+        result = subprocess.run(
+            cmd,
+            capture_output=True,
+            text=True,
+            check=False # We want to handle return codes manually for better output
+        )
+        if result.stdout:
+            print(result.stdout)
+        if result.stderr:
+            print("Error output:")
+            print(result.stderr)
+    except FileNotFoundError:
+        print(f"Error: Command '{cmd[0]}' not found. Please ensure it is installed and in your PATH.")
     except Exception as e:
-        print(f"An error occurred: {e}")
-def run_java(file, type):
-    try:
+        print(f"An unexpected error occurred: {e}")
+
+def handle_origin_file(file):
+    if not file.endswith(".or"):
+        print("Error: Mismatch file type. Expected .or file.")
+        return
+
+    origin_executable = shutil.which("origin")
+    if origin_executable:
+        file_path = Path(file).resolve()
+        # The original code used ["cmd", "/c", "origin", file_path]
+        # We'll use a safer approach but keep Windows compatibility in mind
+        cmd = ["origin", str(file_path)]
+        if os.name == 'nt':
+            cmd = ["cmd", "/c"] + cmd
+        run_command(cmd, file_path)
+    else:
+        print("Origin is not installed or not in PATH. Please install Origin to run .or files.")
+        print("Visit https://www.docs-origin.onrender.com/download.html to download Origin.")
+
+def handle_python_file(file):
+    if not file.endswith(".py"):
+        print("Error: Mismatch file type. Expected .py file.")
+        return
+
+    python_executable = shutil.which("python") or shutil.which("python3")
+    if python_executable:
+        file_path = Path(file).resolve()
+        run_command([python_executable, str(file_path)], file_path)
+    else:
+        print("Python is not installed or not in PATH. Please install Python to run .py files.")
+        print("Visit https://www.python.org/downloads/ to download Python.")
+
+def handle_java_file(file, action):
+    file_path = Path(file).resolve()
+
+    if action == "run":
+        java_executable = shutil.which("java")
+        if not java_executable:
+            print("Java is not installed or not in PATH.")
+            return
+
         if file.endswith(".java"):
-            if shutil.which("java"):
-                file_path = Path(file).resolve()
-                print(f"Running {file_path}...")
-                result = subprocess.run(
-                    ["java", file_path],
-                    capture_output=True,
-                    text=True
-                )
-                if result.returncode == 0:
-                    class_file = file_path.with_suffix('.class')
-                    run_result = subprocess.run(
-                        ["java", class_file.stem],
-                        capture_output=True,
-                        text=True
-                    )
-                    print(run_result.stdout)
-                else:
-                    print(result.stderr)
+            javac_executable = shutil.which("javac")
+            if not javac_executable:
+                print("Java compiler (javac) not found. Cannot compile .java file.")
+                return
+            
+            print(f"Compiling {file_path}...")
+            compile_result = subprocess.run([javac_executable, str(file_path)], capture_output=True, text=True)
+            if compile_result.returncode == 0:
+                print("Compilation successful.")
+                run_command([java_executable, file_path.stem], file_path.with_suffix(".class"))
             else:
-                print("Java is not installed or not in PATH. Please install Java to run .java files (From the Website).")
-                yn = input("Open Java's Website...")
-                if yn.lower() in ["y", "yes"]:
-                    print("Opening java.com..")
-                    webbrowser.open("https://www.java.com/en/download/")
-                else:
-                    pass
+                print("Compilation failed:")
+                print(compile_result.stderr)
         elif file.endswith(".class"):
-            if shutil.which("java"):
-                file_path = Path(file).resolve()
-                print(f"Running {file_path}...")
-                result = subprocess.run(
-                    ["javac", file_path.stem],
-                    capture_output=True,
-                    text=True
-                )
-                print(result.stdout)
-            else:
-                print("Java is not installed or not in PATH. Please install Java to run .class files (From the Website).")
-                yn = input("Open Java's Website...")
-                if yn.lower() in ["y", "yes"]:
-                    print("Opening java.com..")
-                    webbrowser.open("https://www.java.com/en/download/")
-                else:
-                    pass
+            run_command([java_executable, file_path.stem], file_path)
         else:
-            print("Mismatch file type.")
-    except Exception as e:
-        print(f"An error occurred: {e}")
-                
+            print("Error: Expected .java or .class file.")
 
-def compile_java(file):
-    try:
-        if file.endswith(".java"):
-            if shutil.which("javac"):
-                file_path = Path(file).resolve()
-                print(f"Compiling {file_path}...")
-                result = subprocess.run(
-                    ["javac", file_path],
-                    capture_output=True,
-                    text=True
-                )
-                if result.returncode == 0:
-                    print("Compilation successful.")
-                else:
-                    print(result.stderr)
-            else:
-                print("Java compiler is not installed or not in PATH. Please install Java to compile .java files (From the Website).")
-                yn = input("Open Java's Website...")
-                if yn.lower() in ["y", "yes"]:
-                    print("Opening java.com..")
-                    webbrowser.open("https://www.java.com/en/download/")
-                else:
-                    pass
-        else:
-            print("Mismatch file type.")
-    except Exception as e:
-        print(f"An error occurred: {e}")
+    elif action == "compile":
+        if not file.endswith(".java"):
+            print("Error: Only .java files can be compiled.")
+            return
 
-def install_language(language, version=None):
-    if language == "python":
-        if version == None:
-            result = subprocess.run(
-                ["uv", "python", "install", "3"],
-                capture_output=True,
-                text=True
-            )
+        javac_executable = shutil.which("javac")
+        if javac_executable:
+            print(f"Compiling {file_path}...")
+            result = subprocess.run([javac_executable, str(file_path)], capture_output=True, text=True)
+            if result.returncode == 0:
+                print("Compilation successful.")
+            else:
+                print("Compilation failed:")
+                print(result.stderr)
         else:
-            result = subprocess.run(
-                ["uv", "python", "install", version],
-                capture_output=True,
-                text=True
-            )
-if __name__ == "__main__":
+            print("Java compiler (javac) not found.")
+
+def show_help():
+    print("\nAvailable commands:")
+    print("  origin help              - Show this help message")
+    print("  origin clear             - Clear the console")
+    print("  origin exit              - Exit the CLI")
+    print("  origin <file>.or         - Run an Origin file")
+    print("  origin <file>.py         - Run a Python file")
+    print("  origin <file>.java       - Compile and run a Java file")
+    print("  origin <file>.class      - Run a Java class file")
+    print("  origin c <file>.java     - Compile a Java file")
+    print("-" * 56)
+
+
+def main():
+    clear_screen()
     print(title)
-    print("Welcome to the Origin CLI!")
+    print("Welcome to the Origin Interactive CLI!")
+    print("Type 'origin help' for a list of commands.")
+
     running = True
     while running:
-        option = input("> ")
-        option_parse = option.split(" ")
-        if option_parse[0] == "origin":
-            try:
-                if option_parse[1] == "help":
-                    print("Available commands:")
-                    print("origin help - Show this help message")
-                    print("origin exit - Exit the CLI")
-                    print("origin clear - Clear the console")
+        try:
+            user_input = input("> ").strip()
+            if not user_input:
+                continue
 
-                elif option_parse[1].endswith(".or"):
-                    run_or(option_parse[1])
-                
-                elif option_parse[1].endswith(".py"):
-                    run_python(option_parse[1])
-                
-                elif option_parse[1].endswith(".java"):
-                    run_java(option_parse[1], "o")
-                
-                elif option_parse[2].endswith(".class"):
-                    run_java(option_parse[1], "c")
-
-                elif option_parse[2].endswith(".java") and option_parse[1] == "c":
-                    compile_java(option_parse[2])
+            parts = user_input.split()
+            if parts[0] != "origin":
+                print(f"Unknown command prefix. Did you mean 'origin {user_input}'?")
+                continue
             
-                # !!!
-                elif "install" in option_parse[1] and "python" in option_parse[2]:
-                    try:
-                        install_language("python", option_parse[3])
-                    except:
-                        install_language("python")
-                
-                elif option_parse[1] == "exit":
-                    print("Exiting...")
-                    running = False
-                elif option_parse[1] == "clear":
-                    os.system('cls' if os.name == 'nt' else 'clear')
-            except IndexError:
-                print(f"Unknown command: {option_parse[1]}")
+            if len(parts) < 2:
+                print("Usage: origin <command|file>")
+                continue
+
+            cmd_or_file = parts[1]
+
+            # Command: help
+            if cmd_or_file == "help":
+                show_help()
+            
+            # Command: exit
+            elif cmd_or_file == "exit":
+                print("Exiting...")
+                running = False
+            
+            # Command: clear
+            elif cmd_or_file == "clear":
+                clear_screen()
+                print(title)
+
+            # Command: compile (origin c <file>.java)
+            elif cmd_or_file == "c":
+                if len(parts) < 3:
+                    print("Error: Please specify a .java file to compile.")
+                else:
+                    handle_java_file(parts[2], "compile")
+
+            # File execution based on extension
+            elif cmd_or_file.endswith(".or"):
+                handle_origin_file(cmd_or_file)
+            
+            elif cmd_or_file.endswith(".py"):
+                handle_python_file(cmd_or_file)
+            
+            elif cmd_or_file.endswith(".java"):
+                handle_java_file(cmd_or_file, "run")
+            
+            elif cmd_or_file.endswith(".class"):
+                handle_java_file(cmd_or_file, "run")
+
+            
+            else:
+                print(f"Unknown command or unsupported file type: {cmd_or_file}")
+
+        except EOFError:
+            print("\nExiting...")
+            break
+        except KeyboardInterrupt:
+            print("\nType 'origin exit' to quit.")
+        except Exception as e:
+            print(f"An error occurred: {e}")
+
+if __name__ == "__main__":
+    main()
