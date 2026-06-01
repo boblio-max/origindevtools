@@ -8,9 +8,8 @@ import os
 import sys
 from pathlib import Path
 
-# Get the absolute path of the directory 1 level up (my_project/)
-parent_dir = str(Path(__file__).resolve().parents[1])
-sys.path.append(parent_dir)
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -156,12 +155,7 @@ def run_origin(code):
             "_execute_i2c_write": _execute_i2c_write,
             "_origin_runtime_line": 0,  # Default
         }
-        
-        # Ensure we are in the directory of the file being run
-        original_cwd = os.getcwd()
-        file_dir = os.path.dirname(os.path.abspath(file_path))
-        if file_dir:
-            os.chdir(file_dir)
+
             
         try:
             exec(generated_python, runtime_globals)
@@ -178,8 +172,7 @@ def run_origin(code):
             # Report the error beautifully
             report_error(abs_file_path, friendly_msg, line_num)
             sys.exit(1)
-        finally:
-            os.chdir(original_cwd)
+        
 
     except SyntaxError as se:
         # Lexer or Parser error
