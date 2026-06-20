@@ -7,7 +7,11 @@ import sys
 import os
 import sys
 from pathlib import Path
-
+from origin.lexer import lex
+from origin.parser import Parser
+from origin.interpreter import Interpreter
+from origin.errors import report_error, translate_python_error
+from folder_gen import run
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 def clear_screen():
@@ -123,11 +127,6 @@ def handle_java_file(file, action):
         else:
             print("Java compiler (javac) not found.")
 
-from origin.lexer import lex
-from origin.parser import Parser
-from origin.interpreter import Interpreter
-from origin.errors import report_error, translate_python_error
-
 def run_origin(code):
     code_lines = code
 
@@ -187,7 +186,6 @@ def run_repl():
     Welcome to the Origin Interactive Shell!
     Type 'exit' or 'quit' to log off.
 
-    
     """
     print(init_msg)
 
@@ -209,16 +207,20 @@ def run_repl():
         except:
             break
 
+def handle_folder_gen(file_with_structure, location):
+    run(file_with_structure, location)
+    
 def show_help():
     print("\nAvailable commands:")
-    print("  origin help              - Show this help message")
-    print("  origin clear             - Clear the console")
-    print("  origin exit              - Exit the CLI")
-    print("  origin <file>.or         - Run an Origin file")
-    print("  origin <file>.py         - Run a Python file")
-    print("  origin <file>.java       - Compile and run a Java file")
-    print("  origin <file>.class      - Run a Java class file")
-    print("  origin c <file>.java     - Compile a Java file")
+    print("  origin help                                    - Show this help message")
+    print("  origin clear                                   - Clear the console")
+    print("  origin exit                                    - Exit the CLI")
+    print("  origin <file>.or                               - Run an Origin file")
+    print("  origin <file>.py                               - Run a Python file")
+    print("  origin <file>.java                             - Compile and run a Java file")
+    print("  origin <file>.class                            - Run a Java class file")
+    print("  origin c <file>.java                           - Compile a Java file")
+    print("  origin create <file_structure>.otxt <location> - Generates folder structure")
     print("-" * 56)
 
 
@@ -241,7 +243,7 @@ def main():
                 continue
             
             if len(parts) < 2:
-                print("Usage: origin <command|file>")
+                run_repl()
                 continue
 
             cmd_or_file = parts[1]
@@ -280,7 +282,11 @@ def main():
             elif cmd_or_file.endswith(".class"):
                 handle_java_file(cmd_or_file, "run")
 
-            
+            elif cmd_or_file == "create":
+                if len(parts) < 4:
+                    print("Error: Please use the format: origin <file_with_structure>.otxt <location>")
+                else:
+                    handle_folder_gen(parts[2], parts[3])
             elif parts[0] is None:
                 run_repl()
         except EOFError:
