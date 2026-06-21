@@ -7,10 +7,13 @@ import sys
 import os
 import sys
 from pathlib import Path
-from origin.lexer import lex
-from origin.parser import Parser
-from origin.interpreter import Interpreter
-from origin.errors import report_error, translate_python_error
+try:
+    from origin.lexer import lex
+    from origin.parser import Parser
+    from origin.interpreter import Interpreter
+    from origin.errors import report_error, translate_python_error
+except:
+    print("Could not import Origin")
 from folder_gen import run
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
@@ -127,60 +130,7 @@ def handle_java_file(file, action):
         else:
             print("Java compiler (javac) not found.")
 
-def run_origin(code):
-    code_lines = code
 
-    try:
-        # 1. Lexical Analysis
-        tokens = lex(code_lines)
-        
-        # 2. Parsing
-        parser = Parser(tokens)
-        ast = parser.program()
-        
-        # 3. Code Generation
-        interp = Interpreter()
-        generated_python = interp.generate(ast)
-        
-        # 4. Execution
-        # We store the runtime line in a dictionary that will be shared with the exec globals
-        # so it's accessible everywhere.
-        runtime_globals = {
-            "random": random,
-            "math": math,
-            "__name__": "__main__",
-            "_execute_set_pin": _execute_set_pin,
-            "_execute_i2c_read": _execute_i2c_read,
-            "_execute_i2c_write": _execute_i2c_write,
-            "_origin_runtime_line": 0,  # Default
-        }
-
-            
-        try:
-            exec(generated_python, runtime_globals)
-        except Exception as e:
-            # Smart Error Handling
-            exc_type, exc_value, exc_traceback = sys.exc_info()
-            
-            # Get the line number from the runtime globals
-            line_num = runtime_globals.get("_origin_runtime_line", 0)
-            
-            # Translate the error message
-            friendly_msg = translate_python_error(exc_type, exc_value)
-            
-            # Report the error beautifully
-            report_error(abs_file_path, friendly_msg, line_num)
-            sys.exit(1)
-        
-
-    except SyntaxError as se:
-        # Lexer or Parser error
-        print(f"\n[Syntax Error] {se}")
-        sys.exit(1)
-    except Exception as e:
-        print(f"\n[System Error] {e}")
-        sys.exit(1)
-        
 def run_repl():
     init_msg="""
     Welcome to the Origin Interactive Shell!
@@ -201,7 +151,7 @@ def run_repl():
                 if origin_repl_executable:
                     result = subprocess.run([origin_repl_executable, str()], capture_output=True, text=True)
                     if result.returncode == 0:
-                        run_origin(code)
+                        print(code)
                     else:
                         print(result.stderr)
         except:

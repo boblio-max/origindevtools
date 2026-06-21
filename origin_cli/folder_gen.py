@@ -43,47 +43,55 @@ def create_structure(file_path: str, base_path: str):
     base_path = os.path.abspath(base_path)
     os.makedirs(base_path, exist_ok=True)
 
+    if not file_path.endswith(".otxt"):
+        print("Use otxt files instead por favor")
+        return
+
     with open(file_path, "r", encoding="utf-8") as f:
-        lines = f.readlines()
+        lines = [line.rstrip("\n") for line in f if line.strip()]
 
     unit = detect_indent_unit(lines)
 
-    # stack stores (depth, full_path)
     stack = [(-1, base_path)]
 
-    for raw_line in lines:
-        if not raw_line.strip():
-            continue
-
+    for i, raw_line in enumerate(lines):
         name = clean_line(raw_line)
         depth = get_indent_level(raw_line, unit)
 
-        # find correct parent
+        # Determine if this line is a directory
+        is_directory = False
+
+        if i + 1 < len(lines):
+            next_depth = get_indent_level(lines[i + 1], unit)
+            if next_depth > depth:
+                is_directory = True
+
         while stack and stack[-1][0] >= depth:
             stack.pop()
 
         parent_path = stack[-1][1]
         full_path = os.path.join(parent_path, name)
 
-        if is_dir(name):
+        if is_directory:
             os.makedirs(full_path, exist_ok=True)
             stack.append((depth, full_path))
             print(f"[DIR]  {full_path}")
 
         else:
             os.makedirs(parent_path, exist_ok=True)
+
             with open(full_path, "w", encoding="utf-8") as f:
                 pass
+
             print(f"[FILE] {full_path}")
 
-
 def run(file_name: str, location: str):
-    create_structure(file_name, location)
+    create_structure(file_name.strip('"'), location.strip('"'))
 
 
 if __name__ == "__main__":
     if len(sys.argv) < 3:
-        print("Usage: python script.py <structure.txt> <location>")
+        print("Usage: python script.py <structure.otxt> <location>")
         sys.exit(1)
 
     run(sys.argv[1], sys.argv[2])
