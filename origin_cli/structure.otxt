@@ -1,21 +1,10 @@
 supabot
     core
         __init__.py
-        config.py
-        result.py
         runner.py
     connectors
         __init__.py
         gazebo
             __init__.py
             connector.py
-            exceptions.py
-            transport.py
-    telemetry
-        __init__.py
-        logger.py
-    policies
-        __init__.py
-        base.py
-        random_policy.py
     cli.py
