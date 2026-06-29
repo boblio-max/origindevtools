@@ -1,22 +1,10 @@
 import os
-import subprocess
-from pathlib import Path
-import shutil
-import webbrowser
-import sys
-import os
-import sys
-from pathlib import Path
-try:
-    from origin.lexer import lex
-    from origin.parser import Parser
-    from origin.interpreter import Interpreter
-    from origin.errors import report_error, translate_python_error
-except:
-    print("Could not import Origin")
-from folder_gen import run
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from .folder_gen import run
+from .handle_java import handle_java_file
+from .handle_python import handle_python_file
+from .handle_origin import handle_origin_file, run_repl
+
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -32,131 +20,6 @@ title = """
  ▀██████▀    ▀█     █▀   █▀   ▀████████▀  █▀    ▀█   █▀
 ========================================================
 """
-
-def run_command(cmd, file_path):
-    try:
-        print(f"Running {file_path}...")
-        # Use shell=True for 'origin' as it might be a batch file/cmd on Windows
-        # But for general use, we'll try direct execution first
-        result = subprocess.run(
-            cmd,
-            capture_output=True,
-            text=True,
-            check=False # We want to handle return codes manually for better output
-        )
-        if result.stdout:
-            print(result.stdout)
-        if result.stderr:
-            print("Error output:")
-            print(result.stderr)
-    except FileNotFoundError:
-        print(f"Error: Command '{cmd[0]}' not found. Please ensure it is installed and in your PATH.")
-    except Exception as e:
-        print(f"An unexpected error occurred: {e}")
-
-def handle_origin_file(file):
-    if not file.endswith(".or"):
-        print("Error: Mismatch file type. Expected .or file.")
-        return
-
-    origin_executable = shutil.which("origin")
-    if origin_executable:
-        file_path = Path(file).resolve()
-        # The original code used ["cmd", "/c", "origin", file_path]
-        # We'll use a safer approach but keep Windows compatibility in mind
-        cmd = ["origin", str(file_path)]
-        if os.name == 'nt':
-            cmd = ["cmd", "/c"] + cmd
-        run_command(cmd, file_path)
-    else:
-        print("Origin is not installed or not in PATH. Please install Origin to run .or files.")
-        print("Visit https://www.docs-origin.onrender.com/download.html to download Origin.")
-
-def handle_python_file(file):
-    if not file.endswith(".py"):
-        print("Error: Mismatch file type. Expected .py file.")
-        return
-
-    python_executable = shutil.which("python") or shutil.which("python3")
-    if python_executable:
-        file_path = Path(file).resolve()
-        run_command([python_executable, str(file_path)], file_path)
-    else:
-        print("Python is not installed or not in PATH. Please install Python to run .py files.")
-        print("Visit https://www.python.org/downloads/ to download Python.")
-
-def handle_java_file(file, action):
-    file_path = Path(file).resolve()
-
-    if action == "run":
-        java_executable = shutil.which("java")
-        if not java_executable:
-            print("Java is not installed or not in PATH.")
-            return
-
-        if file.endswith(".java"):
-            javac_executable = shutil.which("javac")
-            if not javac_executable:
-                print("Java compiler (javac) not found. Cannot compile .java file.")
-                return
-            
-            print(f"Compiling {file_path}...")
-            compile_result = subprocess.run([javac_executable, str(file_path)], capture_output=True, text=True)
-            if compile_result.returncode == 0:
-                print("Compilation successful.")
-                run_command([java_executable, file_path.stem], file_path.with_suffix(".class"))
-            else:
-                print("Compilation failed:")
-                print(compile_result.stderr)
-        elif file.endswith(".class"):
-            run_command([java_executable, file_path.stem], file_path)
-        else:
-            print("Error: Expected .java or .class file.")
-
-    elif action == "compile":
-        if not file.endswith(".java"):
-            print("Error: Only .java files can be compiled.")
-            return
-
-        javac_executable = shutil.which("javac")
-        if javac_executable:
-            print(f"Compiling {file_path}...")
-            result = subprocess.run([javac_executable, str(file_path)], capture_output=True, text=True)
-            if result.returncode == 0:
-                print("Compilation successful.")
-            else:
-                print("Compilation failed:")
-                print(result.stderr)
-        else:
-            print("Java compiler (javac) not found.")
-
-
-def run_repl():
-    init_msg="""
-    Welcome to the Origin Interactive Shell!
-    Type 'exit' or 'quit' to log off.
-
-    """
-    print(init_msg)
-
-    code = []
-    while True:
-        try:
-            line = input("origin >>> ")
-            if line.lower() in ["exit", "quit"]:
-                break
-            else:
-                code.append(line)
-                origin_repl_executable = shutil.which("origin")
-                if origin_repl_executable:
-                    result = subprocess.run([origin_repl_executable, str()], capture_output=True, text=True)
-                    if result.returncode == 0:
-                        print(code)
-                    else:
-                        print(result.stderr)
-        except:
-            break
-
 def handle_folder_gen(file_with_structure, location):
     run(file_with_structure, location)
     
@@ -174,7 +37,7 @@ def show_help():
     print("-" * 56)
 
 
-def main():
+def cli():
     clear_screen()
     print(title)
     print("Welcome to the Origin Interactive CLI!")
@@ -248,4 +111,4 @@ def main():
             print(f"An error occurred: {e}")
 
 if __name__ == "__main__":
-    main()
+    cli()

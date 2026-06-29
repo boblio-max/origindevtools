@@ -5,14 +5,14 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "origin-devtools"
 version = "2.0.0"
-description = "Professional developer toolkit for the Origin language and beyond"
+description = "Interactive CLI for the Origin language"
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.9"
 authors = [
     {name = "Origin Dev Team"},
 ]
-keywords = ["origin", "devtools", "cli", "developer", "toolkit"]
+keywords = ["origin", "cli", "developer-tools"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Environment :: Console",
@@ -24,31 +24,10 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
-    "Topic :: Software Development :: Build Tools",
-    "Topic :: Software Development :: Code Generators",
-    "Topic :: Utilities",
-]
-dependencies = [
-    "click>=8.1",
-    "rich>=13.0",
-    "watchdog>=3.0",
-    "pyyaml>=6.0",
-]
-
-[project.optional-dependencies]
-dev = [
-    "pytest>=7.0",
-    "pytest-cov>=4.0",
 ]
 
 [project.scripts]
 origin = "origin_cli.main:cli"
 
-[project.entry-points."origin_cli.plugins"]
-# Third-party plugins register here
-
 [tool.setuptools.packages.find]
 include = ["origin_cli*"]
-
-[tool.pytest.ini_options]
-testpaths = ["tests"]
