@@ -1,9 +1,17 @@
+# origin install language
+# origin uninstall language
+# origin update language
+# origin update cli
+# origin doctor
+# origin version
+
 import os
 
 from .folder_gen import run
 from .handle_java import handle_java_file
 from .handle_python import handle_python_file
 from .handle_origin import handle_origin_file, run_repl
+from .install_lang import install_lang, uninstall_lang
 
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -82,6 +90,18 @@ def cli():
                 else:
                     handle_java_file(parts[2], "compile")
 
+            elif cmd_or_file == "install":
+                if len(parts) < 3:
+                    print("Error: Please specify a language to install.")
+                else:
+                    install_lang(parts[2])
+            
+            elif cmd_or_file == "uninstall":
+                if len(parts) < 3:
+                    print("Error: Please specify a language to uninstall.")
+                else:
+                    # Placeholder for uninstall logic
+                    uninstall_lang(parts[2])
             # File execution based on extension
             elif cmd_or_file.endswith(".or"):
                 handle_origin_file(cmd_or_file)
