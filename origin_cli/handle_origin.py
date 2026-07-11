@@ -3,7 +3,7 @@ import subprocess
 import shutil
 from pathlib import Path
 
-from .handle_java import run_command
+from handle_java import run_command
 
 
 def handle_origin_file(file):

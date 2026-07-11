@@ -7,11 +7,11 @@
 
 import os
 
-from .folder_gen import run
-from .handle_java import handle_java_file
-from .handle_python import handle_python_file
-from .handle_origin import handle_origin_file, run_repl
-from .install_lang import install_lang, uninstall_lang
+from folder_gen import run
+from handle_java import handle_java_file
+from handle_python import handle_python_file
+from handle_origin import handle_origin_file, run_repl
+from install_lang import install_lang, uninstall_lang
 
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -117,7 +117,7 @@ def cli():
 
             elif cmd_or_file == "create":
                 if len(parts) < 4:
-                    print("Error: Please use the format: origin <file_with_structure>.otxt <location>")
+                    print("Error: Please use the format: origin create <file_with_structure>.otxt <location>")
                 else:
                     handle_folder_gen(parts[2], parts[3])
             elif parts[0] is None:

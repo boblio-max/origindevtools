@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "origin-cli"
+version = "2.0.0"
+description = "CLI for the Origin programming language"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Origin Labs"}
+]
+
+[project.scripts]
+origin = "origin_cli.main:cli"
+
+[project.urls]
+Homepage = "https://github.com/yourusername/origindevtools"
+Repository = "https://github.com/yourusername/origindevtools"
+
+[tool.setuptools.packages.find]
+include = ["origin_cli*"]

@@ -1,10 +1,7 @@
-supabot
-    core
-        __init__.py
-        runner.py
-    connectors
-        __init__.py
-        gazebo
-            __init__.py
-            connector.py
-    cli.py
+nn/
+    tensor.or     
+    layers.or    
+    losses.or      
+    optimizers.or  
+    autograd.or    
+    nn.or 
