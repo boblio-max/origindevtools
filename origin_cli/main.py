@@ -7,11 +7,11 @@
 
 import os
 
-from folder_gen import run
-from handle_java import handle_java_file
-from handle_python import handle_python_file
-from handle_origin import handle_origin_file, run_repl
-from install_lang import install_lang, uninstall_lang
+from .folder_gen import run
+from .handle_java import handle_java_file
+from .handle_python import handle_python_file
+from .handle_origin import handle_origin_file, run_repl
+from .install_lang import install_lang, uninstall_lang
 
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
