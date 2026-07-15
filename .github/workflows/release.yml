@@ -27,7 +27,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: origin-windows
+          name: origin-windows-x86_64
           path: dist/origin.exe
 
   build-linux:
@@ -51,7 +51,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: origin-linux
+          name: origin-linux-x86_64
           path: dist/origin
 
   build-macos:
@@ -75,11 +75,30 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: origin-macos
+          name: origin-macos-x86_64
           path: dist/origin
 
-  release:
+  checksums:
     needs: [build-windows, build-linux, build-macos]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+
+      - name: Generate checksums
+        run: |
+          echo "$(sha256sum origin-windows-x86_64/origin.exe | awk '{print $1}')  origin-windows-x86_64.exe" >> checksums.txt
+          echo "$(sha256sum origin-linux-x86_64/origin | awk '{print $1}')  origin-linux-x86_64" >> checksums.txt
+          echo "$(sha256sum origin-macos-x86_64/origin | awk '{print $1}')  origin-macos-x86_64" >> checksums.txt
+
+      - name: Upload checksums
+        uses: actions/upload-artifact@v4
+        with:
+          name: checksums
+          path: checksums.txt
+
+  release:
+    needs: [build-windows, build-linux, build-macos, checksums]
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -87,11 +106,19 @@ jobs:
       - name: Download all artifacts
         uses: actions/download-artifact@v4
 
+      - name: Rename artifacts for release
+        run: |
+          mv origin-windows-x86_64/origin.exe origin-windows-x86_64.exe
+          mv origin-linux-x86_64/origin origin-linux-x86_64
+          mv origin-macos-x86_64/origin origin-macos-x86_64
+          mv checksums/checksums.txt checksums.txt
+
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            origin-windows/origin.exe
-            origin-linux/origin
-            origin-macos/origin
+            origin-windows-x86_64.exe
+            origin-linux-x86_64
+            origin-macos-x86_64
+            checksums.txt
           generate_release_notes: true

@@ -16,8 +16,8 @@ authors = [
 origin = "origin_cli.main:cli"
 
 [project.urls]
-Homepage = "https://github.com/yourusername/origindevtools"
-Repository = "https://github.com/yourusername/origindevtools"
+Homepage = "https://github.com/boblio-max/origindevtools"
+Repository = "https://github.com/boblio-max/origindevtools"
 
 [tool.setuptools.packages.find]
 include = ["origin_cli*"]

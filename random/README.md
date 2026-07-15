@@ -17,7 +17,7 @@ Professional developer toolkit for the Origin language and beyond.
 
 ```bash
 # Clone and install
-git clone https://github.com/your-org/origindevtools.git
+git clone https://github.com/boblio-max/origindevtools.git
 cd origindevtools
 pip install -e .
 
