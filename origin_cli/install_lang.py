@@ -70,3 +70,9 @@ def uninstall_lang(lang: str) -> None:
     pkg = _map_lang(lang)
     if pkg:
         _winget_cmd("uninstall", pkg)
+
+def update_lang(lang: str) -> None:
+    pkg = _map_lang(lang)
+    if pkg:
+        _winget_cmd("upgrade", pkg)
+        

@@ -11,7 +11,8 @@ from .folder_gen import run
 from .handle_java import handle_java_file
 from .handle_python import handle_python_file
 from .handle_origin import handle_origin_file, run_repl
-from .install_lang import install_lang, uninstall_lang
+from .install_lang import install_lang, uninstall_lang, update_lang
+from .working_dir import change_working_directory
 
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -42,6 +43,10 @@ def show_help():
     print("  origin <file>.class                            - Run a Java class file")
     print("  origin c <file>.java                           - Compile a Java file")
     print("  origin create <file_structure>.otxt <location> - Generates folder structure")
+    print("  origin install <language>                      - Install a language")
+    print("  origin uninstall <language>                    - Uninstall a language")
+    print("  origin update <language>                       - Update a language")
+    print("  origin in <location>                           - Change working directory")
     print("-" * 56)
 
 
@@ -96,12 +101,24 @@ def cli():
                 else:
                     install_lang(parts[2])
             
+            
             elif cmd_or_file == "uninstall":
                 if len(parts) < 3:
                     print("Error: Please specify a language to uninstall.")
                 else:
-                    # Placeholder for uninstall logic
                     uninstall_lang(parts[2])
+            
+            elif cmd_or_file == "update":
+                if len(parts) < 3:
+                    print("Error: Please specify a language to update.")
+                else:
+                    update_lang(parts[2])
+            
+            elif cmd_or_file == "in":
+                if len(parts) < 3:
+                    print("Error: Please specify a location to change to.")
+                else:
+                    change_working_directory(parts[2])
             # File execution based on extension
             elif cmd_or_file.endswith(".or"):
                 handle_origin_file(cmd_or_file)
