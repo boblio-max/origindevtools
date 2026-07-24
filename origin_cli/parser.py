@@ -1,5 +1,5 @@
 import textwrap
-from lexer import lex, Token
+from lexer import *
 from classes import *
 
 
@@ -46,3 +46,19 @@ class Parser:
         kw = self.eat("KEYWORD")
         lang_token = self.eat("IDENT")
         return InstallNode(lang_token.value, kw.value)
+    
+    def gen_folder(self):
+        """Parse a folder generation statement"""
+        self.eat("ORIGIN", "origin")
+        kw = self.eat("KEYWORD", "create")
+        structure = self.eat("STRING")
+        location = self.eat("STRING")
+        return FolderNode(structure, location)
+    
+    def update_stmt(self):
+        self.eat("ORIGIN", "origin")
+        kw = self.eat("KEYWORD", "update")
+        lang_token = self.eat("IDENT")
+        return InstallNode(lang_token.value, kw.value)
+    
+    

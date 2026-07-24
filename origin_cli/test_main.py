@@ -1,17 +1,18 @@
+# origin install language
+# origin uninstall language
+# origin update language
 # origin update cli
 # origin doctor
 # origin version
 
 import os
-import subprocess
-from pathlib import Path
-from .folder_gen import run
-from .handle_java import handle_java_file
-from .handle_python import handle_python_file
-from .handle_origin import handle_origin_file, run_repl
-from .install_lang import install_lang, uninstall_lang, update_lang
-from .working_dir import change_working_directory
 
+from folder_gen import run
+from handle_java import handle_java_file
+from handle_python import handle_python_file
+from handle_origin import handle_origin_file, run_repl
+from install_lang import install_lang, uninstall_lang, update_lang
+from working_dir import change_working_directory
 
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -35,7 +36,7 @@ def show_help():
     print("\nAvailable commands:")
     print("  origin help                                    - Show this help message")
     print("  origin clear                                   - Clear the console")
-    print("  origin exit / oe                               - Exit the CLI")
+    print("  origin exit                                    - Exit the CLI")
     print("  origin <file>.or                               - Run an Origin file")
     print("  origin <file>.py                               - Run a Python file")
     print("  origin <file>.java                             - Compile and run a Java file")
@@ -44,9 +45,8 @@ def show_help():
     print("  origin create <file_structure>.otxt <location> - Generates folder structure")
     print("  origin install <language>                      - Install a language")
     print("  origin uninstall <language>                    - Uninstall a language")
-    print("  origin update <language>                       - Update    a language")
+    print("  origin update <language>                       - Update a language")
     print("  origin in <location>                           - Change working directory")
-    print("  origin activate <venv_name>                    - Creates a python virtual environment")
     print("-" * 56)
 
 
@@ -59,7 +59,7 @@ def cli():
     running = True
     while running:
         try:
-            cwd = Path.cwd()
+            cwd = os.getcwds.split("\main.py")[0]
             user_input = input(f"{cwd}> ").strip()
             if not user_input:
                 continue
@@ -68,10 +68,6 @@ def cli():
             if parts[0] != "origin":
                 print(f"Unknown command prefix. Did you mean 'origin {user_input}'?")
                 continue
-            
-            if parts[0] == "oe":
-                print("Exiting...")
-                break
             
             if len(parts) < 2:
                 run_repl()
@@ -119,17 +115,6 @@ def cli():
                 else:
                     update_lang(parts[2])
             
-            elif cmd_or_file == "in":
-                if len(parts) < 3:
-                    print("Error: Please specify a language to update.")
-                else:
-                    change_working_directory(parts[2])
-            elif cmd_or_file == "activate":
-                if len(parts) < 3:
-                    print("Error: Please specify a language to update.")
-                else:
-                    subprocess.run(["py", "-m", "venv", ".venv"])
-                    subprocess.run([".venv/scripts/activate.psi"])
             elif cmd_or_file == "in":
                 if len(parts) < 3:
                     print("Error: Please specify a location to change to.")

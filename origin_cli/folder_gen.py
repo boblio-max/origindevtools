@@ -91,7 +91,7 @@ def run(file_name: str, location: str):
 
 if __name__ == "__main__":
     if len(sys.argv) < 3:
-        print("Usage: python script.py <structure.otxt> <location>")
+        print("Usage: python folder_gen.py <structure.otxt> <location>")
         sys.exit(1)
 
     run(sys.argv[1], sys.argv[2])

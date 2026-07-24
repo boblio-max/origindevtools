@@ -14,8 +14,9 @@ import re
 TOKEN_REGEX = [
     (r"[ \t]+", "WHITESPACE"),
     (r"\b(origin)\b", "ORIGIN"),
-    (r"\b(install|uninstall)\b", "KEYWORD"),
+    (r"\b(install|uninstall|create)\b", "KEYWORD"),
     (r"[A-Za-z_][A-Za-z0-9_]*", "IDENT"),
+    (r"\".*?\"|'.*?'",       "STRING")
 
 ]
 

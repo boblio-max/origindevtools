@@ -12,3 +12,13 @@ class InstallNode(ASTNode):
         self.type = type
     def __repr__(self):
         return f"InstallNode({self.lang}, {self.type})"
+    
+class FolderNode(ASTNode):
+    """AST node for folder generation"""
+    def __init__(self, structure, location):
+        super().__init__()
+        self.structure = structure
+        self.location = location
+    def __repr__(self):
+        return f"FolderNode({self.structure}, {self.location})"
+
