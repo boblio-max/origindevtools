@@ -1,19 +1,19 @@
 [build-system]
 requires = ["setuptools>=64", "wheel"]
-build-backend = "setuptools.backends._legacy:_Backend"
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "origin-cli"
 version = "2.0.0"
 description = "CLI for the Origin programming language"
 requires-python = ">=3.8"
-license = {text = "MIT"}
+license = "MIT"
 authors = [
     {name = "Origin Labs"}
 ]
 
 [project.scripts]
-origin = "origin_cli.main:cli"
+origin = "origin_cli.main:main"
 
 [project.urls]
 Homepage = "https://github.com/boblio-max/origindevtools"

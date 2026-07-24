@@ -121,17 +121,6 @@ def cli():
             
             elif cmd_or_file == "in":
                 if len(parts) < 3:
-                    print("Error: Please specify a language to update.")
-                else:
-                    change_working_directory(parts[2])
-            elif cmd_or_file == "activate":
-                if len(parts) < 3:
-                    print("Error: Please specify a language to update.")
-                else:
-                    subprocess.run(["py", "-m", "venv", ".venv"])
-                    subprocess.run([".venv/scripts/activate.psi"])
-            elif cmd_or_file == "in":
-                if len(parts) < 3:
                     print("Error: Please specify a location to change to.")
                 else:
                     change_working_directory(parts[2])
@@ -153,7 +142,7 @@ def cli():
                     print("Error: Please use the format: origin create <file_with_structure>.otxt <location>")
                 else:
                     handle_folder_gen(parts[2], parts[3])
-            elif parts[0] is None:
+            elif parts[1] is None:
                 run_repl()
         except EOFError:
             print("\nExiting...")
@@ -163,5 +152,20 @@ def cli():
         except Exception as e:
             print(f"An error occurred: {e}")
 
+def main():
+    import sys
+    if len(sys.argv) > 1:
+        file_to_run = sys.argv[1]
+        if file_to_run.endswith(".py"):
+            handle_python_file(file_to_run)
+        elif file_to_run.endswith(".java") or file_to_run.endswith(".class"):
+            handle_java_file(file_to_run, "run")
+        elif file_to_run.endswith(".or"):
+            handle_origin_file(file_to_run)
+        else:
+            print(f"Error: Unknown file type '{file_to_run}'")
+    else:
+        cli()
+
 if __name__ == "__main__":
-    cli()
+    main()
