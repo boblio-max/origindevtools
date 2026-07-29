@@ -3,7 +3,7 @@ Name: origin-cli
 Version: 2.0.0
 Summary: CLI for the Origin programming language
 Author: Origin Labs
-License: MIT
+License-Expression: MIT
 Project-URL: Homepage, https://github.com/boblio-max/origindevtools
 Project-URL: Repository, https://github.com/boblio-max/origindevtools
 Requires-Python: >=3.8
