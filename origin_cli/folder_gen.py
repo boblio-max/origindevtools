@@ -88,6 +88,12 @@ def create_structure(file_path: str, base_path: str):
 def run(file_name: str, location: str):
     create_structure(file_name.strip('"'), location.strip('"'))
 
+def run_from_str(structure_str: str, location: str):
+    temp_file = "temp_structure.otxt"
+    with open(temp_file, "w", encoding="utf-8") as f:
+        f.write(structure_str)
+    run(temp_file, location)
+    os.remove(temp_file)
 
 if __name__ == "__main__":
     if len(sys.argv) < 3:

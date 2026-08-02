@@ -11,13 +11,22 @@ import re
 
 
 # Ordered list of regular-expression patterns mapping to token type names.
+# Order matters: the first pattern that matches wins.
 TOKEN_REGEX = [
-    (r"[ \t]+", "WHITESPACE"),
-    (r"\b(origin)\b", "ORIGIN"),
-    (r"\b(install|uninstall|create)\b", "KEYWORD"),
-    (r"[A-Za-z_][A-Za-z0-9_]*", "IDENT"),
-    (r"\".*?\"|'.*?'",       "STRING")
-
+    (r"[ \t]+",                                     "WHITESPACE"),
+    # File names with an extension (foo.or, src/main.otxt, C:\lib\util.py)
+    (r"[A-Za-z0-9_./\\\-]+\.[A-Za-z0-9]+",          "FILE"),
+    # Command prefix. Must come after FILE so "origin.py" lexes as a file.
+    (r"\b(origin)\b",                               "ORIGIN"),
+    (r"\b(install|uninstall|update|create|help|exit|clear|venv|activate|in|c|oe)\b", "KEYWORD"),
+    (r"\".*?\"|'.*?'",                              "STRING"),
+    # Absolute Windows paths (C:\Users\foo)
+    (r"[A-Za-z]:[\\/][A-Za-z0-9_ .\\\-/]*",         "PATH"),
+    # Relative paths containing a separator (./src, foo/bar, ..\out)
+    (r"\.?[A-Za-z0-9_ .-]+[\\/][A-Za-z0-9_ .\\\-/]*", "PATH"),
+    # Single-dot and double-dot locations (. and ..)
+    (r"\.\.?",                                      "PATH"),
+    (r"[A-Za-z_][A-Za-z0-9_]*",                     "IDENT"),
 ]
 
 # Precompile patterns for performance.
