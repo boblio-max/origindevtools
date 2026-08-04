@@ -4,50 +4,52 @@
 
 from pathlib import Path
 
+from . import ui
 from .handle_java import handle_java_file
 from .handle_python import handle_python_file
 from .handle_origin import handle_origin_file
 from .lexer import lex
 from .parser import Parser
 from .classes import ExitNode
-from .interpret import interpret, clear_screen, title
+from .interpret import interpret, clear_screen
 
 
 def cli():
+    ui.enable_ansi()
     clear_screen()
-    print(title)
-    print("Welcome to the Origin Interactive CLI!")
-    print("Type 'origin help' for a list of commands.")
+    print(ui.banner())
+    print(ui.status_bar(str(Path.cwd()), ui.active_venv()))
 
     running = True
     while running:
         try:
-            cwd = Path.cwd()
-            user_input = input(f"{cwd}> ").strip()
+            cwd = str(Path.cwd())
+            user_input = input(ui.prompt(cwd)).strip()
             if not user_input:
                 continue
 
             tokens = lex([user_input])
             if tokens[0].type != "ORIGIN":
-                print(f"Unknown command prefix. Did you mean 'origin {user_input}'?")
+                print(ui.error(f"Unknown command prefix. Did you mean '{user_input}'?"))
                 continue
 
             node = Parser(tokens).command()
             if isinstance(node, ExitNode):
-                print("Exiting...")
+                print(ui.dim("Exiting..."))
                 running = False
                 continue
 
             interpret(node)
+            print(ui.status_bar(cwd, ui.active_venv()))
         except SyntaxError as e:
-            print(f"Syntax error: {e}")
+            print(ui.error(f"Syntax error: {e}"))
         except EOFError:
-            print("\nExiting...")
+            print(ui.dim("\nExiting..."))
             break
         except KeyboardInterrupt:
-            print("\nType 'origin exit' to quit.")
+            print("\n" + ui.muted("Press Ctrl+D or run 'origin exit' to quit."))
         except Exception as e:
-            print(f"An error occurred: {e}")
+            print(ui.error(f"An error occurred: {e}"))
 
 
 def main():

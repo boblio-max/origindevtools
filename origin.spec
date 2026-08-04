@@ -1,12 +1,15 @@
 # -*- mode: python ; coding: utf-8 -*-
 
+from PyInstaller.utils.hooks import collect_submodules
+
+hiddenimports = collect_submodules('origin_cli')
 
 a = Analysis(
     ['run_origin.py'],
     pathex=['.'],
     binaries=[],
     datas=[],
-    hiddenimports=['origin_cli', 'origin_cli.folder_gen', 'origin_cli.handle_java', 'origin_cli.handle_python', 'origin_cli.handle_origin', 'origin_cli.install_lang'],
+    hiddenimports=hiddenimports,
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],

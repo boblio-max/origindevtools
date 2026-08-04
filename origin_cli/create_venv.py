@@ -121,3 +121,5 @@ def init_venv(venv_name: str, location: str):
             print(f"PowerShell: .\\{venv_name}\\scripts\\activate.ps1")
             print(f"CMD:        {venv_name}\\scripts\\activate.bat")
     
+def in_venv() -> bool:
+    return "ORIGIN_ENV" in os.environ
