@@ -14,6 +14,10 @@ import re
 # Order matters: the first pattern that matches wins.
 TOKEN_REGEX = [
     (r"[ \t]+",                                     "WHITESPACE"),
+    # Package spec with a version constraint (numpy@1.2.3, numpy>=1.2.0,
+    # numpy<=2.0.0, numpy^2.1). Must come before FILE so dotted package
+    # names and operators are captured as a single token.
+    (r"[A-Za-z_][A-Za-z0-9_.\-]*(?:@|>=|<=|>|<|\^|==|~)[0-9A-Za-z_.+,\-<>=]*", "SPEC"),
     # File names with an extension (foo.or, src/main.otxt, C:\lib\util.py)
     (r"[A-Za-z0-9_./\\\-]+\.[A-Za-z0-9]+",          "FILE"),
     # Command prefix. Must come after FILE so "origin.py" lexes as a file.

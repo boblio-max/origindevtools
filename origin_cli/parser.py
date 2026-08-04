@@ -48,7 +48,7 @@ class Parser:
     def _arg(self):
         """Consume a single argument token and return its unquoted value."""
         tok = self.current_token()
-        if tok.type in ("STRING", "FILE", "PATH", "IDENT"):
+        if tok.type in ("STRING", "FILE", "PATH", "IDENT", "SPEC"):
             self.pos += 1
             if tok.type == "STRING":
                 return tok.value[1:-1]
