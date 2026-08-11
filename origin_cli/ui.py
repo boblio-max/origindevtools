@@ -171,6 +171,9 @@ def show_help():
         ("in <location>", "Change working directory"),
         ("venv <venv_name>", "Create a Python virtual environment"),
         ("activate <venv_name>", "Activate a Python virtual environment"),
+        ("run <model>", "Chat with an AI model via Ollama"),
+        ("give <model> <connector>", "Give a model access to an MCP connector"),
+        ("connector list", "List defined MCP connectors"),
     ]
     width = max(len(cmd) for cmd, _ in rows)
     lines = [f"\n   {accent('origin', bold=True)} {muted('commands')}"]

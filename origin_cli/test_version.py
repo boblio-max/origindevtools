@@ -7,7 +7,7 @@ import unittest
 import zipfile
 from unittest.mock import patch
 
-from .classes import InstallNode
+from .classes import AINode, ConnectorListNode, GiveNode, InstallNode
 from .install_pkg import _record_install, install_pkg
 from .lexer import lex
 from .parser import Parser
@@ -241,6 +241,72 @@ class TestInstalledJson(unittest.TestCase):
             install_pkg("numpy>=1.x")
             resolve.assert_not_called()
         self.assertFalse(os.path.exists(os.path.join(self.venv_root, "installed.json")))
+
+
+class TestAIParsing(unittest.TestCase):
+    """origin run / give / connector statements parse into the right nodes."""
+
+    def test_run_model_with_dot(self):
+        node = Parser(lex(["origin run llama3.2"])).command()
+        self.assertIsInstance(node, AINode)
+        self.assertEqual(node.model, "llama3.2")
+
+    def test_run_model_plain_name(self):
+        node = Parser(lex(["origin run llama3"])).command()
+        self.assertIsInstance(node, AINode)
+        self.assertEqual(node.model, "llama3")
+
+    def test_give_with_connectors(self):
+        node = Parser(lex(["origin give llama3.2 origin"])).command()
+        self.assertIsInstance(node, GiveNode)
+        self.assertEqual(node.model, "llama3.2")
+        self.assertEqual(node.connectors, ["origin"])
+
+    def test_give_no_connectors(self):
+        node = Parser(lex(["origin give llama3.2"])).command()
+        self.assertIsInstance(node, GiveNode)
+        self.assertEqual(node.model, "llama3.2")
+        self.assertEqual(node.connectors, [])
+
+    def test_connector_list(self):
+        node = Parser(lex(["origin connector list"])).command()
+        self.assertIsInstance(node, ConnectorListNode)
+
+
+class TestConnectorRegistry(unittest.TestCase):
+    """The connector registry attaches connectors to models."""
+
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self._tmp.cleanup)
+        self._old_env = os.environ.get("ORIGIN_CONNECTORS_FILE")
+        self.path = os.path.join(self._tmp.name, "connectors.json")
+        os.environ["ORIGIN_CONNECTORS_FILE"] = self.path
+
+    def tearDown(self):
+        if self._old_env is None:
+            os.environ.pop("ORIGIN_CONNECTORS_FILE", None)
+        else:
+            os.environ["ORIGIN_CONNECTORS_FILE"] = self._old_env
+
+    def test_give_attaches_connector(self):
+        from .mcp import give_connectors, load_registry
+        give_connectors("llama3.2", ["origin"])
+        data = load_registry()
+        self.assertEqual(data["given"]["llama3.2"], ["origin"])
+
+    def test_give_unknown_connector(self):
+        from .mcp import give_connectors, load_registry
+        give_connectors("llama3.2", ["does-not-exist"])
+        data = load_registry()
+        self.assertNotIn("llama3.2", data.get("given", {}))
+
+    def test_give_lists_attachments(self):
+        from .mcp import give_connectors, load_registry
+        give_connectors("llama3.2", ["origin"])
+        give_connectors("llama3.2", [])
+        data = load_registry()
+        self.assertEqual(data["given"]["llama3.2"], ["origin"])
 
 
 if __name__ == "__main__":

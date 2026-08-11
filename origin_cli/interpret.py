@@ -9,11 +9,13 @@ import os
 from . import ui
 from .classes import *
 from .folder_gen import run
+from .handle_ai import run_ai_chat
 from .handle_java import handle_java_file
 from .handle_python import handle_python_file
 from .handle_origin import handle_origin_file, run_repl
 from .install_lang import LANG_MAP, install_lang, uninstall_lang, update_lang
 from .install_pkg import install_pkg
+from .mcp import give_connectors, list_connectors
 from .working_dir import change_working_directory, get_working_directory
 from .create_venv import create_venv, init_venv
 
@@ -61,6 +63,15 @@ def interpret(node):
 
     elif isinstance(node, ChangeDirNode):
         change_working_directory(node.location)
+
+    elif isinstance(node, AINode):
+        run_ai_chat(node.model)
+
+    elif isinstance(node, GiveNode):
+        give_connectors(node.model, node.connectors)
+
+    elif isinstance(node, ConnectorListNode):
+        list_connectors()
 
     elif isinstance(node, RunFileNode):
         if node.file.endswith(".or"):

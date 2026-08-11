@@ -9,6 +9,8 @@ an Abstract Syntax Tree (AST) comprised of the node classes in ``classes.py``.
 from .lexer import Token
 from .classes import *
 
+ARG_TYPES = ("STRING", "FILE", "PATH", "IDENT", "SPEC", "KEYWORD", "ORIGIN")
+
 
 class Parser:
     """Deterministic recursive-descent parser."""
@@ -48,7 +50,7 @@ class Parser:
     def _arg(self):
         """Consume a single argument token and return its unquoted value."""
         tok = self.current_token()
-        if tok.type in ("STRING", "FILE", "PATH", "IDENT", "SPEC"):
+        if tok.type in ARG_TYPES:
             self.pos += 1
             if tok.type == "STRING":
                 return tok.value[1:-1]
@@ -65,7 +67,24 @@ class Parser:
         structure = self._arg()
         location = self._arg()
         return FolderNode(structure, location)
+    def run_model(self):
+        model = self._arg()
+        return AINode(model)
 
+    def give_model(self):
+        """Parse an origin give <model> <connector>... statement."""
+        model = self._arg()
+        connectors = []
+        while self.current_token().type in ARG_TYPES:
+            connectors.append(self._arg())
+        return GiveNode(model, connectors)
+
+    def connector_stmt(self):
+        """Parse an origin connector <action> statement."""
+        action = self._arg()
+        if action == "list":
+            return ConnectorListNode()
+        raise SyntaxError(f"Unknown connector action '{action}'")
     def command(self):
         """Parse a single 'origin ...' command line into an AST node."""
         self.skip_newlines()
@@ -100,6 +119,12 @@ class Parser:
                 node = ActivateNode(self._arg())
             elif kw == "in":
                 node = ChangeDirNode(self._arg())
+            elif kw == "run":
+                node = self.run_model()
+            elif kw == "give":
+                node = self.give_model()
+            elif kw == "connector":
+                node = self.connector_stmt()
             else:
                 raise SyntaxError(f"Unknown command '{kw}' at {tok.line}:{tok.col}")
         elif tok.type == "FILE":

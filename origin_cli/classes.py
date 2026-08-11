@@ -88,3 +88,25 @@ class ReplNode(ASTNode):
     """Start the interactive Origin shell."""
     def __repr__(self):
         return "ReplNode()"
+
+class AINode(ASTNode):
+    """Chat with an AI model through Ollama (origin run <model>)."""
+    def __init__(self, model):
+        super().__init__()
+        self.model = model
+    def __repr__(self):
+        return f"AINode({self.model})"
+
+class GiveNode(ASTNode):
+    """Attach MCP/connector servers to an AI model (origin give <model> <connector>...)."""
+    def __init__(self, model, connectors):
+        super().__init__()
+        self.model = model
+        self.connectors = connectors
+    def __repr__(self):
+        return f"GiveNode({self.model}, {self.connectors})"
+
+class ConnectorListNode(ASTNode):
+    """List the MCP/connector servers defined in the registry."""
+    def __repr__(self):
+        return "ConnectorListNode()"
