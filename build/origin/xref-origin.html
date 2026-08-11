@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>modulegraph cross reference for pyi_rth_inspect.py, run_origin.py</title>
+    <title>modulegraph cross reference for pyi_rth_inspect.py, pyi_rth_multiprocessing.py, pyi_rth_pkgutil.py, run_origin.py</title>
     <style>
       .node { padding: 0.5em 0 0.5em; border-top: thin grey dotted; }
       .moduletype { font: smaller italic }
@@ -11,7 +11,7 @@
     </style>
   </head>
   <body>
-    <h1>modulegraph cross reference for pyi_rth_inspect.py, run_origin.py</h1>
+    <h1>modulegraph cross reference for pyi_rth_inspect.py, pyi_rth_multiprocessing.py, pyi_rth_pkgutil.py, run_origin.py</h1>
 
 <div class="node">
   <a name="pyi_rth_inspect.py"></a>
@@ -22,6 +22,42 @@ imports:
  &#8226;   <a href="#os">os</a>
  &#8226;   <a href="#sys">sys</a>
  &#8226;   <a href="#zipfile">zipfile</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#run_origin.py">run_origin.py</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="pyi_rth_multiprocessing.py"></a>
+  <a target="code" href="///C:/Users/smile/OneDrive/Documents/GitHub/origindevtools/.venv/Lib/site-packages/PyInstaller/hooks/rthooks/pyi_rth_multiprocessing.py" type="text/plain"><tt>pyi_rth_multiprocessing.py</tt></a>
+<span class="moduletype">Script</span>  <div class="import">
+imports:
+    <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.spawn">multiprocessing.spawn</a>
+ &#8226;   <a href="#subprocess">subprocess</a>
+ &#8226;   <a href="#sys">sys</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#run_origin.py">run_origin.py</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="pyi_rth_pkgutil.py"></a>
+  <a target="code" href="///C:/Users/smile/OneDrive/Documents/GitHub/origindevtools/.venv/Lib/site-packages/PyInstaller/hooks/rthooks/pyi_rth_pkgutil.py" type="text/plain"><tt>pyi_rth_pkgutil.py</tt></a>
+<span class="moduletype">Script</span>  <div class="import">
+imports:
+    <a href="#pkgutil">pkgutil</a>
+ &#8226;   <a href="#pyimod02_importers">pyimod02_importers</a>
 
   </div>
   <div class="import">
@@ -193,11 +229,15 @@ imports:
  &#8226;   <a href="#origin_cli.parser">origin_cli.parser</a>
  &#8226;   <a href="#origin_cli.test">origin_cli.test</a>
  &#8226;   <a href="#origin_cli.test_main">origin_cli.test_main</a>
+ &#8226;   <a href="#origin_cli.test_version">origin_cli.test_version</a>
  &#8226;   <a href="#origin_cli.ui">origin_cli.ui</a>
+ &#8226;   <a href="#origin_cli.version">origin_cli.version</a>
  &#8226;   <a href="#origin_cli.working_dir">origin_cli.working_dir</a>
  &#8226;   <a href="#os">os</a>
  &#8226;   <a href="#posixpath">posixpath</a>
  &#8226;   <a href="#pyi_rth_inspect.py">pyi_rth_inspect.py</a>
+ &#8226;   <a href="#pyi_rth_multiprocessing.py">pyi_rth_multiprocessing.py</a>
+ &#8226;   <a href="#pyi_rth_pkgutil.py">pyi_rth_pkgutil.py</a>
  &#8226;   <a href="#re">re</a>
  &#8226;   <a href="#re._casefix">re._casefix</a>
  &#8226;   <a href="#re._compiler">re._compiler</a>
@@ -222,7 +262,9 @@ imports:
   <a target="code" href="" type="text/plain"><tt>'collections.abc'</tt></a>
 <span class="moduletype">MissingModule</span>  <div class="import">
 imported by:
-    <a href="#http.client">http.client</a>
+    <a href="#asyncio.base_events">asyncio.base_events</a>
+ &#8226;   <a href="#asyncio.coroutines">asyncio.coroutines</a>
+ &#8226;   <a href="#http.client">http.client</a>
  &#8226;   <a href="#importlib.resources.readers">importlib.resources.readers</a>
  &#8226;   <a href="#inspect">inspect</a>
  &#8226;   <a href="#logging">logging</a>
@@ -275,6 +317,18 @@ imported by:
   <tt>_ast</tt> <span class="moduletype"><i>(builtin module)</i></span>  <div class="import">
 imported by:
     <a href="#ast">ast</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="_asyncio"></a>
+  <tt>_asyncio</tt> <span class="moduletype"><tt>C:\Users\smile\AppData\Local\Programs\Python\Python313\DLLs\_asyncio.pyd</tt></span>  <div class="import">
+imported by:
+    <a href="#asyncio.events">asyncio.events</a>
+ &#8226;   <a href="#asyncio.futures">asyncio.futures</a>
+ &#8226;   <a href="#asyncio.tasks">asyncio.tasks</a>
 
   </div>
 
@@ -550,6 +604,7 @@ imported by:
 imported by:
     <a href="#importlib">importlib</a>
  &#8226;   <a href="#importlib.abc">importlib.abc</a>
+ &#8226;   <a href="#zipimport">zipimport</a>
 
   </div>
 
@@ -563,6 +618,7 @@ imported by:
     <a href="#importlib">importlib</a>
  &#8226;   <a href="#importlib._bootstrap">importlib._bootstrap</a>
  &#8226;   <a href="#importlib.abc">importlib.abc</a>
+ &#8226;   <a href="#zipimport">zipimport</a>
 
   </div>
 
@@ -583,6 +639,7 @@ imported by:
   <tt>_hashlib</tt> <span class="moduletype"><tt>C:\Users\smile\AppData\Local\Programs\Python\Python313\DLLs\_hashlib.pyd</tt></span>  <div class="import">
 imported by:
     <a href="#hashlib">hashlib</a>
+ &#8226;   <a href="#hmac">hmac</a>
 
   </div>
 
@@ -605,6 +662,7 @@ imported by:
     <a href="#importlib">importlib</a>
  &#8226;   <a href="#importlib._bootstrap_external">importlib._bootstrap_external</a>
  &#8226;   <a href="#importlib.util">importlib.util</a>
+ &#8226;   <a href="#zipimport">zipimport</a>
 
   </div>
 
@@ -616,6 +674,8 @@ imported by:
 imported by:
     <a href="#importlib._bootstrap_external">importlib._bootstrap_external</a>
  &#8226;   <a href="#io">io</a>
+ &#8226;   <a href="#unittest.mock">unittest.mock</a>
+ &#8226;   <a href="#zipimport">zipimport</a>
 
   </div>
 
@@ -702,6 +762,18 @@ imported by:
 </div>
 
 <div class="node">
+  <a name="_multiprocessing"></a>
+  <tt>_multiprocessing</tt> <span class="moduletype"><tt>C:\Users\smile\AppData\Local\Programs\Python\Python313\DLLs\_multiprocessing.pyd</tt></span>  <div class="import">
+imported by:
+    <a href="#multiprocessing.connection">multiprocessing.connection</a>
+ &#8226;   <a href="#multiprocessing.resource_tracker">multiprocessing.resource_tracker</a>
+ &#8226;   <a href="#multiprocessing.synchronize">multiprocessing.synchronize</a>
+
+  </div>
+
+</div>
+
+<div class="node">
   <a name="_opcode"></a>
   <tt>_opcode</tt> <span class="moduletype"><i>(builtin module)</i></span>  <div class="import">
 imported by:
@@ -727,7 +799,18 @@ imported by:
   <a name="_operator"></a>
   <tt>_operator</tt> <span class="moduletype"><i>(builtin module)</i></span>  <div class="import">
 imported by:
-    <a href="#operator">operator</a>
+    <a href="#hmac">hmac</a>
+ &#8226;   <a href="#operator">operator</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="_overlapped"></a>
+  <tt>_overlapped</tt> <span class="moduletype"><tt>C:\Users\smile\AppData\Local\Programs\Python\Python313\DLLs\_overlapped.pyd</tt></span>  <div class="import">
+imported by:
+    <a href="#asyncio.windows_events">asyncio.windows_events</a>
 
   </div>
 
@@ -751,6 +834,18 @@ imported by:
 </div>
 
 <div class="node">
+  <a name="_posixshmem"></a>
+  <a target="code" href="" type="text/plain"><tt>_posixshmem</tt></a>
+<span class="moduletype">MissingModule</span>  <div class="import">
+imported by:
+    <a href="#multiprocessing.resource_tracker">multiprocessing.resource_tracker</a>
+ &#8226;   <a href="#multiprocessing.shared_memory">multiprocessing.shared_memory</a>
+
+  </div>
+
+</div>
+
+<div class="node">
   <a name="_posixsubprocess"></a>
   <a target="code" href="" type="text/plain"><tt>_posixsubprocess</tt></a>
 <span class="moduletype">MissingModule</span>  <div class="import">
@@ -760,7 +855,8 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#subprocess">subprocess</a>
+    <a href="#multiprocessing.util">multiprocessing.util</a>
+ &#8226;   <a href="#subprocess">subprocess</a>
 
   </div>
 
@@ -821,6 +917,16 @@ imports:
   <div class="import">
 imported by:
     <a href="#decimal">decimal</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="_queue"></a>
+  <tt>_queue</tt> <span class="moduletype"><tt>C:\Users\smile\AppData\Local\Programs\Python\Python313\DLLs\_queue.pyd</tt></span>  <div class="import">
+imported by:
+    <a href="#queue">queue</a>
 
   </div>
 
@@ -1075,6 +1181,7 @@ imported by:
 imported by:
     <a href="#importlib._bootstrap_external">importlib._bootstrap_external</a>
  &#8226;   <a href="#warnings">warnings</a>
+ &#8226;   <a href="#zipimport">zipimport</a>
 
   </div>
 
@@ -1087,6 +1194,7 @@ imported by:
     <a href="#_weakrefset">_weakrefset</a>
  &#8226;   <a href="#collections">collections</a>
  &#8226;   <a href="#weakref">weakref</a>
+ &#8226;   <a href="#xml.sax.expatreader">xml.sax.expatreader</a>
 
   </div>
 
@@ -1104,6 +1212,7 @@ imports:
   <div class="import">
 imported by:
     <a href="#_py_abc">_py_abc</a>
+ &#8226;   <a href="#multiprocessing.process">multiprocessing.process</a>
  &#8226;   <a href="#run_origin.py">run_origin.py</a>
  &#8226;   <a href="#threading">threading</a>
  &#8226;   <a href="#weakref">weakref</a>
@@ -1116,8 +1225,16 @@ imported by:
   <a name="_winapi"></a>
   <tt>_winapi</tt> <span class="moduletype"><i>(builtin module)</i></span>  <div class="import">
 imported by:
-    <a href="#encodings">encodings</a>
+    <a href="#asyncio.windows_events">asyncio.windows_events</a>
+ &#8226;   <a href="#asyncio.windows_utils">asyncio.windows_utils</a>
+ &#8226;   <a href="#encodings">encodings</a>
  &#8226;   <a href="#mimetypes">mimetypes</a>
+ &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
+ &#8226;   <a href="#multiprocessing.heap">multiprocessing.heap</a>
+ &#8226;   <a href="#multiprocessing.popen_spawn_win32">multiprocessing.popen_spawn_win32</a>
+ &#8226;   <a href="#multiprocessing.reduction">multiprocessing.reduction</a>
+ &#8226;   <a href="#multiprocessing.shared_memory">multiprocessing.shared_memory</a>
+ &#8226;   <a href="#multiprocessing.spawn">multiprocessing.spawn</a>
  &#8226;   <a href="#ntpath">ntpath</a>
  &#8226;   <a href="#shutil">shutil</a>
  &#8226;   <a href="#subprocess">subprocess</a>
@@ -1158,6 +1275,7 @@ imported by:
  &#8226;   <a href="#importlib.resources.abc">importlib.resources.abc</a>
  &#8226;   <a href="#inspect">inspect</a>
  &#8226;   <a href="#io">io</a>
+ &#8226;   <a href="#multiprocessing.reduction">multiprocessing.reduction</a>
  &#8226;   <a href="#numbers">numbers</a>
  &#8226;   <a href="#os">os</a>
  &#8226;   <a href="#run_origin.py">run_origin.py</a>
@@ -1194,6 +1312,7 @@ imported by:
  &#8226;   <a href="#random">random</a>
  &#8226;   <a href="#tarfile">tarfile</a>
  &#8226;   <a href="#tokenize">tokenize</a>
+ &#8226;   <a href="#unittest.main">unittest.main</a>
  &#8226;   <a href="#zipfile">zipfile</a>
 
   </div>
@@ -1204,7 +1323,10 @@ imported by:
   <a name="array"></a>
   <tt>array</tt> <span class="moduletype"><i>(builtin module)</i></span>  <div class="import">
 imported by:
-    <a href="#socket">socket</a>
+    <a href="#multiprocessing.dummy">multiprocessing.dummy</a>
+ &#8226;   <a href="#multiprocessing.managers">multiprocessing.managers</a>
+ &#8226;   <a href="#multiprocessing.reduction">multiprocessing.reduction</a>
+ &#8226;   <a href="#socket">socket</a>
 
   </div>
 
@@ -1236,10 +1358,957 @@ imported by:
 </div>
 
 <div class="node">
+  <a name="asyncio"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/asyncio/__init__.py" type="text/plain"><tt>asyncio</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.DefaultEventLoopPolicy">asyncio.DefaultEventLoopPolicy</a>
+ &#8226;   <a href="#asyncio.base_events">asyncio.base_events</a>
+ &#8226;   <a href="#asyncio.base_futures">asyncio.base_futures</a>
+ &#8226;   <a href="#asyncio.base_subprocess">asyncio.base_subprocess</a>
+ &#8226;   <a href="#asyncio.base_tasks">asyncio.base_tasks</a>
+ &#8226;   <a href="#asyncio.constants">asyncio.constants</a>
+ &#8226;   <a href="#asyncio.coroutines">asyncio.coroutines</a>
+ &#8226;   <a href="#asyncio.events">asyncio.events</a>
+ &#8226;   <a href="#asyncio.exceptions">asyncio.exceptions</a>
+ &#8226;   <a href="#asyncio.format_helpers">asyncio.format_helpers</a>
+ &#8226;   <a href="#asyncio.futures">asyncio.futures</a>
+ &#8226;   <a href="#asyncio.locks">asyncio.locks</a>
+ &#8226;   <a href="#asyncio.mixins">asyncio.mixins</a>
+ &#8226;   <a href="#asyncio.proactor_events">asyncio.proactor_events</a>
+ &#8226;   <a href="#asyncio.protocols">asyncio.protocols</a>
+ &#8226;   <a href="#asyncio.queues">asyncio.queues</a>
+ &#8226;   <a href="#asyncio.runners">asyncio.runners</a>
+ &#8226;   <a href="#asyncio.selector_events">asyncio.selector_events</a>
+ &#8226;   <a href="#asyncio.sslproto">asyncio.sslproto</a>
+ &#8226;   <a href="#asyncio.staggered">asyncio.staggered</a>
+ &#8226;   <a href="#asyncio.streams">asyncio.streams</a>
+ &#8226;   <a href="#asyncio.subprocess">asyncio.subprocess</a>
+ &#8226;   <a href="#asyncio.taskgroups">asyncio.taskgroups</a>
+ &#8226;   <a href="#asyncio.tasks">asyncio.tasks</a>
+ &#8226;   <a href="#asyncio.threads">asyncio.threads</a>
+ &#8226;   <a href="#asyncio.timeouts">asyncio.timeouts</a>
+ &#8226;   <a href="#asyncio.transports">asyncio.transports</a>
+ &#8226;   <a href="#asyncio.trsock">asyncio.trsock</a>
+ &#8226;   <a href="#asyncio.unix_events">asyncio.unix_events</a>
+ &#8226;   <a href="#asyncio.windows_events">asyncio.windows_events</a>
+ &#8226;   <a href="#asyncio.windows_utils">asyncio.windows_utils</a>
+ &#8226;   <a href="#sys">sys</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.base_events">asyncio.base_events</a>
+ &#8226;   <a href="#asyncio.base_futures">asyncio.base_futures</a>
+ &#8226;   <a href="#asyncio.base_subprocess">asyncio.base_subprocess</a>
+ &#8226;   <a href="#asyncio.base_tasks">asyncio.base_tasks</a>
+ &#8226;   <a href="#asyncio.constants">asyncio.constants</a>
+ &#8226;   <a href="#asyncio.coroutines">asyncio.coroutines</a>
+ &#8226;   <a href="#asyncio.events">asyncio.events</a>
+ &#8226;   <a href="#asyncio.exceptions">asyncio.exceptions</a>
+ &#8226;   <a href="#asyncio.format_helpers">asyncio.format_helpers</a>
+ &#8226;   <a href="#asyncio.futures">asyncio.futures</a>
+ &#8226;   <a href="#asyncio.locks">asyncio.locks</a>
+ &#8226;   <a href="#asyncio.log">asyncio.log</a>
+ &#8226;   <a href="#asyncio.mixins">asyncio.mixins</a>
+ &#8226;   <a href="#asyncio.proactor_events">asyncio.proactor_events</a>
+ &#8226;   <a href="#asyncio.protocols">asyncio.protocols</a>
+ &#8226;   <a href="#asyncio.queues">asyncio.queues</a>
+ &#8226;   <a href="#asyncio.runners">asyncio.runners</a>
+ &#8226;   <a href="#asyncio.selector_events">asyncio.selector_events</a>
+ &#8226;   <a href="#asyncio.sslproto">asyncio.sslproto</a>
+ &#8226;   <a href="#asyncio.staggered">asyncio.staggered</a>
+ &#8226;   <a href="#asyncio.streams">asyncio.streams</a>
+ &#8226;   <a href="#asyncio.subprocess">asyncio.subprocess</a>
+ &#8226;   <a href="#asyncio.taskgroups">asyncio.taskgroups</a>
+ &#8226;   <a href="#asyncio.tasks">asyncio.tasks</a>
+ &#8226;   <a href="#asyncio.threads">asyncio.threads</a>
+ &#8226;   <a href="#asyncio.timeouts">asyncio.timeouts</a>
+ &#8226;   <a href="#asyncio.transports">asyncio.transports</a>
+ &#8226;   <a href="#asyncio.trsock">asyncio.trsock</a>
+ &#8226;   <a href="#asyncio.unix_events">asyncio.unix_events</a>
+ &#8226;   <a href="#asyncio.windows_events">asyncio.windows_events</a>
+ &#8226;   <a href="#asyncio.windows_utils">asyncio.windows_utils</a>
+ &#8226;   <a href="#unittest.async_case">unittest.async_case</a>
+ &#8226;   <a href="#unittest.mock">unittest.mock</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="asyncio.DefaultEventLoopPolicy"></a>
+  <a target="code" href="" type="text/plain"><tt>asyncio.DefaultEventLoopPolicy</tt></a>
+<span class="moduletype">MissingModule</span>  <div class="import">
+imported by:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.events">asyncio.events</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="asyncio.base_events"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/asyncio/base_events.py" type="text/plain"><tt>asyncio.base_events</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#'collections.abc'">'collections.abc'</a>
+ &#8226;   <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.constants">asyncio.constants</a>
+ &#8226;   <a href="#asyncio.coroutines">asyncio.coroutines</a>
+ &#8226;   <a href="#asyncio.events">asyncio.events</a>
+ &#8226;   <a href="#asyncio.exceptions">asyncio.exceptions</a>
+ &#8226;   <a href="#asyncio.futures">asyncio.futures</a>
+ &#8226;   <a href="#asyncio.log">asyncio.log</a>
+ &#8226;   <a href="#asyncio.protocols">asyncio.protocols</a>
+ &#8226;   <a href="#asyncio.sslproto">asyncio.sslproto</a>
+ &#8226;   <a href="#asyncio.staggered">asyncio.staggered</a>
+ &#8226;   <a href="#asyncio.tasks">asyncio.tasks</a>
+ &#8226;   <a href="#asyncio.timeouts">asyncio.timeouts</a>
+ &#8226;   <a href="#asyncio.transports">asyncio.transports</a>
+ &#8226;   <a href="#asyncio.trsock">asyncio.trsock</a>
+ &#8226;   <a href="#collections">collections</a>
+ &#8226;   <a href="#concurrent.futures">concurrent.futures</a>
+ &#8226;   <a href="#errno">errno</a>
+ &#8226;   <a href="#heapq">heapq</a>
+ &#8226;   <a href="#itertools">itertools</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#socket">socket</a>
+ &#8226;   <a href="#ssl">ssl</a>
+ &#8226;   <a href="#stat">stat</a>
+ &#8226;   <a href="#subprocess">subprocess</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#threading">threading</a>
+ &#8226;   <a href="#time">time</a>
+ &#8226;   <a href="#traceback">traceback</a>
+ &#8226;   <a href="#warnings">warnings</a>
+ &#8226;   <a href="#weakref">weakref</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.proactor_events">asyncio.proactor_events</a>
+ &#8226;   <a href="#asyncio.selector_events">asyncio.selector_events</a>
+ &#8226;   <a href="#asyncio.unix_events">asyncio.unix_events</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="asyncio.base_futures"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/asyncio/base_futures.py" type="text/plain"><tt>asyncio.base_futures</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.format_helpers">asyncio.format_helpers</a>
+ &#8226;   <a href="#reprlib">reprlib</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.base_tasks">asyncio.base_tasks</a>
+ &#8226;   <a href="#asyncio.futures">asyncio.futures</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="asyncio.base_subprocess"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/asyncio/base_subprocess.py" type="text/plain"><tt>asyncio.base_subprocess</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.log">asyncio.log</a>
+ &#8226;   <a href="#asyncio.protocols">asyncio.protocols</a>
+ &#8226;   <a href="#asyncio.transports">asyncio.transports</a>
+ &#8226;   <a href="#collections">collections</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#signal">signal</a>
+ &#8226;   <a href="#subprocess">subprocess</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#warnings">warnings</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.unix_events">asyncio.unix_events</a>
+ &#8226;   <a href="#asyncio.windows_events">asyncio.windows_events</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="asyncio.base_tasks"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/asyncio/base_tasks.py" type="text/plain"><tt>asyncio.base_tasks</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.base_futures">asyncio.base_futures</a>
+ &#8226;   <a href="#asyncio.coroutines">asyncio.coroutines</a>
+ &#8226;   <a href="#linecache">linecache</a>
+ &#8226;   <a href="#reprlib">reprlib</a>
+ &#8226;   <a href="#traceback">traceback</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.tasks">asyncio.tasks</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="asyncio.constants"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/asyncio/constants.py" type="text/plain"><tt>asyncio.constants</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#enum">enum</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.base_events">asyncio.base_events</a>
+ &#8226;   <a href="#asyncio.format_helpers">asyncio.format_helpers</a>
+ &#8226;   <a href="#asyncio.proactor_events">asyncio.proactor_events</a>
+ &#8226;   <a href="#asyncio.runners">asyncio.runners</a>
+ &#8226;   <a href="#asyncio.selector_events">asyncio.selector_events</a>
+ &#8226;   <a href="#asyncio.sslproto">asyncio.sslproto</a>
+ &#8226;   <a href="#asyncio.unix_events">asyncio.unix_events</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="asyncio.coroutines"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/asyncio/coroutines.py" type="text/plain"><tt>asyncio.coroutines</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#'collections.abc'">'collections.abc'</a>
+ &#8226;   <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#inspect">inspect</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#types">types</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.base_events">asyncio.base_events</a>
+ &#8226;   <a href="#asyncio.base_tasks">asyncio.base_tasks</a>
+ &#8226;   <a href="#asyncio.runners">asyncio.runners</a>
+ &#8226;   <a href="#asyncio.streams">asyncio.streams</a>
+ &#8226;   <a href="#asyncio.tasks">asyncio.tasks</a>
+ &#8226;   <a href="#asyncio.unix_events">asyncio.unix_events</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="asyncio.events"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/asyncio/events.py" type="text/plain"><tt>asyncio.events</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#_asyncio">_asyncio</a>
+ &#8226;   <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.DefaultEventLoopPolicy">asyncio.DefaultEventLoopPolicy</a>
+ &#8226;   <a href="#asyncio.format_helpers">asyncio.format_helpers</a>
+ &#8226;   <a href="#contextvars">contextvars</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#signal">signal</a>
+ &#8226;   <a href="#socket">socket</a>
+ &#8226;   <a href="#subprocess">subprocess</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#threading">threading</a>
+ &#8226;   <a href="#warnings">warnings</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.base_events">asyncio.base_events</a>
+ &#8226;   <a href="#asyncio.futures">asyncio.futures</a>
+ &#8226;   <a href="#asyncio.mixins">asyncio.mixins</a>
+ &#8226;   <a href="#asyncio.runners">asyncio.runners</a>
+ &#8226;   <a href="#asyncio.selector_events">asyncio.selector_events</a>
+ &#8226;   <a href="#asyncio.staggered">asyncio.staggered</a>
+ &#8226;   <a href="#asyncio.streams">asyncio.streams</a>
+ &#8226;   <a href="#asyncio.subprocess">asyncio.subprocess</a>
+ &#8226;   <a href="#asyncio.taskgroups">asyncio.taskgroups</a>
+ &#8226;   <a href="#asyncio.tasks">asyncio.tasks</a>
+ &#8226;   <a href="#asyncio.threads">asyncio.threads</a>
+ &#8226;   <a href="#asyncio.timeouts">asyncio.timeouts</a>
+ &#8226;   <a href="#asyncio.unix_events">asyncio.unix_events</a>
+ &#8226;   <a href="#asyncio.windows_events">asyncio.windows_events</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="asyncio.exceptions"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/asyncio/exceptions.py" type="text/plain"><tt>asyncio.exceptions</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#asyncio">asyncio</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.base_events">asyncio.base_events</a>
+ &#8226;   <a href="#asyncio.futures">asyncio.futures</a>
+ &#8226;   <a href="#asyncio.locks">asyncio.locks</a>
+ &#8226;   <a href="#asyncio.proactor_events">asyncio.proactor_events</a>
+ &#8226;   <a href="#asyncio.runners">asyncio.runners</a>
+ &#8226;   <a href="#asyncio.sslproto">asyncio.sslproto</a>
+ &#8226;   <a href="#asyncio.staggered">asyncio.staggered</a>
+ &#8226;   <a href="#asyncio.streams">asyncio.streams</a>
+ &#8226;   <a href="#asyncio.taskgroups">asyncio.taskgroups</a>
+ &#8226;   <a href="#asyncio.tasks">asyncio.tasks</a>
+ &#8226;   <a href="#asyncio.timeouts">asyncio.timeouts</a>
+ &#8226;   <a href="#asyncio.unix_events">asyncio.unix_events</a>
+ &#8226;   <a href="#asyncio.windows_events">asyncio.windows_events</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="asyncio.format_helpers"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/asyncio/format_helpers.py" type="text/plain"><tt>asyncio.format_helpers</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.constants">asyncio.constants</a>
+ &#8226;   <a href="#functools">functools</a>
+ &#8226;   <a href="#inspect">inspect</a>
+ &#8226;   <a href="#reprlib">reprlib</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#traceback">traceback</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.base_futures">asyncio.base_futures</a>
+ &#8226;   <a href="#asyncio.events">asyncio.events</a>
+ &#8226;   <a href="#asyncio.futures">asyncio.futures</a>
+ &#8226;   <a href="#asyncio.streams">asyncio.streams</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="asyncio.futures"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/asyncio/futures.py" type="text/plain"><tt>asyncio.futures</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#_asyncio">_asyncio</a>
+ &#8226;   <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.base_futures">asyncio.base_futures</a>
+ &#8226;   <a href="#asyncio.events">asyncio.events</a>
+ &#8226;   <a href="#asyncio.exceptions">asyncio.exceptions</a>
+ &#8226;   <a href="#asyncio.format_helpers">asyncio.format_helpers</a>
+ &#8226;   <a href="#concurrent.futures">concurrent.futures</a>
+ &#8226;   <a href="#contextvars">contextvars</a>
+ &#8226;   <a href="#logging">logging</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#types">types</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.base_events">asyncio.base_events</a>
+ &#8226;   <a href="#asyncio.proactor_events">asyncio.proactor_events</a>
+ &#8226;   <a href="#asyncio.selector_events">asyncio.selector_events</a>
+ &#8226;   <a href="#asyncio.tasks">asyncio.tasks</a>
+ &#8226;   <a href="#asyncio.unix_events">asyncio.unix_events</a>
+ &#8226;   <a href="#asyncio.windows_events">asyncio.windows_events</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="asyncio.locks"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/asyncio/locks.py" type="text/plain"><tt>asyncio.locks</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.exceptions">asyncio.exceptions</a>
+ &#8226;   <a href="#asyncio.mixins">asyncio.mixins</a>
+ &#8226;   <a href="#collections">collections</a>
+ &#8226;   <a href="#enum">enum</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.queues">asyncio.queues</a>
+ &#8226;   <a href="#asyncio.staggered">asyncio.staggered</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="asyncio.log"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/asyncio/log.py" type="text/plain"><tt>asyncio.log</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#logging">logging</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#asyncio.base_events">asyncio.base_events</a>
+ &#8226;   <a href="#asyncio.base_subprocess">asyncio.base_subprocess</a>
+ &#8226;   <a href="#asyncio.proactor_events">asyncio.proactor_events</a>
+ &#8226;   <a href="#asyncio.selector_events">asyncio.selector_events</a>
+ &#8226;   <a href="#asyncio.sslproto">asyncio.sslproto</a>
+ &#8226;   <a href="#asyncio.streams">asyncio.streams</a>
+ &#8226;   <a href="#asyncio.subprocess">asyncio.subprocess</a>
+ &#8226;   <a href="#asyncio.unix_events">asyncio.unix_events</a>
+ &#8226;   <a href="#asyncio.windows_events">asyncio.windows_events</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="asyncio.mixins"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/asyncio/mixins.py" type="text/plain"><tt>asyncio.mixins</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.events">asyncio.events</a>
+ &#8226;   <a href="#threading">threading</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.locks">asyncio.locks</a>
+ &#8226;   <a href="#asyncio.queues">asyncio.queues</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="asyncio.proactor_events"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/asyncio/proactor_events.py" type="text/plain"><tt>asyncio.proactor_events</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.base_events">asyncio.base_events</a>
+ &#8226;   <a href="#asyncio.constants">asyncio.constants</a>
+ &#8226;   <a href="#asyncio.exceptions">asyncio.exceptions</a>
+ &#8226;   <a href="#asyncio.futures">asyncio.futures</a>
+ &#8226;   <a href="#asyncio.log">asyncio.log</a>
+ &#8226;   <a href="#asyncio.protocols">asyncio.protocols</a>
+ &#8226;   <a href="#asyncio.sslproto">asyncio.sslproto</a>
+ &#8226;   <a href="#asyncio.transports">asyncio.transports</a>
+ &#8226;   <a href="#asyncio.trsock">asyncio.trsock</a>
+ &#8226;   <a href="#collections">collections</a>
+ &#8226;   <a href="#io">io</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#signal">signal</a>
+ &#8226;   <a href="#socket">socket</a>
+ &#8226;   <a href="#threading">threading</a>
+ &#8226;   <a href="#warnings">warnings</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.windows_events">asyncio.windows_events</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="asyncio.protocols"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/asyncio/protocols.py" type="text/plain"><tt>asyncio.protocols</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#asyncio">asyncio</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.base_events">asyncio.base_events</a>
+ &#8226;   <a href="#asyncio.base_subprocess">asyncio.base_subprocess</a>
+ &#8226;   <a href="#asyncio.proactor_events">asyncio.proactor_events</a>
+ &#8226;   <a href="#asyncio.selector_events">asyncio.selector_events</a>
+ &#8226;   <a href="#asyncio.sslproto">asyncio.sslproto</a>
+ &#8226;   <a href="#asyncio.streams">asyncio.streams</a>
+ &#8226;   <a href="#asyncio.subprocess">asyncio.subprocess</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="asyncio.queues"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/asyncio/queues.py" type="text/plain"><tt>asyncio.queues</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.locks">asyncio.locks</a>
+ &#8226;   <a href="#asyncio.mixins">asyncio.mixins</a>
+ &#8226;   <a href="#collections">collections</a>
+ &#8226;   <a href="#heapq">heapq</a>
+ &#8226;   <a href="#types">types</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.tasks">asyncio.tasks</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="asyncio.runners"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/asyncio/runners.py" type="text/plain"><tt>asyncio.runners</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.constants">asyncio.constants</a>
+ &#8226;   <a href="#asyncio.coroutines">asyncio.coroutines</a>
+ &#8226;   <a href="#asyncio.events">asyncio.events</a>
+ &#8226;   <a href="#asyncio.exceptions">asyncio.exceptions</a>
+ &#8226;   <a href="#asyncio.tasks">asyncio.tasks</a>
+ &#8226;   <a href="#contextvars">contextvars</a>
+ &#8226;   <a href="#enum">enum</a>
+ &#8226;   <a href="#functools">functools</a>
+ &#8226;   <a href="#signal">signal</a>
+ &#8226;   <a href="#threading">threading</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#asyncio">asyncio</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="asyncio.selector_events"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/asyncio/selector_events.py" type="text/plain"><tt>asyncio.selector_events</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.base_events">asyncio.base_events</a>
+ &#8226;   <a href="#asyncio.constants">asyncio.constants</a>
+ &#8226;   <a href="#asyncio.events">asyncio.events</a>
+ &#8226;   <a href="#asyncio.futures">asyncio.futures</a>
+ &#8226;   <a href="#asyncio.log">asyncio.log</a>
+ &#8226;   <a href="#asyncio.protocols">asyncio.protocols</a>
+ &#8226;   <a href="#asyncio.sslproto">asyncio.sslproto</a>
+ &#8226;   <a href="#asyncio.transports">asyncio.transports</a>
+ &#8226;   <a href="#asyncio.trsock">asyncio.trsock</a>
+ &#8226;   <a href="#collections">collections</a>
+ &#8226;   <a href="#errno">errno</a>
+ &#8226;   <a href="#functools">functools</a>
+ &#8226;   <a href="#itertools">itertools</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#selectors">selectors</a>
+ &#8226;   <a href="#socket">socket</a>
+ &#8226;   <a href="#ssl">ssl</a>
+ &#8226;   <a href="#warnings">warnings</a>
+ &#8226;   <a href="#weakref">weakref</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.unix_events">asyncio.unix_events</a>
+ &#8226;   <a href="#asyncio.windows_events">asyncio.windows_events</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="asyncio.sslproto"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/asyncio/sslproto.py" type="text/plain"><tt>asyncio.sslproto</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.constants">asyncio.constants</a>
+ &#8226;   <a href="#asyncio.exceptions">asyncio.exceptions</a>
+ &#8226;   <a href="#asyncio.log">asyncio.log</a>
+ &#8226;   <a href="#asyncio.protocols">asyncio.protocols</a>
+ &#8226;   <a href="#asyncio.transports">asyncio.transports</a>
+ &#8226;   <a href="#collections">collections</a>
+ &#8226;   <a href="#enum">enum</a>
+ &#8226;   <a href="#ssl">ssl</a>
+ &#8226;   <a href="#warnings">warnings</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.base_events">asyncio.base_events</a>
+ &#8226;   <a href="#asyncio.proactor_events">asyncio.proactor_events</a>
+ &#8226;   <a href="#asyncio.selector_events">asyncio.selector_events</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="asyncio.staggered"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/asyncio/staggered.py" type="text/plain"><tt>asyncio.staggered</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.events">asyncio.events</a>
+ &#8226;   <a href="#asyncio.exceptions">asyncio.exceptions</a>
+ &#8226;   <a href="#asyncio.locks">asyncio.locks</a>
+ &#8226;   <a href="#asyncio.tasks">asyncio.tasks</a>
+ &#8226;   <a href="#contextlib">contextlib</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.base_events">asyncio.base_events</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="asyncio.streams"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/asyncio/streams.py" type="text/plain"><tt>asyncio.streams</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.coroutines">asyncio.coroutines</a>
+ &#8226;   <a href="#asyncio.events">asyncio.events</a>
+ &#8226;   <a href="#asyncio.exceptions">asyncio.exceptions</a>
+ &#8226;   <a href="#asyncio.format_helpers">asyncio.format_helpers</a>
+ &#8226;   <a href="#asyncio.log">asyncio.log</a>
+ &#8226;   <a href="#asyncio.protocols">asyncio.protocols</a>
+ &#8226;   <a href="#asyncio.tasks">asyncio.tasks</a>
+ &#8226;   <a href="#collections">collections</a>
+ &#8226;   <a href="#socket">socket</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#warnings">warnings</a>
+ &#8226;   <a href="#weakref">weakref</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.subprocess">asyncio.subprocess</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="asyncio.subprocess"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/asyncio/subprocess.py" type="text/plain"><tt>asyncio.subprocess</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.events">asyncio.events</a>
+ &#8226;   <a href="#asyncio.log">asyncio.log</a>
+ &#8226;   <a href="#asyncio.protocols">asyncio.protocols</a>
+ &#8226;   <a href="#asyncio.streams">asyncio.streams</a>
+ &#8226;   <a href="#asyncio.tasks">asyncio.tasks</a>
+ &#8226;   <a href="#subprocess">subprocess</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#asyncio">asyncio</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="asyncio.taskgroups"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/asyncio/taskgroups.py" type="text/plain"><tt>asyncio.taskgroups</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.events">asyncio.events</a>
+ &#8226;   <a href="#asyncio.exceptions">asyncio.exceptions</a>
+ &#8226;   <a href="#asyncio.tasks">asyncio.tasks</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#asyncio">asyncio</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="asyncio.tasks"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/asyncio/tasks.py" type="text/plain"><tt>asyncio.tasks</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#_asyncio">_asyncio</a>
+ &#8226;   <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.base_tasks">asyncio.base_tasks</a>
+ &#8226;   <a href="#asyncio.coroutines">asyncio.coroutines</a>
+ &#8226;   <a href="#asyncio.events">asyncio.events</a>
+ &#8226;   <a href="#asyncio.exceptions">asyncio.exceptions</a>
+ &#8226;   <a href="#asyncio.futures">asyncio.futures</a>
+ &#8226;   <a href="#asyncio.queues">asyncio.queues</a>
+ &#8226;   <a href="#asyncio.timeouts">asyncio.timeouts</a>
+ &#8226;   <a href="#concurrent.futures">concurrent.futures</a>
+ &#8226;   <a href="#contextvars">contextvars</a>
+ &#8226;   <a href="#functools">functools</a>
+ &#8226;   <a href="#inspect">inspect</a>
+ &#8226;   <a href="#itertools">itertools</a>
+ &#8226;   <a href="#math">math</a>
+ &#8226;   <a href="#types">types</a>
+ &#8226;   <a href="#weakref">weakref</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.base_events">asyncio.base_events</a>
+ &#8226;   <a href="#asyncio.runners">asyncio.runners</a>
+ &#8226;   <a href="#asyncio.staggered">asyncio.staggered</a>
+ &#8226;   <a href="#asyncio.streams">asyncio.streams</a>
+ &#8226;   <a href="#asyncio.subprocess">asyncio.subprocess</a>
+ &#8226;   <a href="#asyncio.taskgroups">asyncio.taskgroups</a>
+ &#8226;   <a href="#asyncio.timeouts">asyncio.timeouts</a>
+ &#8226;   <a href="#asyncio.unix_events">asyncio.unix_events</a>
+ &#8226;   <a href="#asyncio.windows_events">asyncio.windows_events</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="asyncio.threads"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/asyncio/threads.py" type="text/plain"><tt>asyncio.threads</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.events">asyncio.events</a>
+ &#8226;   <a href="#contextvars">contextvars</a>
+ &#8226;   <a href="#functools">functools</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#asyncio">asyncio</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="asyncio.timeouts"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/asyncio/timeouts.py" type="text/plain"><tt>asyncio.timeouts</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.events">asyncio.events</a>
+ &#8226;   <a href="#asyncio.exceptions">asyncio.exceptions</a>
+ &#8226;   <a href="#asyncio.tasks">asyncio.tasks</a>
+ &#8226;   <a href="#enum">enum</a>
+ &#8226;   <a href="#types">types</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.base_events">asyncio.base_events</a>
+ &#8226;   <a href="#asyncio.tasks">asyncio.tasks</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="asyncio.transports"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/asyncio/transports.py" type="text/plain"><tt>asyncio.transports</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#asyncio">asyncio</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.base_events">asyncio.base_events</a>
+ &#8226;   <a href="#asyncio.base_subprocess">asyncio.base_subprocess</a>
+ &#8226;   <a href="#asyncio.proactor_events">asyncio.proactor_events</a>
+ &#8226;   <a href="#asyncio.selector_events">asyncio.selector_events</a>
+ &#8226;   <a href="#asyncio.sslproto">asyncio.sslproto</a>
+ &#8226;   <a href="#asyncio.unix_events">asyncio.unix_events</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="asyncio.trsock"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/asyncio/trsock.py" type="text/plain"><tt>asyncio.trsock</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#socket">socket</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.base_events">asyncio.base_events</a>
+ &#8226;   <a href="#asyncio.proactor_events">asyncio.proactor_events</a>
+ &#8226;   <a href="#asyncio.selector_events">asyncio.selector_events</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="asyncio.unix_events"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/asyncio/unix_events.py" type="text/plain"><tt>asyncio.unix_events</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.base_events">asyncio.base_events</a>
+ &#8226;   <a href="#asyncio.base_subprocess">asyncio.base_subprocess</a>
+ &#8226;   <a href="#asyncio.constants">asyncio.constants</a>
+ &#8226;   <a href="#asyncio.coroutines">asyncio.coroutines</a>
+ &#8226;   <a href="#asyncio.events">asyncio.events</a>
+ &#8226;   <a href="#asyncio.exceptions">asyncio.exceptions</a>
+ &#8226;   <a href="#asyncio.futures">asyncio.futures</a>
+ &#8226;   <a href="#asyncio.log">asyncio.log</a>
+ &#8226;   <a href="#asyncio.selector_events">asyncio.selector_events</a>
+ &#8226;   <a href="#asyncio.tasks">asyncio.tasks</a>
+ &#8226;   <a href="#asyncio.transports">asyncio.transports</a>
+ &#8226;   <a href="#errno">errno</a>
+ &#8226;   <a href="#io">io</a>
+ &#8226;   <a href="#itertools">itertools</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#selectors">selectors</a>
+ &#8226;   <a href="#signal">signal</a>
+ &#8226;   <a href="#socket">socket</a>
+ &#8226;   <a href="#stat">stat</a>
+ &#8226;   <a href="#subprocess">subprocess</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#threading">threading</a>
+ &#8226;   <a href="#warnings">warnings</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#asyncio">asyncio</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="asyncio.windows_events"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/asyncio/windows_events.py" type="text/plain"><tt>asyncio.windows_events</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#_overlapped">_overlapped</a>
+ &#8226;   <a href="#_winapi">_winapi</a>
+ &#8226;   <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.base_subprocess">asyncio.base_subprocess</a>
+ &#8226;   <a href="#asyncio.events">asyncio.events</a>
+ &#8226;   <a href="#asyncio.exceptions">asyncio.exceptions</a>
+ &#8226;   <a href="#asyncio.futures">asyncio.futures</a>
+ &#8226;   <a href="#asyncio.log">asyncio.log</a>
+ &#8226;   <a href="#asyncio.proactor_events">asyncio.proactor_events</a>
+ &#8226;   <a href="#asyncio.selector_events">asyncio.selector_events</a>
+ &#8226;   <a href="#asyncio.tasks">asyncio.tasks</a>
+ &#8226;   <a href="#asyncio.windows_utils">asyncio.windows_utils</a>
+ &#8226;   <a href="#errno">errno</a>
+ &#8226;   <a href="#functools">functools</a>
+ &#8226;   <a href="#math">math</a>
+ &#8226;   <a href="#msvcrt">msvcrt</a>
+ &#8226;   <a href="#socket">socket</a>
+ &#8226;   <a href="#struct">struct</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#time">time</a>
+ &#8226;   <a href="#weakref">weakref</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#asyncio">asyncio</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="asyncio.windows_utils"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/asyncio/windows_utils.py" type="text/plain"><tt>asyncio.windows_utils</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#_winapi">_winapi</a>
+ &#8226;   <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#itertools">itertools</a>
+ &#8226;   <a href="#msvcrt">msvcrt</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#subprocess">subprocess</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#tempfile">tempfile</a>
+ &#8226;   <a href="#warnings">warnings</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.windows_events">asyncio.windows_events</a>
+
+  </div>
+
+</div>
+
+<div class="node">
   <a name="atexit"></a>
   <tt>atexit</tt> <span class="moduletype"><i>(builtin module)</i></span>  <div class="import">
 imported by:
     <a href="#logging">logging</a>
+ &#8226;   <a href="#multiprocessing.forkserver">multiprocessing.forkserver</a>
+ &#8226;   <a href="#multiprocessing.popen_fork">multiprocessing.popen_fork</a>
+ &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
  &#8226;   <a href="#weakref">weakref</a>
 
   </div>
@@ -1264,8 +2333,10 @@ imported by:
  &#8226;   <a href="#email.base64mime">email.base64mime</a>
  &#8226;   <a href="#email.encoders">email.encoders</a>
  &#8226;   <a href="#encodings.base64_codec">encodings.base64_codec</a>
+ &#8226;   <a href="#secrets">secrets</a>
  &#8226;   <a href="#ssl">ssl</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
+ &#8226;   <a href="#xmlrpc.client">xmlrpc.client</a>
 
   </div>
 
@@ -1300,7 +2371,8 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#random">random</a>
+    <a href="#multiprocessing.heap">multiprocessing.heap</a>
+ &#8226;   <a href="#random">random</a>
  &#8226;   <a href="#statistics">statistics</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
 
@@ -1325,6 +2397,7 @@ imported by:
  &#8226;   <a href="#subprocess">subprocess</a>
  &#8226;   <a href="#tarfile">tarfile</a>
  &#8226;   <a href="#tokenize">tokenize</a>
+ &#8226;   <a href="#unittest.mock">unittest.mock</a>
  &#8226;   <a href="#warnings">warnings</a>
 
   </div>
@@ -1518,6 +2591,7 @@ imported by:
  &#8226;   <a href="#pickle">pickle</a>
  &#8226;   <a href="#run_origin.py">run_origin.py</a>
  &#8226;   <a href="#tokenize">tokenize</a>
+ &#8226;   <a href="#xml.sax.saxutils">xml.sax.saxutils</a>
 
   </div>
 
@@ -1544,7 +2618,17 @@ imports:
 imported by:
     <a href="#_pydecimal">_pydecimal</a>
  &#8226;   <a href="#ast">ast</a>
+ &#8226;   <a href="#asyncio.base_events">asyncio.base_events</a>
+ &#8226;   <a href="#asyncio.base_subprocess">asyncio.base_subprocess</a>
+ &#8226;   <a href="#asyncio.locks">asyncio.locks</a>
+ &#8226;   <a href="#asyncio.proactor_events">asyncio.proactor_events</a>
+ &#8226;   <a href="#asyncio.queues">asyncio.queues</a>
+ &#8226;   <a href="#asyncio.selector_events">asyncio.selector_events</a>
+ &#8226;   <a href="#asyncio.sslproto">asyncio.sslproto</a>
+ &#8226;   <a href="#asyncio.streams">asyncio.streams</a>
+ &#8226;   <a href="#concurrent.futures._base">concurrent.futures._base</a>
  &#8226;   <a href="#contextlib">contextlib</a>
+ &#8226;   <a href="#difflib">difflib</a>
  &#8226;   <a href="#dis">dis</a>
  &#8226;   <a href="#email.feedparser">email.feedparser</a>
  &#8226;   <a href="#functools">functools</a>
@@ -1552,8 +2636,13 @@ imported by:
  &#8226;   <a href="#importlib.metadata._collections">importlib.metadata._collections</a>
  &#8226;   <a href="#importlib.resources.readers">importlib.resources.readers</a>
  &#8226;   <a href="#inspect">inspect</a>
+ &#8226;   <a href="#multiprocessing.heap">multiprocessing.heap</a>
+ &#8226;   <a href="#multiprocessing.pool">multiprocessing.pool</a>
+ &#8226;   <a href="#multiprocessing.queues">multiprocessing.queues</a>
+ &#8226;   <a href="#pkgutil">pkgutil</a>
  &#8226;   <a href="#platform">platform</a>
  &#8226;   <a href="#pprint">pprint</a>
+ &#8226;   <a href="#queue">queue</a>
  &#8226;   <a href="#run_origin.py">run_origin.py</a>
  &#8226;   <a href="#selectors">selectors</a>
  &#8226;   <a href="#shutil">shutil</a>
@@ -1563,7 +2652,120 @@ imported by:
  &#8226;   <a href="#threading">threading</a>
  &#8226;   <a href="#tokenize">tokenize</a>
  &#8226;   <a href="#typing">typing</a>
+ &#8226;   <a href="#unittest._log">unittest._log</a>
+ &#8226;   <a href="#unittest.case">unittest.case</a>
+ &#8226;   <a href="#unittest.util">unittest.util</a>
  &#8226;   <a href="#urllib.parse">urllib.parse</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="concurrent"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/concurrent/__init__.py" type="text/plain"><tt>concurrent</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imported by:
+    <a href="#concurrent.futures">concurrent.futures</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="concurrent.futures"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/concurrent/futures/__init__.py" type="text/plain"><tt>concurrent.futures</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#concurrent">concurrent</a>
+ &#8226;   <a href="#concurrent.futures._base">concurrent.futures._base</a>
+ &#8226;   <a href="#concurrent.futures.process">concurrent.futures.process</a>
+ &#8226;   <a href="#concurrent.futures.thread">concurrent.futures.thread</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#asyncio.base_events">asyncio.base_events</a>
+ &#8226;   <a href="#asyncio.futures">asyncio.futures</a>
+ &#8226;   <a href="#asyncio.tasks">asyncio.tasks</a>
+ &#8226;   <a href="#concurrent.futures._base">concurrent.futures._base</a>
+ &#8226;   <a href="#concurrent.futures.process">concurrent.futures.process</a>
+ &#8226;   <a href="#concurrent.futures.thread">concurrent.futures.thread</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="concurrent.futures._base"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/concurrent/futures/_base.py" type="text/plain"><tt>concurrent.futures._base</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#collections">collections</a>
+ &#8226;   <a href="#concurrent.futures">concurrent.futures</a>
+ &#8226;   <a href="#logging">logging</a>
+ &#8226;   <a href="#threading">threading</a>
+ &#8226;   <a href="#time">time</a>
+ &#8226;   <a href="#types">types</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#concurrent.futures">concurrent.futures</a>
+ &#8226;   <a href="#concurrent.futures.process">concurrent.futures.process</a>
+ &#8226;   <a href="#concurrent.futures.thread">concurrent.futures.thread</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="concurrent.futures.process"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/concurrent/futures/process.py" type="text/plain"><tt>concurrent.futures.process</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#concurrent.futures">concurrent.futures</a>
+ &#8226;   <a href="#concurrent.futures._base">concurrent.futures._base</a>
+ &#8226;   <a href="#functools">functools</a>
+ &#8226;   <a href="#itertools">itertools</a>
+ &#8226;   <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
+ &#8226;   <a href="#multiprocessing.queues">multiprocessing.queues</a>
+ &#8226;   <a href="#multiprocessing.synchronize">multiprocessing.synchronize</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#queue">queue</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#threading">threading</a>
+ &#8226;   <a href="#traceback">traceback</a>
+ &#8226;   <a href="#weakref">weakref</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#concurrent.futures">concurrent.futures</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="concurrent.futures.thread"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/concurrent/futures/thread.py" type="text/plain"><tt>concurrent.futures.thread</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#concurrent.futures">concurrent.futures</a>
+ &#8226;   <a href="#concurrent.futures._base">concurrent.futures._base</a>
+ &#8226;   <a href="#itertools">itertools</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#queue">queue</a>
+ &#8226;   <a href="#threading">threading</a>
+ &#8226;   <a href="#types">types</a>
+ &#8226;   <a href="#weakref">weakref</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#concurrent.futures">concurrent.futures</a>
 
   </div>
 
@@ -1587,6 +2789,7 @@ imports:
 imported by:
     <a href="#_threading_local">_threading_local</a>
  &#8226;   <a href="#ast">ast</a>
+ &#8226;   <a href="#asyncio.staggered">asyncio.staggered</a>
  &#8226;   <a href="#getpass">getpass</a>
  &#8226;   <a href="#glob">glob</a>
  &#8226;   <a href="#importlib.metadata">importlib.metadata</a>
@@ -1596,6 +2799,8 @@ imported by:
  &#8226;   <a href="#subprocess">subprocess</a>
  &#8226;   <a href="#traceback">traceback</a>
  &#8226;   <a href="#typing">typing</a>
+ &#8226;   <a href="#unittest.case">unittest.case</a>
+ &#8226;   <a href="#unittest.mock">unittest.mock</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
  &#8226;   <a href="#zipfile._path">zipfile._path</a>
 
@@ -1614,6 +2819,12 @@ imports:
   <div class="import">
 imported by:
     <a href="#_pydecimal">_pydecimal</a>
+ &#8226;   <a href="#asyncio.events">asyncio.events</a>
+ &#8226;   <a href="#asyncio.futures">asyncio.futures</a>
+ &#8226;   <a href="#asyncio.runners">asyncio.runners</a>
+ &#8226;   <a href="#asyncio.tasks">asyncio.tasks</a>
+ &#8226;   <a href="#asyncio.threads">asyncio.threads</a>
+ &#8226;   <a href="#unittest.async_case">unittest.async_case</a>
 
   </div>
 
@@ -1658,6 +2869,7 @@ imports:
 imported by:
     <a href="#_pickle">_pickle</a>
  &#8226;   <a href="#copy">copy</a>
+ &#8226;   <a href="#multiprocessing.reduction">multiprocessing.reduction</a>
  &#8226;   <a href="#pickle">pickle</a>
  &#8226;   <a href="#re">re</a>
  &#8226;   <a href="#run_origin.py">run_origin.py</a>
@@ -1704,6 +2916,7 @@ imports:
   <div class="import">
 imported by:
     <a href="#ctypes._endian">ctypes._endian</a>
+ &#8226;   <a href="#multiprocessing.sharedctypes">multiprocessing.sharedctypes</a>
  &#8226;   <a href="#origin_cli.ui">origin_cli.ui</a>
  &#8226;   <a href="#platform">platform</a>
 
@@ -1746,7 +2959,8 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#pprint">pprint</a>
+    <a href="#origin_cli.version">origin_cli.version</a>
+ &#8226;   <a href="#pprint">pprint</a>
 
   </div>
 
@@ -1768,6 +2982,7 @@ imported by:
  &#8226;   <a href="#calendar">calendar</a>
  &#8226;   <a href="#email.utils">email.utils</a>
  &#8226;   <a href="#http.cookiejar">http.cookiejar</a>
+ &#8226;   <a href="#xmlrpc.client">xmlrpc.client</a>
 
   </div>
 
@@ -1787,6 +3002,28 @@ imports:
 imported by:
     <a href="#fractions">fractions</a>
  &#8226;   <a href="#statistics">statistics</a>
+ &#8226;   <a href="#xmlrpc.client">xmlrpc.client</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="difflib"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/difflib.py" type="text/plain"><tt>difflib</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#collections">collections</a>
+ &#8226;   <a href="#difflib">difflib</a>
+ &#8226;   <a href="#heapq">heapq</a>
+ &#8226;   <a href="#re">re</a>
+ &#8226;   <a href="#types">types</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#difflib">difflib</a>
+ &#8226;   <a href="#unittest.case">unittest.case</a>
 
   </div>
 
@@ -4805,9 +6042,15 @@ imports:
   <div class="import">
 imported by:
     <a href="#ast">ast</a>
+ &#8226;   <a href="#asyncio.constants">asyncio.constants</a>
+ &#8226;   <a href="#asyncio.locks">asyncio.locks</a>
+ &#8226;   <a href="#asyncio.runners">asyncio.runners</a>
+ &#8226;   <a href="#asyncio.sslproto">asyncio.sslproto</a>
+ &#8226;   <a href="#asyncio.timeouts">asyncio.timeouts</a>
  &#8226;   <a href="#calendar">calendar</a>
  &#8226;   <a href="#http">http</a>
  &#8226;   <a href="#inspect">inspect</a>
+ &#8226;   <a href="#origin_cli.version">origin_cli.version</a>
  &#8226;   <a href="#py_compile">py_compile</a>
  &#8226;   <a href="#re">re</a>
  &#8226;   <a href="#run_origin.py">run_origin.py</a>
@@ -4823,9 +6066,17 @@ imported by:
   <a name="errno"></a>
   <tt>errno</tt> <span class="moduletype"><i>(builtin module)</i></span>  <div class="import">
 imported by:
-    <a href="#gettext">gettext</a>
+    <a href="#asyncio.base_events">asyncio.base_events</a>
+ &#8226;   <a href="#asyncio.selector_events">asyncio.selector_events</a>
+ &#8226;   <a href="#asyncio.unix_events">asyncio.unix_events</a>
+ &#8226;   <a href="#asyncio.windows_events">asyncio.windows_events</a>
+ &#8226;   <a href="#gettext">gettext</a>
  &#8226;   <a href="#gzip">gzip</a>
  &#8226;   <a href="#http.client">http.client</a>
+ &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
+ &#8226;   <a href="#multiprocessing.forkserver">multiprocessing.forkserver</a>
+ &#8226;   <a href="#multiprocessing.queues">multiprocessing.queues</a>
+ &#8226;   <a href="#multiprocessing.shared_memory">multiprocessing.shared_memory</a>
  &#8226;   <a href="#pathlib._abc">pathlib._abc</a>
  &#8226;   <a href="#posixpath">posixpath</a>
  &#8226;   <a href="#shutil">shutil</a>
@@ -4833,6 +6084,7 @@ imported by:
  &#8226;   <a href="#ssl">ssl</a>
  &#8226;   <a href="#subprocess">subprocess</a>
  &#8226;   <a href="#tempfile">tempfile</a>
+ &#8226;   <a href="#xmlrpc.client">xmlrpc.client</a>
 
   </div>
 
@@ -4865,6 +6117,7 @@ imported by:
     <a href="#glob">glob</a>
  &#8226;   <a href="#shutil">shutil</a>
  &#8226;   <a href="#tracemalloc">tracemalloc</a>
+ &#8226;   <a href="#unittest.loader">unittest.loader</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
 
   </div>
@@ -4942,7 +6195,14 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#contextlib">contextlib</a>
+    <a href="#asyncio.format_helpers">asyncio.format_helpers</a>
+ &#8226;   <a href="#asyncio.runners">asyncio.runners</a>
+ &#8226;   <a href="#asyncio.selector_events">asyncio.selector_events</a>
+ &#8226;   <a href="#asyncio.tasks">asyncio.tasks</a>
+ &#8226;   <a href="#asyncio.threads">asyncio.threads</a>
+ &#8226;   <a href="#asyncio.windows_events">asyncio.windows_events</a>
+ &#8226;   <a href="#concurrent.futures.process">concurrent.futures.process</a>
+ &#8226;   <a href="#contextlib">contextlib</a>
  &#8226;   <a href="#copyreg">copyreg</a>
  &#8226;   <a href="#email._encoded_words">email._encoded_words</a>
  &#8226;   <a href="#email.charset">email.charset</a>
@@ -4957,9 +6217,13 @@ imported by:
  &#8226;   <a href="#inspect">inspect</a>
  &#8226;   <a href="#ipaddress">ipaddress</a>
  &#8226;   <a href="#locale">locale</a>
+ &#8226;   <a href="#multiprocessing.reduction">multiprocessing.reduction</a>
+ &#8226;   <a href="#multiprocessing.shared_memory">multiprocessing.shared_memory</a>
  &#8226;   <a href="#operator">operator</a>
+ &#8226;   <a href="#origin_cli.version">origin_cli.version</a>
  &#8226;   <a href="#pathlib._abc">pathlib._abc</a>
  &#8226;   <a href="#pickle">pickle</a>
+ &#8226;   <a href="#pkgutil">pkgutil</a>
  &#8226;   <a href="#platform">platform</a>
  &#8226;   <a href="#re">re</a>
  &#8226;   <a href="#run_origin.py">run_origin.py</a>
@@ -4969,6 +6233,11 @@ imported by:
  &#8226;   <a href="#tracemalloc">tracemalloc</a>
  &#8226;   <a href="#types">types</a>
  &#8226;   <a href="#typing">typing</a>
+ &#8226;   <a href="#unittest.case">unittest.case</a>
+ &#8226;   <a href="#unittest.loader">unittest.loader</a>
+ &#8226;   <a href="#unittest.mock">unittest.mock</a>
+ &#8226;   <a href="#unittest.result">unittest.result</a>
+ &#8226;   <a href="#unittest.signals">unittest.signals</a>
  &#8226;   <a href="#urllib.parse">urllib.parse</a>
  &#8226;   <a href="#warnings">warnings</a>
 
@@ -5142,6 +6411,7 @@ imports:
   <div class="import">
 imported by:
     <a href="#tarfile">tarfile</a>
+ &#8226;   <a href="#xmlrpc.client">xmlrpc.client</a>
 
   </div>
 
@@ -5196,7 +6466,8 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#random">random</a>
+    <a href="#hmac">hmac</a>
+ &#8226;   <a href="#random">random</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
 
   </div>
@@ -5213,8 +6484,32 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#collections">collections</a>
+    <a href="#asyncio.base_events">asyncio.base_events</a>
+ &#8226;   <a href="#asyncio.queues">asyncio.queues</a>
+ &#8226;   <a href="#collections">collections</a>
+ &#8226;   <a href="#difflib">difflib</a>
+ &#8226;   <a href="#queue">queue</a>
  &#8226;   <a href="#run_origin.py">run_origin.py</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="hmac"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/hmac.py" type="text/plain"><tt>hmac</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#_hashlib">_hashlib</a>
+ &#8226;   <a href="#_operator">_operator</a>
+ &#8226;   <a href="#hashlib">hashlib</a>
+ &#8226;   <a href="#warnings">warnings</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#multiprocessing.connection">multiprocessing.connection</a>
+ &#8226;   <a href="#secrets">secrets</a>
 
   </div>
 
@@ -5259,6 +6554,7 @@ imports:
 imported by:
     <a href="#http.cookiejar">http.cookiejar</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
+ &#8226;   <a href="#xmlrpc.client">xmlrpc.client</a>
 
   </div>
 
@@ -5322,6 +6618,7 @@ imported by:
  &#8226;   <a href="#importlib.resources._common">importlib.resources._common</a>
  &#8226;   <a href="#importlib.util">importlib.util</a>
  &#8226;   <a href="#inspect">inspect</a>
+ &#8226;   <a href="#pkgutil">pkgutil</a>
 
   </div>
 
@@ -5436,7 +6733,9 @@ imports:
 imported by:
     <a href="#importlib.abc">importlib.abc</a>
  &#8226;   <a href="#inspect">inspect</a>
+ &#8226;   <a href="#pkgutil">pkgutil</a>
  &#8226;   <a href="#py_compile">py_compile</a>
+ &#8226;   <a href="#runpy">runpy</a>
 
   </div>
 
@@ -5617,6 +6916,7 @@ imports:
   <div class="import">
 imported by:
     <a href="#importlib._bootstrap_external">importlib._bootstrap_external</a>
+ &#8226;   <a href="#zipimport">zipimport</a>
 
   </div>
 
@@ -5803,7 +7103,9 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#py_compile">py_compile</a>
+    <a href="#pkgutil">pkgutil</a>
+ &#8226;   <a href="#py_compile">py_compile</a>
+ &#8226;   <a href="#runpy">runpy</a>
  &#8226;   <a href="#zipfile">zipfile</a>
 
   </div>
@@ -5842,11 +7144,17 @@ imports:
   <div class="import">
 imported by:
     <a href="#ast">ast</a>
+ &#8226;   <a href="#asyncio.coroutines">asyncio.coroutines</a>
+ &#8226;   <a href="#asyncio.format_helpers">asyncio.format_helpers</a>
+ &#8226;   <a href="#asyncio.tasks">asyncio.tasks</a>
  &#8226;   <a href="#dataclasses">dataclasses</a>
  &#8226;   <a href="#importlib.metadata">importlib.metadata</a>
  &#8226;   <a href="#importlib.resources._common">importlib.resources._common</a>
+ &#8226;   <a href="#pkgutil">pkgutil</a>
  &#8226;   <a href="#pyi_rth_inspect.py">pyi_rth_inspect.py</a>
  &#8226;   <a href="#typing">typing</a>
+ &#8226;   <a href="#unittest.async_case">unittest.async_case</a>
+ &#8226;   <a href="#unittest.mock">unittest.mock</a>
  &#8226;   <a href="#warnings">warnings</a>
 
   </div>
@@ -5877,6 +7185,8 @@ imports:
 imported by:
     <a href="#_colorize">_colorize</a>
  &#8226;   <a href="#_compression">_compression</a>
+ &#8226;   <a href="#asyncio.proactor_events">asyncio.proactor_events</a>
+ &#8226;   <a href="#asyncio.unix_events">asyncio.unix_events</a>
  &#8226;   <a href="#bz2">bz2</a>
  &#8226;   <a href="#csv">csv</a>
  &#8226;   <a href="#dis">dis</a>
@@ -5895,19 +7205,29 @@ imported by:
  &#8226;   <a href="#importlib.resources.abc">importlib.resources.abc</a>
  &#8226;   <a href="#logging">logging</a>
  &#8226;   <a href="#lzma">lzma</a>
+ &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
+ &#8226;   <a href="#multiprocessing.popen_forkserver">multiprocessing.popen_forkserver</a>
+ &#8226;   <a href="#multiprocessing.popen_spawn_posix">multiprocessing.popen_spawn_posix</a>
+ &#8226;   <a href="#multiprocessing.reduction">multiprocessing.reduction</a>
  &#8226;   <a href="#os">os</a>
  &#8226;   <a href="#pathlib._local">pathlib._local</a>
  &#8226;   <a href="#pickle">pickle</a>
  &#8226;   <a href="#pprint">pprint</a>
  &#8226;   <a href="#quopri">quopri</a>
  &#8226;   <a href="#run_origin.py">run_origin.py</a>
+ &#8226;   <a href="#runpy">runpy</a>
  &#8226;   <a href="#socket">socket</a>
  &#8226;   <a href="#subprocess">subprocess</a>
  &#8226;   <a href="#tarfile">tarfile</a>
  &#8226;   <a href="#tempfile">tempfile</a>
  &#8226;   <a href="#tokenize">tokenize</a>
+ &#8226;   <a href="#unittest.mock">unittest.mock</a>
+ &#8226;   <a href="#unittest.result">unittest.result</a>
  &#8226;   <a href="#urllib.error">urllib.error</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
+ &#8226;   <a href="#xml.sax">xml.sax</a>
+ &#8226;   <a href="#xml.sax.saxutils">xml.sax.saxutils</a>
+ &#8226;   <a href="#xmlrpc.client">xmlrpc.client</a>
  &#8226;   <a href="#zipfile">zipfile</a>
  &#8226;   <a href="#zipfile._path">zipfile._path</a>
 
@@ -5938,8 +7258,15 @@ imported by:
   <tt>itertools</tt> <span class="moduletype"><i>(builtin module)</i></span>  <div class="import">
 imported by:
     <a href="#_pydecimal">_pydecimal</a>
+ &#8226;   <a href="#asyncio.base_events">asyncio.base_events</a>
+ &#8226;   <a href="#asyncio.selector_events">asyncio.selector_events</a>
+ &#8226;   <a href="#asyncio.tasks">asyncio.tasks</a>
+ &#8226;   <a href="#asyncio.unix_events">asyncio.unix_events</a>
+ &#8226;   <a href="#asyncio.windows_utils">asyncio.windows_utils</a>
  &#8226;   <a href="#calendar">calendar</a>
  &#8226;   <a href="#collections">collections</a>
+ &#8226;   <a href="#concurrent.futures.process">concurrent.futures.process</a>
+ &#8226;   <a href="#concurrent.futures.thread">concurrent.futures.thread</a>
  &#8226;   <a href="#dataclasses">dataclasses</a>
  &#8226;   <a href="#glob">glob</a>
  &#8226;   <a href="#importlib.metadata">importlib.metadata</a>
@@ -5948,6 +7275,10 @@ imported by:
  &#8226;   <a href="#importlib.resources.abc">importlib.resources.abc</a>
  &#8226;   <a href="#importlib.resources.readers">importlib.resources.readers</a>
  &#8226;   <a href="#inspect">inspect</a>
+ &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
+ &#8226;   <a href="#multiprocessing.pool">multiprocessing.pool</a>
+ &#8226;   <a href="#multiprocessing.process">multiprocessing.process</a>
+ &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
  &#8226;   <a href="#pathlib._local">pathlib._local</a>
  &#8226;   <a href="#pickle">pickle</a>
  &#8226;   <a href="#platform">platform</a>
@@ -5993,6 +7324,7 @@ imported by:
  &#8226;   <a href="#json.encoder">json.encoder</a>
  &#8226;   <a href="#json.scanner">json.scanner</a>
  &#8226;   <a href="#origin_cli.install_pkg">origin_cli.install_pkg</a>
+ &#8226;   <a href="#origin_cli.test_version">origin_cli.test_version</a>
 
   </div>
 
@@ -6081,7 +7413,8 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#inspect">inspect</a>
+    <a href="#asyncio.base_tasks">asyncio.base_tasks</a>
+ &#8226;   <a href="#inspect">inspect</a>
  &#8226;   <a href="#run_origin.py">run_origin.py</a>
  &#8226;   <a href="#traceback">traceback</a>
  &#8226;   <a href="#tracemalloc">tracemalloc</a>
@@ -6144,8 +7477,13 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#hashlib">hashlib</a>
+    <a href="#asyncio.futures">asyncio.futures</a>
+ &#8226;   <a href="#asyncio.log">asyncio.log</a>
+ &#8226;   <a href="#concurrent.futures._base">concurrent.futures._base</a>
+ &#8226;   <a href="#hashlib">hashlib</a>
  &#8226;   <a href="#http.cookiejar">http.cookiejar</a>
+ &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
+ &#8226;   <a href="#unittest._log">unittest._log</a>
 
   </div>
 
@@ -6178,6 +7516,8 @@ imported by:
   <tt>marshal</tt> <span class="moduletype"><i>(builtin module)</i></span>  <div class="import">
 imported by:
     <a href="#importlib._bootstrap_external">importlib._bootstrap_external</a>
+ &#8226;   <a href="#pkgutil">pkgutil</a>
+ &#8226;   <a href="#zipimport">zipimport</a>
 
   </div>
 
@@ -6189,6 +7529,8 @@ imported by:
 imported by:
     <a href="#_pydatetime">_pydatetime</a>
  &#8226;   <a href="#_pydecimal">_pydecimal</a>
+ &#8226;   <a href="#asyncio.tasks">asyncio.tasks</a>
+ &#8226;   <a href="#asyncio.windows_events">asyncio.windows_events</a>
  &#8226;   <a href="#fractions">fractions</a>
  &#8226;   <a href="#random">random</a>
  &#8226;   <a href="#selectors">selectors</a>
@@ -6222,11 +7564,825 @@ imported by:
 </div>
 
 <div class="node">
+  <a name="mmap"></a>
+  <tt>mmap</tt> <span class="moduletype"><i>(builtin module)</i></span>  <div class="import">
+imported by:
+    <a href="#multiprocessing.heap">multiprocessing.heap</a>
+ &#8226;   <a href="#multiprocessing.shared_memory">multiprocessing.shared_memory</a>
+
+  </div>
+
+</div>
+
+<div class="node">
   <a name="msvcrt"></a>
   <tt>msvcrt</tt> <span class="moduletype"><i>(builtin module)</i></span>  <div class="import">
 imported by:
-    <a href="#getpass">getpass</a>
+    <a href="#asyncio.windows_events">asyncio.windows_events</a>
+ &#8226;   <a href="#asyncio.windows_utils">asyncio.windows_utils</a>
+ &#8226;   <a href="#getpass">getpass</a>
+ &#8226;   <a href="#multiprocessing.popen_spawn_win32">multiprocessing.popen_spawn_win32</a>
+ &#8226;   <a href="#multiprocessing.spawn">multiprocessing.spawn</a>
  &#8226;   <a href="#subprocess">subprocess</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="multiprocessing"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/multiprocessing/__init__.py" type="text/plain"><tt>multiprocessing</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.AuthenticationError">multiprocessing.AuthenticationError</a>
+ &#8226;   <a href="#multiprocessing.BufferTooShort">multiprocessing.BufferTooShort</a>
+ &#8226;   <a href="#multiprocessing.TimeoutError">multiprocessing.TimeoutError</a>
+ &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
+ &#8226;   <a href="#multiprocessing.context">multiprocessing.context</a>
+ &#8226;   <a href="#multiprocessing.forkserver">multiprocessing.forkserver</a>
+ &#8226;   <a href="#multiprocessing.get_context">multiprocessing.get_context</a>
+ &#8226;   <a href="#multiprocessing.get_start_method">multiprocessing.get_start_method</a>
+ &#8226;   <a href="#multiprocessing.pool">multiprocessing.pool</a>
+ &#8226;   <a href="#multiprocessing.process">multiprocessing.process</a>
+ &#8226;   <a href="#multiprocessing.reduction">multiprocessing.reduction</a>
+ &#8226;   <a href="#multiprocessing.resource_sharer">multiprocessing.resource_sharer</a>
+ &#8226;   <a href="#multiprocessing.resource_tracker">multiprocessing.resource_tracker</a>
+ &#8226;   <a href="#multiprocessing.set_start_method">multiprocessing.set_start_method</a>
+ &#8226;   <a href="#multiprocessing.shared_memory">multiprocessing.shared_memory</a>
+ &#8226;   <a href="#multiprocessing.spawn">multiprocessing.spawn</a>
+ &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
+ &#8226;   <a href="#sys">sys</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#concurrent.futures.process">concurrent.futures.process</a>
+ &#8226;   <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
+ &#8226;   <a href="#multiprocessing.context">multiprocessing.context</a>
+ &#8226;   <a href="#multiprocessing.dummy">multiprocessing.dummy</a>
+ &#8226;   <a href="#multiprocessing.forkserver">multiprocessing.forkserver</a>
+ &#8226;   <a href="#multiprocessing.heap">multiprocessing.heap</a>
+ &#8226;   <a href="#multiprocessing.managers">multiprocessing.managers</a>
+ &#8226;   <a href="#multiprocessing.pool">multiprocessing.pool</a>
+ &#8226;   <a href="#multiprocessing.popen_fork">multiprocessing.popen_fork</a>
+ &#8226;   <a href="#multiprocessing.popen_forkserver">multiprocessing.popen_forkserver</a>
+ &#8226;   <a href="#multiprocessing.popen_spawn_posix">multiprocessing.popen_spawn_posix</a>
+ &#8226;   <a href="#multiprocessing.popen_spawn_win32">multiprocessing.popen_spawn_win32</a>
+ &#8226;   <a href="#multiprocessing.process">multiprocessing.process</a>
+ &#8226;   <a href="#multiprocessing.queues">multiprocessing.queues</a>
+ &#8226;   <a href="#multiprocessing.reduction">multiprocessing.reduction</a>
+ &#8226;   <a href="#multiprocessing.resource_sharer">multiprocessing.resource_sharer</a>
+ &#8226;   <a href="#multiprocessing.resource_tracker">multiprocessing.resource_tracker</a>
+ &#8226;   <a href="#multiprocessing.shared_memory">multiprocessing.shared_memory</a>
+ &#8226;   <a href="#multiprocessing.sharedctypes">multiprocessing.sharedctypes</a>
+ &#8226;   <a href="#multiprocessing.spawn">multiprocessing.spawn</a>
+ &#8226;   <a href="#multiprocessing.synchronize">multiprocessing.synchronize</a>
+ &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
+ &#8226;   <a href="#pyi_rth_multiprocessing.py">pyi_rth_multiprocessing.py</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="multiprocessing.AuthenticationError"></a>
+  <a target="code" href="" type="text/plain"><tt>multiprocessing.AuthenticationError</tt></a>
+<span class="moduletype">MissingModule</span>  <div class="import">
+imported by:
+    <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="multiprocessing.BufferTooShort"></a>
+  <a target="code" href="" type="text/plain"><tt>multiprocessing.BufferTooShort</tt></a>
+<span class="moduletype">MissingModule</span>  <div class="import">
+imported by:
+    <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="multiprocessing.TimeoutError"></a>
+  <a target="code" href="" type="text/plain"><tt>multiprocessing.TimeoutError</tt></a>
+<span class="moduletype">MissingModule</span>  <div class="import">
+imported by:
+    <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.pool">multiprocessing.pool</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="multiprocessing.connection"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/multiprocessing/connection.py" type="text/plain"><tt>multiprocessing.connection</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#_multiprocessing">_multiprocessing</a>
+ &#8226;   <a href="#_winapi">_winapi</a>
+ &#8226;   <a href="#errno">errno</a>
+ &#8226;   <a href="#hmac">hmac</a>
+ &#8226;   <a href="#io">io</a>
+ &#8226;   <a href="#itertools">itertools</a>
+ &#8226;   <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.AuthenticationError">multiprocessing.AuthenticationError</a>
+ &#8226;   <a href="#multiprocessing.BufferTooShort">multiprocessing.BufferTooShort</a>
+ &#8226;   <a href="#multiprocessing.context">multiprocessing.context</a>
+ &#8226;   <a href="#multiprocessing.resource_sharer">multiprocessing.resource_sharer</a>
+ &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#selectors">selectors</a>
+ &#8226;   <a href="#socket">socket</a>
+ &#8226;   <a href="#struct">struct</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#tempfile">tempfile</a>
+ &#8226;   <a href="#time">time</a>
+ &#8226;   <a href="#xmlrpc.client">xmlrpc.client</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#concurrent.futures.process">concurrent.futures.process</a>
+ &#8226;   <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.context">multiprocessing.context</a>
+ &#8226;   <a href="#multiprocessing.forkserver">multiprocessing.forkserver</a>
+ &#8226;   <a href="#multiprocessing.managers">multiprocessing.managers</a>
+ &#8226;   <a href="#multiprocessing.pool">multiprocessing.pool</a>
+ &#8226;   <a href="#multiprocessing.popen_fork">multiprocessing.popen_fork</a>
+ &#8226;   <a href="#multiprocessing.popen_forkserver">multiprocessing.popen_forkserver</a>
+ &#8226;   <a href="#multiprocessing.process">multiprocessing.process</a>
+ &#8226;   <a href="#multiprocessing.queues">multiprocessing.queues</a>
+ &#8226;   <a href="#multiprocessing.resource_sharer">multiprocessing.resource_sharer</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="multiprocessing.context"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/multiprocessing/context.py" type="text/plain"><tt>multiprocessing.context</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
+ &#8226;   <a href="#multiprocessing.forkserver">multiprocessing.forkserver</a>
+ &#8226;   <a href="#multiprocessing.managers">multiprocessing.managers</a>
+ &#8226;   <a href="#multiprocessing.pool">multiprocessing.pool</a>
+ &#8226;   <a href="#multiprocessing.popen_fork">multiprocessing.popen_fork</a>
+ &#8226;   <a href="#multiprocessing.popen_forkserver">multiprocessing.popen_forkserver</a>
+ &#8226;   <a href="#multiprocessing.popen_spawn_posix">multiprocessing.popen_spawn_posix</a>
+ &#8226;   <a href="#multiprocessing.popen_spawn_win32">multiprocessing.popen_spawn_win32</a>
+ &#8226;   <a href="#multiprocessing.process">multiprocessing.process</a>
+ &#8226;   <a href="#multiprocessing.queues">multiprocessing.queues</a>
+ &#8226;   <a href="#multiprocessing.reduction">multiprocessing.reduction</a>
+ &#8226;   <a href="#multiprocessing.sharedctypes">multiprocessing.sharedctypes</a>
+ &#8226;   <a href="#multiprocessing.spawn">multiprocessing.spawn</a>
+ &#8226;   <a href="#multiprocessing.synchronize">multiprocessing.synchronize</a>
+ &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#threading">threading</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
+ &#8226;   <a href="#multiprocessing.forkserver">multiprocessing.forkserver</a>
+ &#8226;   <a href="#multiprocessing.heap">multiprocessing.heap</a>
+ &#8226;   <a href="#multiprocessing.managers">multiprocessing.managers</a>
+ &#8226;   <a href="#multiprocessing.popen_forkserver">multiprocessing.popen_forkserver</a>
+ &#8226;   <a href="#multiprocessing.popen_spawn_posix">multiprocessing.popen_spawn_posix</a>
+ &#8226;   <a href="#multiprocessing.popen_spawn_win32">multiprocessing.popen_spawn_win32</a>
+ &#8226;   <a href="#multiprocessing.process">multiprocessing.process</a>
+ &#8226;   <a href="#multiprocessing.queues">multiprocessing.queues</a>
+ &#8226;   <a href="#multiprocessing.reduction">multiprocessing.reduction</a>
+ &#8226;   <a href="#multiprocessing.resource_sharer">multiprocessing.resource_sharer</a>
+ &#8226;   <a href="#multiprocessing.sharedctypes">multiprocessing.sharedctypes</a>
+ &#8226;   <a href="#multiprocessing.spawn">multiprocessing.spawn</a>
+ &#8226;   <a href="#multiprocessing.synchronize">multiprocessing.synchronize</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="multiprocessing.dummy"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/multiprocessing/dummy/__init__.py" type="text/plain"><tt>multiprocessing.dummy</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#array">array</a>
+ &#8226;   <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.dummy.connection">multiprocessing.dummy.connection</a>
+ &#8226;   <a href="#multiprocessing.pool">multiprocessing.pool</a>
+ &#8226;   <a href="#queue">queue</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#threading">threading</a>
+ &#8226;   <a href="#weakref">weakref</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#multiprocessing.dummy.connection">multiprocessing.dummy.connection</a>
+ &#8226;   <a href="#multiprocessing.pool">multiprocessing.pool</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="multiprocessing.dummy.connection"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/multiprocessing/dummy/connection.py" type="text/plain"><tt>multiprocessing.dummy.connection</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#multiprocessing.dummy">multiprocessing.dummy</a>
+ &#8226;   <a href="#queue">queue</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#multiprocessing.dummy">multiprocessing.dummy</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="multiprocessing.forkserver"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/multiprocessing/forkserver.py" type="text/plain"><tt>multiprocessing.forkserver</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#atexit">atexit</a>
+ &#8226;   <a href="#errno">errno</a>
+ &#8226;   <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
+ &#8226;   <a href="#multiprocessing.context">multiprocessing.context</a>
+ &#8226;   <a href="#multiprocessing.process">multiprocessing.process</a>
+ &#8226;   <a href="#multiprocessing.resource_tracker">multiprocessing.resource_tracker</a>
+ &#8226;   <a href="#multiprocessing.spawn">multiprocessing.spawn</a>
+ &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#selectors">selectors</a>
+ &#8226;   <a href="#signal">signal</a>
+ &#8226;   <a href="#socket">socket</a>
+ &#8226;   <a href="#struct">struct</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#threading">threading</a>
+ &#8226;   <a href="#warnings">warnings</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.context">multiprocessing.context</a>
+ &#8226;   <a href="#multiprocessing.popen_forkserver">multiprocessing.popen_forkserver</a>
+ &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="multiprocessing.get_context"></a>
+  <a target="code" href="" type="text/plain"><tt>multiprocessing.get_context</tt></a>
+<span class="moduletype">MissingModule</span>  <div class="import">
+imported by:
+    <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.managers">multiprocessing.managers</a>
+ &#8226;   <a href="#multiprocessing.pool">multiprocessing.pool</a>
+ &#8226;   <a href="#multiprocessing.sharedctypes">multiprocessing.sharedctypes</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="multiprocessing.get_start_method"></a>
+  <a target="code" href="" type="text/plain"><tt>multiprocessing.get_start_method</tt></a>
+<span class="moduletype">MissingModule</span>  <div class="import">
+imported by:
+    <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.spawn">multiprocessing.spawn</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="multiprocessing.heap"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/multiprocessing/heap.py" type="text/plain"><tt>multiprocessing.heap</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#_winapi">_winapi</a>
+ &#8226;   <a href="#bisect">bisect</a>
+ &#8226;   <a href="#collections">collections</a>
+ &#8226;   <a href="#mmap">mmap</a>
+ &#8226;   <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.context">multiprocessing.context</a>
+ &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#tempfile">tempfile</a>
+ &#8226;   <a href="#threading">threading</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#multiprocessing.sharedctypes">multiprocessing.sharedctypes</a>
+ &#8226;   <a href="#multiprocessing.synchronize">multiprocessing.synchronize</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="multiprocessing.managers"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/multiprocessing/managers.py" type="text/plain"><tt>multiprocessing.managers</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#array">array</a>
+ &#8226;   <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
+ &#8226;   <a href="#multiprocessing.context">multiprocessing.context</a>
+ &#8226;   <a href="#multiprocessing.get_context">multiprocessing.get_context</a>
+ &#8226;   <a href="#multiprocessing.pool">multiprocessing.pool</a>
+ &#8226;   <a href="#multiprocessing.process">multiprocessing.process</a>
+ &#8226;   <a href="#multiprocessing.resource_tracker">multiprocessing.resource_tracker</a>
+ &#8226;   <a href="#multiprocessing.shared_memory">multiprocessing.shared_memory</a>
+ &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#queue">queue</a>
+ &#8226;   <a href="#signal">signal</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#threading">threading</a>
+ &#8226;   <a href="#time">time</a>
+ &#8226;   <a href="#traceback">traceback</a>
+ &#8226;   <a href="#types">types</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#multiprocessing.context">multiprocessing.context</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="multiprocessing.pool"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/multiprocessing/pool.py" type="text/plain"><tt>multiprocessing.pool</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#collections">collections</a>
+ &#8226;   <a href="#itertools">itertools</a>
+ &#8226;   <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.TimeoutError">multiprocessing.TimeoutError</a>
+ &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
+ &#8226;   <a href="#multiprocessing.dummy">multiprocessing.dummy</a>
+ &#8226;   <a href="#multiprocessing.get_context">multiprocessing.get_context</a>
+ &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#queue">queue</a>
+ &#8226;   <a href="#threading">threading</a>
+ &#8226;   <a href="#time">time</a>
+ &#8226;   <a href="#traceback">traceback</a>
+ &#8226;   <a href="#types">types</a>
+ &#8226;   <a href="#warnings">warnings</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.context">multiprocessing.context</a>
+ &#8226;   <a href="#multiprocessing.dummy">multiprocessing.dummy</a>
+ &#8226;   <a href="#multiprocessing.managers">multiprocessing.managers</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="multiprocessing.popen_fork"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/multiprocessing/popen_fork.py" type="text/plain"><tt>multiprocessing.popen_fork</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#atexit">atexit</a>
+ &#8226;   <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
+ &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#signal">signal</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#multiprocessing.context">multiprocessing.context</a>
+ &#8226;   <a href="#multiprocessing.popen_forkserver">multiprocessing.popen_forkserver</a>
+ &#8226;   <a href="#multiprocessing.popen_spawn_posix">multiprocessing.popen_spawn_posix</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="multiprocessing.popen_forkserver"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/multiprocessing/popen_forkserver.py" type="text/plain"><tt>multiprocessing.popen_forkserver</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#io">io</a>
+ &#8226;   <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
+ &#8226;   <a href="#multiprocessing.context">multiprocessing.context</a>
+ &#8226;   <a href="#multiprocessing.forkserver">multiprocessing.forkserver</a>
+ &#8226;   <a href="#multiprocessing.popen_fork">multiprocessing.popen_fork</a>
+ &#8226;   <a href="#multiprocessing.spawn">multiprocessing.spawn</a>
+ &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
+ &#8226;   <a href="#os">os</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#multiprocessing.context">multiprocessing.context</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="multiprocessing.popen_spawn_posix"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/multiprocessing/popen_spawn_posix.py" type="text/plain"><tt>multiprocessing.popen_spawn_posix</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#io">io</a>
+ &#8226;   <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.context">multiprocessing.context</a>
+ &#8226;   <a href="#multiprocessing.popen_fork">multiprocessing.popen_fork</a>
+ &#8226;   <a href="#multiprocessing.resource_tracker">multiprocessing.resource_tracker</a>
+ &#8226;   <a href="#multiprocessing.spawn">multiprocessing.spawn</a>
+ &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
+ &#8226;   <a href="#os">os</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#multiprocessing.context">multiprocessing.context</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="multiprocessing.popen_spawn_win32"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/multiprocessing/popen_spawn_win32.py" type="text/plain"><tt>multiprocessing.popen_spawn_win32</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#_winapi">_winapi</a>
+ &#8226;   <a href="#msvcrt">msvcrt</a>
+ &#8226;   <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.context">multiprocessing.context</a>
+ &#8226;   <a href="#multiprocessing.spawn">multiprocessing.spawn</a>
+ &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#signal">signal</a>
+ &#8226;   <a href="#subprocess">subprocess</a>
+ &#8226;   <a href="#sys">sys</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#multiprocessing.context">multiprocessing.context</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="multiprocessing.process"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/multiprocessing/process.py" type="text/plain"><tt>multiprocessing.process</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#_weakrefset">_weakrefset</a>
+ &#8226;   <a href="#itertools">itertools</a>
+ &#8226;   <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
+ &#8226;   <a href="#multiprocessing.context">multiprocessing.context</a>
+ &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#signal">signal</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#threading">threading</a>
+ &#8226;   <a href="#traceback">traceback</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.context">multiprocessing.context</a>
+ &#8226;   <a href="#multiprocessing.forkserver">multiprocessing.forkserver</a>
+ &#8226;   <a href="#multiprocessing.managers">multiprocessing.managers</a>
+ &#8226;   <a href="#multiprocessing.resource_sharer">multiprocessing.resource_sharer</a>
+ &#8226;   <a href="#multiprocessing.spawn">multiprocessing.spawn</a>
+ &#8226;   <a href="#multiprocessing.synchronize">multiprocessing.synchronize</a>
+ &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="multiprocessing.queues"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/multiprocessing/queues.py" type="text/plain"><tt>multiprocessing.queues</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#collections">collections</a>
+ &#8226;   <a href="#errno">errno</a>
+ &#8226;   <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
+ &#8226;   <a href="#multiprocessing.context">multiprocessing.context</a>
+ &#8226;   <a href="#multiprocessing.synchronize">multiprocessing.synchronize</a>
+ &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#queue">queue</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#threading">threading</a>
+ &#8226;   <a href="#time">time</a>
+ &#8226;   <a href="#traceback">traceback</a>
+ &#8226;   <a href="#types">types</a>
+ &#8226;   <a href="#weakref">weakref</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#concurrent.futures.process">concurrent.futures.process</a>
+ &#8226;   <a href="#multiprocessing.context">multiprocessing.context</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="multiprocessing.reduction"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/multiprocessing/reduction.py" type="text/plain"><tt>multiprocessing.reduction</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#_winapi">_winapi</a>
+ &#8226;   <a href="#abc">abc</a>
+ &#8226;   <a href="#array">array</a>
+ &#8226;   <a href="#copyreg">copyreg</a>
+ &#8226;   <a href="#functools">functools</a>
+ &#8226;   <a href="#io">io</a>
+ &#8226;   <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.context">multiprocessing.context</a>
+ &#8226;   <a href="#multiprocessing.resource_sharer">multiprocessing.resource_sharer</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#pickle">pickle</a>
+ &#8226;   <a href="#socket">socket</a>
+ &#8226;   <a href="#sys">sys</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.context">multiprocessing.context</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="multiprocessing.resource_sharer"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/multiprocessing/resource_sharer.py" type="text/plain"><tt>multiprocessing.resource_sharer</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
+ &#8226;   <a href="#multiprocessing.context">multiprocessing.context</a>
+ &#8226;   <a href="#multiprocessing.process">multiprocessing.process</a>
+ &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#signal">signal</a>
+ &#8226;   <a href="#socket">socket</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#threading">threading</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
+ &#8226;   <a href="#multiprocessing.reduction">multiprocessing.reduction</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="multiprocessing.resource_tracker"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/multiprocessing/resource_tracker.py" type="text/plain"><tt>multiprocessing.resource_tracker</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#_multiprocessing">_multiprocessing</a>
+ &#8226;   <a href="#_posixshmem">_posixshmem</a>
+ &#8226;   <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.spawn">multiprocessing.spawn</a>
+ &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#signal">signal</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#threading">threading</a>
+ &#8226;   <a href="#warnings">warnings</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.forkserver">multiprocessing.forkserver</a>
+ &#8226;   <a href="#multiprocessing.managers">multiprocessing.managers</a>
+ &#8226;   <a href="#multiprocessing.popen_spawn_posix">multiprocessing.popen_spawn_posix</a>
+ &#8226;   <a href="#multiprocessing.shared_memory">multiprocessing.shared_memory</a>
+ &#8226;   <a href="#multiprocessing.spawn">multiprocessing.spawn</a>
+ &#8226;   <a href="#multiprocessing.synchronize">multiprocessing.synchronize</a>
+ &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="multiprocessing.set_start_method"></a>
+  <a target="code" href="" type="text/plain"><tt>multiprocessing.set_start_method</tt></a>
+<span class="moduletype">MissingModule</span>  <div class="import">
+imported by:
+    <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.spawn">multiprocessing.spawn</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="multiprocessing.shared_memory"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/multiprocessing/shared_memory.py" type="text/plain"><tt>multiprocessing.shared_memory</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#_posixshmem">_posixshmem</a>
+ &#8226;   <a href="#_winapi">_winapi</a>
+ &#8226;   <a href="#errno">errno</a>
+ &#8226;   <a href="#functools">functools</a>
+ &#8226;   <a href="#mmap">mmap</a>
+ &#8226;   <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.resource_tracker">multiprocessing.resource_tracker</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#secrets">secrets</a>
+ &#8226;   <a href="#struct">struct</a>
+ &#8226;   <a href="#types">types</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.managers">multiprocessing.managers</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="multiprocessing.sharedctypes"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/multiprocessing/sharedctypes.py" type="text/plain"><tt>multiprocessing.sharedctypes</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#ctypes">ctypes</a>
+ &#8226;   <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.context">multiprocessing.context</a>
+ &#8226;   <a href="#multiprocessing.get_context">multiprocessing.get_context</a>
+ &#8226;   <a href="#multiprocessing.heap">multiprocessing.heap</a>
+ &#8226;   <a href="#weakref">weakref</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#multiprocessing.context">multiprocessing.context</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="multiprocessing.spawn"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/multiprocessing/spawn.py" type="text/plain"><tt>multiprocessing.spawn</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#_winapi">_winapi</a>
+ &#8226;   <a href="#msvcrt">msvcrt</a>
+ &#8226;   <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.context">multiprocessing.context</a>
+ &#8226;   <a href="#multiprocessing.get_start_method">multiprocessing.get_start_method</a>
+ &#8226;   <a href="#multiprocessing.process">multiprocessing.process</a>
+ &#8226;   <a href="#multiprocessing.resource_tracker">multiprocessing.resource_tracker</a>
+ &#8226;   <a href="#multiprocessing.set_start_method">multiprocessing.set_start_method</a>
+ &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#runpy">runpy</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#types">types</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.context">multiprocessing.context</a>
+ &#8226;   <a href="#multiprocessing.forkserver">multiprocessing.forkserver</a>
+ &#8226;   <a href="#multiprocessing.popen_forkserver">multiprocessing.popen_forkserver</a>
+ &#8226;   <a href="#multiprocessing.popen_spawn_posix">multiprocessing.popen_spawn_posix</a>
+ &#8226;   <a href="#multiprocessing.popen_spawn_win32">multiprocessing.popen_spawn_win32</a>
+ &#8226;   <a href="#multiprocessing.resource_tracker">multiprocessing.resource_tracker</a>
+ &#8226;   <a href="#pyi_rth_multiprocessing.py">pyi_rth_multiprocessing.py</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="multiprocessing.synchronize"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/multiprocessing/synchronize.py" type="text/plain"><tt>multiprocessing.synchronize</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#_multiprocessing">_multiprocessing</a>
+ &#8226;   <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.context">multiprocessing.context</a>
+ &#8226;   <a href="#multiprocessing.heap">multiprocessing.heap</a>
+ &#8226;   <a href="#multiprocessing.process">multiprocessing.process</a>
+ &#8226;   <a href="#multiprocessing.resource_tracker">multiprocessing.resource_tracker</a>
+ &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
+ &#8226;   <a href="#struct">struct</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#tempfile">tempfile</a>
+ &#8226;   <a href="#threading">threading</a>
+ &#8226;   <a href="#time">time</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#concurrent.futures.process">concurrent.futures.process</a>
+ &#8226;   <a href="#multiprocessing.context">multiprocessing.context</a>
+ &#8226;   <a href="#multiprocessing.queues">multiprocessing.queues</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="multiprocessing.util"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/multiprocessing/util.py" type="text/plain"><tt>multiprocessing.util</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#_posixsubprocess">_posixsubprocess</a>
+ &#8226;   <a href="#atexit">atexit</a>
+ &#8226;   <a href="#itertools">itertools</a>
+ &#8226;   <a href="#logging">logging</a>
+ &#8226;   <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.forkserver">multiprocessing.forkserver</a>
+ &#8226;   <a href="#multiprocessing.process">multiprocessing.process</a>
+ &#8226;   <a href="#multiprocessing.resource_tracker">multiprocessing.resource_tracker</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#shutil">shutil</a>
+ &#8226;   <a href="#subprocess">subprocess</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#tempfile">tempfile</a>
+ &#8226;   <a href="#threading">threading</a>
+ &#8226;   <a href="#traceback">traceback</a>
+ &#8226;   <a href="#weakref">weakref</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
+ &#8226;   <a href="#multiprocessing.context">multiprocessing.context</a>
+ &#8226;   <a href="#multiprocessing.forkserver">multiprocessing.forkserver</a>
+ &#8226;   <a href="#multiprocessing.heap">multiprocessing.heap</a>
+ &#8226;   <a href="#multiprocessing.managers">multiprocessing.managers</a>
+ &#8226;   <a href="#multiprocessing.pool">multiprocessing.pool</a>
+ &#8226;   <a href="#multiprocessing.popen_fork">multiprocessing.popen_fork</a>
+ &#8226;   <a href="#multiprocessing.popen_forkserver">multiprocessing.popen_forkserver</a>
+ &#8226;   <a href="#multiprocessing.popen_spawn_posix">multiprocessing.popen_spawn_posix</a>
+ &#8226;   <a href="#multiprocessing.popen_spawn_win32">multiprocessing.popen_spawn_win32</a>
+ &#8226;   <a href="#multiprocessing.process">multiprocessing.process</a>
+ &#8226;   <a href="#multiprocessing.queues">multiprocessing.queues</a>
+ &#8226;   <a href="#multiprocessing.resource_sharer">multiprocessing.resource_sharer</a>
+ &#8226;   <a href="#multiprocessing.resource_tracker">multiprocessing.resource_tracker</a>
+ &#8226;   <a href="#multiprocessing.spawn">multiprocessing.spawn</a>
+ &#8226;   <a href="#multiprocessing.synchronize">multiprocessing.synchronize</a>
 
   </div>
 
@@ -6402,7 +8558,9 @@ imported by:
  &#8226;   <a href="#origin_cli.parser">origin_cli.parser</a>
  &#8226;   <a href="#origin_cli.test">origin_cli.test</a>
  &#8226;   <a href="#origin_cli.test_main">origin_cli.test_main</a>
+ &#8226;   <a href="#origin_cli.test_version">origin_cli.test_version</a>
  &#8226;   <a href="#origin_cli.ui">origin_cli.ui</a>
+ &#8226;   <a href="#origin_cli.version">origin_cli.version</a>
  &#8226;   <a href="#origin_cli.working_dir">origin_cli.working_dir</a>
  &#8226;   <a href="#run_origin.py">run_origin.py</a>
 
@@ -6424,6 +8582,7 @@ imported by:
  &#8226;   <a href="#origin_cli.interpret">origin_cli.interpret</a>
  &#8226;   <a href="#origin_cli.main">origin_cli.main</a>
  &#8226;   <a href="#origin_cli.parser">origin_cli.parser</a>
+ &#8226;   <a href="#origin_cli.test_version">origin_cli.test_version</a>
  &#8226;   <a href="#run_origin.py">run_origin.py</a>
 
   </div>
@@ -6605,6 +8764,7 @@ imports:
     <a href="#json">json</a>
  &#8226;   <a href="#origin_cli">origin_cli</a>
  &#8226;   <a href="#origin_cli.create_venv">origin_cli.create_venv</a>
+ &#8226;   <a href="#origin_cli.version">origin_cli.version</a>
  &#8226;   <a href="#os">os</a>
  &#8226;   <a href="#shutil">shutil</a>
  &#8226;   <a href="#tempfile">tempfile</a>
@@ -6616,6 +8776,7 @@ imports:
   <div class="import">
 imported by:
     <a href="#origin_cli.interpret">origin_cli.interpret</a>
+ &#8226;   <a href="#origin_cli.test_version">origin_cli.test_version</a>
  &#8226;   <a href="#run_origin.py">run_origin.py</a>
 
   </div>
@@ -6664,6 +8825,7 @@ imports:
 imported by:
     <a href="#origin_cli.main">origin_cli.main</a>
  &#8226;   <a href="#origin_cli.parser">origin_cli.parser</a>
+ &#8226;   <a href="#origin_cli.test_version">origin_cli.test_version</a>
  &#8226;   <a href="#run_origin.py">run_origin.py</a>
 
   </div>
@@ -6685,6 +8847,8 @@ imports:
  &#8226;   <a href="#origin_cli.parser">origin_cli.parser</a>
  &#8226;   <a href="#origin_cli.ui">origin_cli.ui</a>
  &#8226;   <a href="#pathlib">pathlib</a>
+ &#8226;   <a href="#re">re</a>
+ &#8226;   <a href="#subprocess">subprocess</a>
  &#8226;   <a href="#sys">sys</a>
 
   </div>
@@ -6736,6 +8900,7 @@ imports:
   <div class="import">
 imported by:
     <a href="#origin_cli.main">origin_cli.main</a>
+ &#8226;   <a href="#origin_cli.test_version">origin_cli.test_version</a>
  &#8226;   <a href="#run_origin.py">run_origin.py</a>
 
   </div>
@@ -6782,6 +8947,33 @@ imported by:
 </div>
 
 <div class="node">
+  <a name="origin_cli.test_version"></a>
+  <a target="code" href="///C:/Users/smile/OneDrive/Documents/GitHub/origindevtools/origin_cli/test_version.py" type="text/plain"><tt>origin_cli.test_version</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#json">json</a>
+ &#8226;   <a href="#origin_cli">origin_cli</a>
+ &#8226;   <a href="#origin_cli.classes">origin_cli.classes</a>
+ &#8226;   <a href="#origin_cli.install_pkg">origin_cli.install_pkg</a>
+ &#8226;   <a href="#origin_cli.lexer">origin_cli.lexer</a>
+ &#8226;   <a href="#origin_cli.parser">origin_cli.parser</a>
+ &#8226;   <a href="#origin_cli.version">origin_cli.version</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#tempfile">tempfile</a>
+ &#8226;   <a href="#unittest">unittest</a>
+ &#8226;   <a href="#unittest.mock">unittest.mock</a>
+ &#8226;   <a href="#zipfile">zipfile</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#run_origin.py">run_origin.py</a>
+
+  </div>
+
+</div>
+
+<div class="node">
   <a name="origin_cli.ui"></a>
   <a target="code" href="///C:/Users/smile/OneDrive/Documents/GitHub/origindevtools/origin_cli/ui.py" type="text/plain"><tt>origin_cli.ui</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
@@ -6800,6 +8992,29 @@ imported by:
     <a href="#origin_cli">origin_cli</a>
  &#8226;   <a href="#origin_cli.interpret">origin_cli.interpret</a>
  &#8226;   <a href="#origin_cli.main">origin_cli.main</a>
+ &#8226;   <a href="#run_origin.py">run_origin.py</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="origin_cli.version"></a>
+  <a target="code" href="///C:/Users/smile/OneDrive/Documents/GitHub/origindevtools/origin_cli/version.py" type="text/plain"><tt>origin_cli.version</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#dataclasses">dataclasses</a>
+ &#8226;   <a href="#enum">enum</a>
+ &#8226;   <a href="#functools">functools</a>
+ &#8226;   <a href="#origin_cli">origin_cli</a>
+ &#8226;   <a href="#re">re</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#origin_cli.install_pkg">origin_cli.install_pkg</a>
+ &#8226;   <a href="#origin_cli.test_version">origin_cli.test_version</a>
  &#8226;   <a href="#run_origin.py">run_origin.py</a>
 
   </div>
@@ -6849,7 +9064,17 @@ imported by:
     <a href="#_colorize">_colorize</a>
  &#8226;   <a href="#_strptime">_strptime</a>
  &#8226;   <a href="#argparse">argparse</a>
+ &#8226;   <a href="#asyncio.base_events">asyncio.base_events</a>
+ &#8226;   <a href="#asyncio.base_subprocess">asyncio.base_subprocess</a>
+ &#8226;   <a href="#asyncio.coroutines">asyncio.coroutines</a>
+ &#8226;   <a href="#asyncio.events">asyncio.events</a>
+ &#8226;   <a href="#asyncio.proactor_events">asyncio.proactor_events</a>
+ &#8226;   <a href="#asyncio.selector_events">asyncio.selector_events</a>
+ &#8226;   <a href="#asyncio.unix_events">asyncio.unix_events</a>
+ &#8226;   <a href="#asyncio.windows_utils">asyncio.windows_utils</a>
  &#8226;   <a href="#bz2">bz2</a>
+ &#8226;   <a href="#concurrent.futures.process">concurrent.futures.process</a>
+ &#8226;   <a href="#concurrent.futures.thread">concurrent.futures.thread</a>
  &#8226;   <a href="#contextlib">contextlib</a>
  &#8226;   <a href="#ctypes">ctypes</a>
  &#8226;   <a href="#email.utils">email.utils</a>
@@ -6871,6 +9096,24 @@ imported by:
  &#8226;   <a href="#logging">logging</a>
  &#8226;   <a href="#lzma">lzma</a>
  &#8226;   <a href="#mimetypes">mimetypes</a>
+ &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
+ &#8226;   <a href="#multiprocessing.context">multiprocessing.context</a>
+ &#8226;   <a href="#multiprocessing.forkserver">multiprocessing.forkserver</a>
+ &#8226;   <a href="#multiprocessing.heap">multiprocessing.heap</a>
+ &#8226;   <a href="#multiprocessing.managers">multiprocessing.managers</a>
+ &#8226;   <a href="#multiprocessing.pool">multiprocessing.pool</a>
+ &#8226;   <a href="#multiprocessing.popen_fork">multiprocessing.popen_fork</a>
+ &#8226;   <a href="#multiprocessing.popen_forkserver">multiprocessing.popen_forkserver</a>
+ &#8226;   <a href="#multiprocessing.popen_spawn_posix">multiprocessing.popen_spawn_posix</a>
+ &#8226;   <a href="#multiprocessing.popen_spawn_win32">multiprocessing.popen_spawn_win32</a>
+ &#8226;   <a href="#multiprocessing.process">multiprocessing.process</a>
+ &#8226;   <a href="#multiprocessing.queues">multiprocessing.queues</a>
+ &#8226;   <a href="#multiprocessing.reduction">multiprocessing.reduction</a>
+ &#8226;   <a href="#multiprocessing.resource_sharer">multiprocessing.resource_sharer</a>
+ &#8226;   <a href="#multiprocessing.resource_tracker">multiprocessing.resource_tracker</a>
+ &#8226;   <a href="#multiprocessing.shared_memory">multiprocessing.shared_memory</a>
+ &#8226;   <a href="#multiprocessing.spawn">multiprocessing.spawn</a>
+ &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
  &#8226;   <a href="#netrc">netrc</a>
  &#8226;   <a href="#ntpath">ntpath</a>
  &#8226;   <a href="#origin_cli.create_venv">origin_cli.create_venv</a>
@@ -6880,16 +9123,19 @@ imported by:
  &#8226;   <a href="#origin_cli.interpret">origin_cli.interpret</a>
  &#8226;   <a href="#origin_cli.main_statements">origin_cli.main_statements</a>
  &#8226;   <a href="#origin_cli.test_main">origin_cli.test_main</a>
+ &#8226;   <a href="#origin_cli.test_version">origin_cli.test_version</a>
  &#8226;   <a href="#origin_cli.ui">origin_cli.ui</a>
  &#8226;   <a href="#origin_cli.working_dir">origin_cli.working_dir</a>
  &#8226;   <a href="#os.path">os.path</a>
  &#8226;   <a href="#pathlib._local">pathlib._local</a>
+ &#8226;   <a href="#pkgutil">pkgutil</a>
  &#8226;   <a href="#platform">platform</a>
  &#8226;   <a href="#posixpath">posixpath</a>
  &#8226;   <a href="#py_compile">py_compile</a>
  &#8226;   <a href="#pyi_rth_inspect.py">pyi_rth_inspect.py</a>
  &#8226;   <a href="#random">random</a>
  &#8226;   <a href="#run_origin.py">run_origin.py</a>
+ &#8226;   <a href="#runpy">runpy</a>
  &#8226;   <a href="#shutil">shutil</a>
  &#8226;   <a href="#socket">socket</a>
  &#8226;   <a href="#ssl">ssl</a>
@@ -6897,7 +9143,11 @@ imported by:
  &#8226;   <a href="#tarfile">tarfile</a>
  &#8226;   <a href="#tempfile">tempfile</a>
  &#8226;   <a href="#threading">threading</a>
+ &#8226;   <a href="#unittest.loader">unittest.loader</a>
+ &#8226;   <a href="#unittest.main">unittest.main</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
+ &#8226;   <a href="#xml.sax">xml.sax</a>
+ &#8226;   <a href="#xml.sax.saxutils">xml.sax.saxutils</a>
  &#8226;   <a href="#zipfile">zipfile</a>
  &#8226;   <a href="#zipfile._path.glob">zipfile._path.glob</a>
 
@@ -6917,8 +9167,10 @@ imports:
   <div class="import">
 imported by:
     <a href="#os">os</a>
+ &#8226;   <a href="#pkgutil">pkgutil</a>
  &#8226;   <a href="#py_compile">py_compile</a>
  &#8226;   <a href="#tracemalloc">tracemalloc</a>
+ &#8226;   <a href="#unittest.util">unittest.util</a>
 
   </div>
 
@@ -7025,7 +9277,39 @@ imports:
   <div class="import">
 imported by:
     <a href="#logging">logging</a>
+ &#8226;   <a href="#multiprocessing.reduction">multiprocessing.reduction</a>
  &#8226;   <a href="#tracemalloc">tracemalloc</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="pkgutil"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/pkgutil.py" type="text/plain"><tt>pkgutil</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#collections">collections</a>
+ &#8226;   <a href="#functools">functools</a>
+ &#8226;   <a href="#importlib">importlib</a>
+ &#8226;   <a href="#importlib.machinery">importlib.machinery</a>
+ &#8226;   <a href="#importlib.util">importlib.util</a>
+ &#8226;   <a href="#inspect">inspect</a>
+ &#8226;   <a href="#marshal">marshal</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#os.path">os.path</a>
+ &#8226;   <a href="#re">re</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#types">types</a>
+ &#8226;   <a href="#warnings">warnings</a>
+ &#8226;   <a href="#zipimport">zipimport</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#pyi_rth_pkgutil.py">pyi_rth_pkgutil.py</a>
+ &#8226;   <a href="#runpy">runpy</a>
+ &#8226;   <a href="#unittest.mock">unittest.mock</a>
 
   </div>
 
@@ -7127,6 +9411,8 @@ imports:
   <div class="import">
 imported by:
     <a href="#pickle">pickle</a>
+ &#8226;   <a href="#unittest.case">unittest.case</a>
+ &#8226;   <a href="#unittest.mock">unittest.mock</a>
 
   </div>
 
@@ -7185,6 +9471,54 @@ imported by:
 </div>
 
 <div class="node">
+  <a name="pyexpat"></a>
+  <tt>pyexpat</tt> <span class="moduletype"><tt>C:\Users\smile\AppData\Local\Programs\Python\Python313\DLLs\pyexpat.pyd</tt></span>  <div class="import">
+imported by:
+    <a href="#xml.parsers.expat">xml.parsers.expat</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="pyimod02_importers"></a>
+  <a target="code" href="" type="text/plain"><tt>pyimod02_importers</tt></a>
+<span class="moduletype">MissingModule</span>  <div class="import">
+imported by:
+    <a href="#pyi_rth_pkgutil.py">pyi_rth_pkgutil.py</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="queue"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/queue.py" type="text/plain"><tt>queue</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#_queue">_queue</a>
+ &#8226;   <a href="#collections">collections</a>
+ &#8226;   <a href="#heapq">heapq</a>
+ &#8226;   <a href="#threading">threading</a>
+ &#8226;   <a href="#time">time</a>
+ &#8226;   <a href="#types">types</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#concurrent.futures.process">concurrent.futures.process</a>
+ &#8226;   <a href="#concurrent.futures.thread">concurrent.futures.thread</a>
+ &#8226;   <a href="#multiprocessing.dummy">multiprocessing.dummy</a>
+ &#8226;   <a href="#multiprocessing.dummy.connection">multiprocessing.dummy.connection</a>
+ &#8226;   <a href="#multiprocessing.managers">multiprocessing.managers</a>
+ &#8226;   <a href="#multiprocessing.pool">multiprocessing.pool</a>
+ &#8226;   <a href="#multiprocessing.queues">multiprocessing.queues</a>
+
+  </div>
+
+</div>
+
+<div class="node">
   <a name="quopri"></a>
   <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/quopri.py" type="text/plain"><tt>quopri</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
@@ -7229,6 +9563,7 @@ imports:
 imported by:
     <a href="#email.generator">email.generator</a>
  &#8226;   <a href="#email.utils">email.utils</a>
+ &#8226;   <a href="#secrets">secrets</a>
  &#8226;   <a href="#statistics">statistics</a>
  &#8226;   <a href="#tempfile">tempfile</a>
 
@@ -7262,6 +9597,7 @@ imported by:
  &#8226;   <a href="#base64">base64</a>
  &#8226;   <a href="#csv">csv</a>
  &#8226;   <a href="#dataclasses">dataclasses</a>
+ &#8226;   <a href="#difflib">difflib</a>
  &#8226;   <a href="#email._encoded_words">email._encoded_words</a>
  &#8226;   <a href="#email._header_value_parser">email._header_value_parser</a>
  &#8226;   <a href="#email.feedparser">email.feedparser</a>
@@ -7291,8 +9627,11 @@ imported by:
  &#8226;   <a href="#locale">locale</a>
  &#8226;   <a href="#logging">logging</a>
  &#8226;   <a href="#origin_cli.lexer">origin_cli.lexer</a>
+ &#8226;   <a href="#origin_cli.main">origin_cli.main</a>
  &#8226;   <a href="#origin_cli.ui">origin_cli.ui</a>
+ &#8226;   <a href="#origin_cli.version">origin_cli.version</a>
  &#8226;   <a href="#pickle">pickle</a>
+ &#8226;   <a href="#pkgutil">pkgutil</a>
  &#8226;   <a href="#platform">platform</a>
  &#8226;   <a href="#posixpath">posixpath</a>
  &#8226;   <a href="#pprint">pprint</a>
@@ -7310,6 +9649,8 @@ imported by:
  &#8226;   <a href="#textwrap">textwrap</a>
  &#8226;   <a href="#tokenize">tokenize</a>
  &#8226;   <a href="#typing">typing</a>
+ &#8226;   <a href="#unittest.case">unittest.case</a>
+ &#8226;   <a href="#unittest.loader">unittest.loader</a>
  &#8226;   <a href="#urllib.parse">urllib.parse</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
  &#8226;   <a href="#warnings">warnings</a>
@@ -7415,7 +9756,10 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#collections">collections</a>
+    <a href="#asyncio.base_futures">asyncio.base_futures</a>
+ &#8226;   <a href="#asyncio.base_tasks">asyncio.base_tasks</a>
+ &#8226;   <a href="#asyncio.format_helpers">asyncio.format_helpers</a>
+ &#8226;   <a href="#collections">collections</a>
  &#8226;   <a href="#dataclasses">dataclasses</a>
  &#8226;   <a href="#functools">functools</a>
  &#8226;   <a href="#run_origin.py">run_origin.py</a>
@@ -7430,6 +9774,46 @@ imported by:
 <span class="moduletype">MissingModule</span>  <div class="import">
 imported by:
     <a href="#posix">posix</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="runpy"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/runpy.py" type="text/plain"><tt>runpy</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#importlib.machinery">importlib.machinery</a>
+ &#8226;   <a href="#importlib.util">importlib.util</a>
+ &#8226;   <a href="#io">io</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#pkgutil">pkgutil</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#warnings">warnings</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#multiprocessing.spawn">multiprocessing.spawn</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="secrets"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/secrets.py" type="text/plain"><tt>secrets</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#base64">base64</a>
+ &#8226;   <a href="#hmac">hmac</a>
+ &#8226;   <a href="#random">random</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#multiprocessing.shared_memory">multiprocessing.shared_memory</a>
 
   </div>
 
@@ -7461,7 +9845,11 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#socket">socket</a>
+    <a href="#asyncio.selector_events">asyncio.selector_events</a>
+ &#8226;   <a href="#asyncio.unix_events">asyncio.unix_events</a>
+ &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
+ &#8226;   <a href="#multiprocessing.forkserver">multiprocessing.forkserver</a>
+ &#8226;   <a href="#socket">socket</a>
  &#8226;   <a href="#subprocess">subprocess</a>
 
   </div>
@@ -7494,6 +9882,7 @@ imports:
   <div class="import">
 imported by:
     <a href="#argparse">argparse</a>
+ &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
  &#8226;   <a href="#origin_cli.handle_java">origin_cli.handle_java</a>
  &#8226;   <a href="#origin_cli.handle_origin">origin_cli.handle_origin</a>
  &#8226;   <a href="#origin_cli.handle_python">origin_cli.handle_python</a>
@@ -7518,7 +9907,20 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#subprocess">subprocess</a>
+    <a href="#asyncio.base_subprocess">asyncio.base_subprocess</a>
+ &#8226;   <a href="#asyncio.events">asyncio.events</a>
+ &#8226;   <a href="#asyncio.proactor_events">asyncio.proactor_events</a>
+ &#8226;   <a href="#asyncio.runners">asyncio.runners</a>
+ &#8226;   <a href="#asyncio.unix_events">asyncio.unix_events</a>
+ &#8226;   <a href="#multiprocessing.forkserver">multiprocessing.forkserver</a>
+ &#8226;   <a href="#multiprocessing.managers">multiprocessing.managers</a>
+ &#8226;   <a href="#multiprocessing.popen_fork">multiprocessing.popen_fork</a>
+ &#8226;   <a href="#multiprocessing.popen_spawn_win32">multiprocessing.popen_spawn_win32</a>
+ &#8226;   <a href="#multiprocessing.process">multiprocessing.process</a>
+ &#8226;   <a href="#multiprocessing.resource_sharer">multiprocessing.resource_sharer</a>
+ &#8226;   <a href="#multiprocessing.resource_tracker">multiprocessing.resource_tracker</a>
+ &#8226;   <a href="#subprocess">subprocess</a>
+ &#8226;   <a href="#unittest.signals">unittest.signals</a>
 
   </div>
 
@@ -7542,9 +9944,21 @@ imports:
   <div class="import">
 imported by:
     <a href="#_ssl">_ssl</a>
+ &#8226;   <a href="#asyncio.base_events">asyncio.base_events</a>
+ &#8226;   <a href="#asyncio.events">asyncio.events</a>
+ &#8226;   <a href="#asyncio.proactor_events">asyncio.proactor_events</a>
+ &#8226;   <a href="#asyncio.selector_events">asyncio.selector_events</a>
+ &#8226;   <a href="#asyncio.streams">asyncio.streams</a>
+ &#8226;   <a href="#asyncio.trsock">asyncio.trsock</a>
+ &#8226;   <a href="#asyncio.unix_events">asyncio.unix_events</a>
+ &#8226;   <a href="#asyncio.windows_events">asyncio.windows_events</a>
  &#8226;   <a href="#email.utils">email.utils</a>
  &#8226;   <a href="#ftplib">ftplib</a>
  &#8226;   <a href="#http.client">http.client</a>
+ &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
+ &#8226;   <a href="#multiprocessing.forkserver">multiprocessing.forkserver</a>
+ &#8226;   <a href="#multiprocessing.reduction">multiprocessing.reduction</a>
+ &#8226;   <a href="#multiprocessing.resource_sharer">multiprocessing.resource_sharer</a>
  &#8226;   <a href="#platform">platform</a>
  &#8226;   <a href="#ssl">ssl</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
@@ -7627,7 +10041,10 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#ftplib">ftplib</a>
+    <a href="#asyncio.base_events">asyncio.base_events</a>
+ &#8226;   <a href="#asyncio.selector_events">asyncio.selector_events</a>
+ &#8226;   <a href="#asyncio.sslproto">asyncio.sslproto</a>
+ &#8226;   <a href="#ftplib">ftplib</a>
  &#8226;   <a href="#http.client">http.client</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
 
@@ -7645,7 +10062,9 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#genericpath">genericpath</a>
+    <a href="#asyncio.base_events">asyncio.base_events</a>
+ &#8226;   <a href="#asyncio.unix_events">asyncio.unix_events</a>
+ &#8226;   <a href="#genericpath">genericpath</a>
  &#8226;   <a href="#glob">glob</a>
  &#8226;   <a href="#netrc">netrc</a>
  &#8226;   <a href="#os">os</a>
@@ -7738,14 +10157,20 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#base64">base64</a>
+    <a href="#asyncio.windows_events">asyncio.windows_events</a>
+ &#8226;   <a href="#base64">base64</a>
  &#8226;   <a href="#ctypes">ctypes</a>
  &#8226;   <a href="#gettext">gettext</a>
  &#8226;   <a href="#gzip">gzip</a>
+ &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
+ &#8226;   <a href="#multiprocessing.forkserver">multiprocessing.forkserver</a>
+ &#8226;   <a href="#multiprocessing.shared_memory">multiprocessing.shared_memory</a>
+ &#8226;   <a href="#multiprocessing.synchronize">multiprocessing.synchronize</a>
  &#8226;   <a href="#pickle">pickle</a>
  &#8226;   <a href="#platform">platform</a>
  &#8226;   <a href="#tarfile">tarfile</a>
  &#8226;   <a href="#zipfile">zipfile</a>
+ &#8226;   <a href="#zipimport">zipimport</a>
 
   </div>
 
@@ -7780,12 +10205,22 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#origin_cli.handle_java">origin_cli.handle_java</a>
+    <a href="#asyncio.base_events">asyncio.base_events</a>
+ &#8226;   <a href="#asyncio.base_subprocess">asyncio.base_subprocess</a>
+ &#8226;   <a href="#asyncio.events">asyncio.events</a>
+ &#8226;   <a href="#asyncio.subprocess">asyncio.subprocess</a>
+ &#8226;   <a href="#asyncio.unix_events">asyncio.unix_events</a>
+ &#8226;   <a href="#asyncio.windows_utils">asyncio.windows_utils</a>
+ &#8226;   <a href="#multiprocessing.popen_spawn_win32">multiprocessing.popen_spawn_win32</a>
+ &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
+ &#8226;   <a href="#origin_cli.handle_java">origin_cli.handle_java</a>
  &#8226;   <a href="#origin_cli.handle_origin">origin_cli.handle_origin</a>
  &#8226;   <a href="#origin_cli.install_lang">origin_cli.install_lang</a>
+ &#8226;   <a href="#origin_cli.main">origin_cli.main</a>
  &#8226;   <a href="#origin_cli.main_statements">origin_cli.main_statements</a>
  &#8226;   <a href="#os">os</a>
  &#8226;   <a href="#platform">platform</a>
+ &#8226;   <a href="#pyi_rth_multiprocessing.py">pyi_rth_multiprocessing.py</a>
 
   </div>
 
@@ -7802,10 +10237,22 @@ imported by:
  &#8226;   <a href="#_pydecimal">_pydecimal</a>
  &#8226;   <a href="#argparse">argparse</a>
  &#8226;   <a href="#ast">ast</a>
+ &#8226;   <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.base_events">asyncio.base_events</a>
+ &#8226;   <a href="#asyncio.base_subprocess">asyncio.base_subprocess</a>
+ &#8226;   <a href="#asyncio.coroutines">asyncio.coroutines</a>
+ &#8226;   <a href="#asyncio.events">asyncio.events</a>
+ &#8226;   <a href="#asyncio.format_helpers">asyncio.format_helpers</a>
+ &#8226;   <a href="#asyncio.futures">asyncio.futures</a>
+ &#8226;   <a href="#asyncio.streams">asyncio.streams</a>
+ &#8226;   <a href="#asyncio.unix_events">asyncio.unix_events</a>
+ &#8226;   <a href="#asyncio.windows_events">asyncio.windows_events</a>
+ &#8226;   <a href="#asyncio.windows_utils">asyncio.windows_utils</a>
  &#8226;   <a href="#base64">base64</a>
  &#8226;   <a href="#calendar">calendar</a>
  &#8226;   <a href="#codecs">codecs</a>
  &#8226;   <a href="#collections">collections</a>
+ &#8226;   <a href="#concurrent.futures.process">concurrent.futures.process</a>
  &#8226;   <a href="#contextlib">contextlib</a>
  &#8226;   <a href="#ctypes">ctypes</a>
  &#8226;   <a href="#ctypes._endian">ctypes._endian</a>
@@ -7838,6 +10285,22 @@ imported by:
  &#8226;   <a href="#locale">locale</a>
  &#8226;   <a href="#logging">logging</a>
  &#8226;   <a href="#mimetypes">mimetypes</a>
+ &#8226;   <a href="#multiprocessing">multiprocessing</a>
+ &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
+ &#8226;   <a href="#multiprocessing.context">multiprocessing.context</a>
+ &#8226;   <a href="#multiprocessing.dummy">multiprocessing.dummy</a>
+ &#8226;   <a href="#multiprocessing.forkserver">multiprocessing.forkserver</a>
+ &#8226;   <a href="#multiprocessing.heap">multiprocessing.heap</a>
+ &#8226;   <a href="#multiprocessing.managers">multiprocessing.managers</a>
+ &#8226;   <a href="#multiprocessing.popen_spawn_win32">multiprocessing.popen_spawn_win32</a>
+ &#8226;   <a href="#multiprocessing.process">multiprocessing.process</a>
+ &#8226;   <a href="#multiprocessing.queues">multiprocessing.queues</a>
+ &#8226;   <a href="#multiprocessing.reduction">multiprocessing.reduction</a>
+ &#8226;   <a href="#multiprocessing.resource_sharer">multiprocessing.resource_sharer</a>
+ &#8226;   <a href="#multiprocessing.resource_tracker">multiprocessing.resource_tracker</a>
+ &#8226;   <a href="#multiprocessing.spawn">multiprocessing.spawn</a>
+ &#8226;   <a href="#multiprocessing.synchronize">multiprocessing.synchronize</a>
+ &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
  &#8226;   <a href="#ntpath">ntpath</a>
  &#8226;   <a href="#origin_cli.folder_gen">origin_cli.folder_gen</a>
  &#8226;   <a href="#origin_cli.main">origin_cli.main</a>
@@ -7846,13 +10309,16 @@ imported by:
  &#8226;   <a href="#os">os</a>
  &#8226;   <a href="#pathlib._local">pathlib._local</a>
  &#8226;   <a href="#pickle">pickle</a>
+ &#8226;   <a href="#pkgutil">pkgutil</a>
  &#8226;   <a href="#platform">platform</a>
  &#8226;   <a href="#posixpath">posixpath</a>
  &#8226;   <a href="#pprint">pprint</a>
  &#8226;   <a href="#py_compile">py_compile</a>
  &#8226;   <a href="#pyi_rth_inspect.py">pyi_rth_inspect.py</a>
+ &#8226;   <a href="#pyi_rth_multiprocessing.py">pyi_rth_multiprocessing.py</a>
  &#8226;   <a href="#quopri">quopri</a>
  &#8226;   <a href="#re._compiler">re._compiler</a>
+ &#8226;   <a href="#runpy">runpy</a>
  &#8226;   <a href="#selectors">selectors</a>
  &#8226;   <a href="#shutil">shutil</a>
  &#8226;   <a href="#socket">socket</a>
@@ -7866,11 +10332,23 @@ imported by:
  &#8226;   <a href="#traceback">traceback</a>
  &#8226;   <a href="#types">types</a>
  &#8226;   <a href="#typing">typing</a>
+ &#8226;   <a href="#unittest.case">unittest.case</a>
+ &#8226;   <a href="#unittest.loader">unittest.loader</a>
+ &#8226;   <a href="#unittest.main">unittest.main</a>
+ &#8226;   <a href="#unittest.mock">unittest.mock</a>
+ &#8226;   <a href="#unittest.result">unittest.result</a>
+ &#8226;   <a href="#unittest.runner">unittest.runner</a>
+ &#8226;   <a href="#unittest.suite">unittest.suite</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
  &#8226;   <a href="#warnings">warnings</a>
  &#8226;   <a href="#weakref">weakref</a>
+ &#8226;   <a href="#xml.parsers.expat">xml.parsers.expat</a>
+ &#8226;   <a href="#xml.sax">xml.sax</a>
+ &#8226;   <a href="#xml.sax.saxutils">xml.sax.saxutils</a>
+ &#8226;   <a href="#xmlrpc.client">xmlrpc.client</a>
  &#8226;   <a href="#zipfile">zipfile</a>
  &#8226;   <a href="#zipfile._path">zipfile._path</a>
+ &#8226;   <a href="#zipimport">zipimport</a>
 
   </div>
 
@@ -7929,8 +10407,14 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#importlib.resources._common">importlib.resources._common</a>
+    <a href="#asyncio.windows_utils">asyncio.windows_utils</a>
+ &#8226;   <a href="#importlib.resources._common">importlib.resources._common</a>
+ &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
+ &#8226;   <a href="#multiprocessing.heap">multiprocessing.heap</a>
+ &#8226;   <a href="#multiprocessing.synchronize">multiprocessing.synchronize</a>
+ &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
  &#8226;   <a href="#origin_cli.install_pkg">origin_cli.install_pkg</a>
+ &#8226;   <a href="#origin_cli.test_version">origin_cli.test_version</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
  &#8226;   <a href="#urllib.response">urllib.response</a>
 
@@ -7989,10 +10473,33 @@ imports:
   <div class="import">
 imported by:
     <a href="#_threading_local">_threading_local</a>
+ &#8226;   <a href="#asyncio.base_events">asyncio.base_events</a>
+ &#8226;   <a href="#asyncio.events">asyncio.events</a>
+ &#8226;   <a href="#asyncio.mixins">asyncio.mixins</a>
+ &#8226;   <a href="#asyncio.proactor_events">asyncio.proactor_events</a>
+ &#8226;   <a href="#asyncio.runners">asyncio.runners</a>
+ &#8226;   <a href="#asyncio.unix_events">asyncio.unix_events</a>
+ &#8226;   <a href="#concurrent.futures._base">concurrent.futures._base</a>
+ &#8226;   <a href="#concurrent.futures.process">concurrent.futures.process</a>
+ &#8226;   <a href="#concurrent.futures.thread">concurrent.futures.thread</a>
  &#8226;   <a href="#http.cookiejar">http.cookiejar</a>
  &#8226;   <a href="#importlib.util">importlib.util</a>
  &#8226;   <a href="#logging">logging</a>
+ &#8226;   <a href="#multiprocessing.context">multiprocessing.context</a>
+ &#8226;   <a href="#multiprocessing.dummy">multiprocessing.dummy</a>
+ &#8226;   <a href="#multiprocessing.forkserver">multiprocessing.forkserver</a>
+ &#8226;   <a href="#multiprocessing.heap">multiprocessing.heap</a>
+ &#8226;   <a href="#multiprocessing.managers">multiprocessing.managers</a>
+ &#8226;   <a href="#multiprocessing.pool">multiprocessing.pool</a>
+ &#8226;   <a href="#multiprocessing.process">multiprocessing.process</a>
+ &#8226;   <a href="#multiprocessing.queues">multiprocessing.queues</a>
+ &#8226;   <a href="#multiprocessing.resource_sharer">multiprocessing.resource_sharer</a>
+ &#8226;   <a href="#multiprocessing.resource_tracker">multiprocessing.resource_tracker</a>
+ &#8226;   <a href="#multiprocessing.synchronize">multiprocessing.synchronize</a>
+ &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
+ &#8226;   <a href="#queue">queue</a>
  &#8226;   <a href="#subprocess">subprocess</a>
+ &#8226;   <a href="#unittest.mock">unittest.mock</a>
  &#8226;   <a href="#zipfile">zipfile</a>
 
   </div>
@@ -8011,6 +10518,9 @@ imported by:
     <a href="#_datetime">_datetime</a>
  &#8226;   <a href="#_pydatetime">_pydatetime</a>
  &#8226;   <a href="#_strptime">_strptime</a>
+ &#8226;   <a href="#asyncio.base_events">asyncio.base_events</a>
+ &#8226;   <a href="#asyncio.windows_events">asyncio.windows_events</a>
+ &#8226;   <a href="#concurrent.futures._base">concurrent.futures._base</a>
  &#8226;   <a href="#datetime">datetime</a>
  &#8226;   <a href="#email._parseaddr">email._parseaddr</a>
  &#8226;   <a href="#email.generator">email.generator</a>
@@ -8019,14 +10529,24 @@ imported by:
  &#8226;   <a href="#gzip">gzip</a>
  &#8226;   <a href="#http.cookiejar">http.cookiejar</a>
  &#8226;   <a href="#logging">logging</a>
+ &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
+ &#8226;   <a href="#multiprocessing.managers">multiprocessing.managers</a>
+ &#8226;   <a href="#multiprocessing.pool">multiprocessing.pool</a>
+ &#8226;   <a href="#multiprocessing.queues">multiprocessing.queues</a>
+ &#8226;   <a href="#multiprocessing.synchronize">multiprocessing.synchronize</a>
  &#8226;   <a href="#origin_cli.install_pkg">origin_cli.install_pkg</a>
+ &#8226;   <a href="#queue">queue</a>
  &#8226;   <a href="#random">random</a>
  &#8226;   <a href="#ssl">ssl</a>
  &#8226;   <a href="#subprocess">subprocess</a>
  &#8226;   <a href="#tarfile">tarfile</a>
  &#8226;   <a href="#threading">threading</a>
+ &#8226;   <a href="#unittest.case">unittest.case</a>
+ &#8226;   <a href="#unittest.runner">unittest.runner</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
+ &#8226;   <a href="#xmlrpc.client">xmlrpc.client</a>
  &#8226;   <a href="#zipfile">zipfile</a>
+ &#8226;   <a href="#zipimport">zipimport</a>
 
   </div>
 
@@ -8092,11 +10612,23 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#http.cookiejar">http.cookiejar</a>
+    <a href="#asyncio.base_events">asyncio.base_events</a>
+ &#8226;   <a href="#asyncio.base_tasks">asyncio.base_tasks</a>
+ &#8226;   <a href="#asyncio.format_helpers">asyncio.format_helpers</a>
+ &#8226;   <a href="#concurrent.futures.process">concurrent.futures.process</a>
+ &#8226;   <a href="#http.cookiejar">http.cookiejar</a>
  &#8226;   <a href="#logging">logging</a>
+ &#8226;   <a href="#multiprocessing.managers">multiprocessing.managers</a>
+ &#8226;   <a href="#multiprocessing.pool">multiprocessing.pool</a>
+ &#8226;   <a href="#multiprocessing.process">multiprocessing.process</a>
+ &#8226;   <a href="#multiprocessing.queues">multiprocessing.queues</a>
+ &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
  &#8226;   <a href="#py_compile">py_compile</a>
  &#8226;   <a href="#run_origin.py">run_origin.py</a>
  &#8226;   <a href="#threading">threading</a>
+ &#8226;   <a href="#unittest.case">unittest.case</a>
+ &#8226;   <a href="#unittest.loader">unittest.loader</a>
+ &#8226;   <a href="#unittest.result">unittest.result</a>
  &#8226;   <a href="#warnings">warnings</a>
 
   </div>
@@ -8139,11 +10671,19 @@ imports:
   <div class="import">
 imported by:
     <a href="#_weakrefset">_weakrefset</a>
+ &#8226;   <a href="#asyncio.coroutines">asyncio.coroutines</a>
+ &#8226;   <a href="#asyncio.futures">asyncio.futures</a>
+ &#8226;   <a href="#asyncio.queues">asyncio.queues</a>
+ &#8226;   <a href="#asyncio.tasks">asyncio.tasks</a>
+ &#8226;   <a href="#asyncio.timeouts">asyncio.timeouts</a>
+ &#8226;   <a href="#concurrent.futures._base">concurrent.futures._base</a>
+ &#8226;   <a href="#concurrent.futures.thread">concurrent.futures.thread</a>
  &#8226;   <a href="#contextlib">contextlib</a>
  &#8226;   <a href="#copy">copy</a>
  &#8226;   <a href="#csv">csv</a>
  &#8226;   <a href="#ctypes">ctypes</a>
  &#8226;   <a href="#dataclasses">dataclasses</a>
+ &#8226;   <a href="#difflib">difflib</a>
  &#8226;   <a href="#dis">dis</a>
  &#8226;   <a href="#email.headerregistry">email.headerregistry</a>
  &#8226;   <a href="#enum">enum</a>
@@ -8154,12 +10694,22 @@ imported by:
  &#8226;   <a href="#importlib.util">importlib.util</a>
  &#8226;   <a href="#inspect">inspect</a>
  &#8226;   <a href="#logging">logging</a>
+ &#8226;   <a href="#multiprocessing.managers">multiprocessing.managers</a>
+ &#8226;   <a href="#multiprocessing.pool">multiprocessing.pool</a>
+ &#8226;   <a href="#multiprocessing.queues">multiprocessing.queues</a>
+ &#8226;   <a href="#multiprocessing.shared_memory">multiprocessing.shared_memory</a>
+ &#8226;   <a href="#multiprocessing.spawn">multiprocessing.spawn</a>
  &#8226;   <a href="#pickle">pickle</a>
+ &#8226;   <a href="#pkgutil">pkgutil</a>
  &#8226;   <a href="#pprint">pprint</a>
+ &#8226;   <a href="#queue">queue</a>
  &#8226;   <a href="#run_origin.py">run_origin.py</a>
  &#8226;   <a href="#subprocess">subprocess</a>
  &#8226;   <a href="#tempfile">tempfile</a>
  &#8226;   <a href="#typing">typing</a>
+ &#8226;   <a href="#unittest.case">unittest.case</a>
+ &#8226;   <a href="#unittest.loader">unittest.loader</a>
+ &#8226;   <a href="#unittest.mock">unittest.mock</a>
  &#8226;   <a href="#urllib.parse">urllib.parse</a>
  &#8226;   <a href="#warnings">warnings</a>
 
@@ -8190,11 +10740,13 @@ imports:
   <div class="import">
 imported by:
     <a href="#_colorize">_colorize</a>
+ &#8226;   <a href="#asyncio.timeouts">asyncio.timeouts</a>
  &#8226;   <a href="#functools">functools</a>
  &#8226;   <a href="#importlib.metadata">importlib.metadata</a>
  &#8226;   <a href="#importlib.metadata._meta">importlib.metadata._meta</a>
  &#8226;   <a href="#importlib.resources._common">importlib.resources._common</a>
  &#8226;   <a href="#importlib.resources.abc">importlib.resources.abc</a>
+ &#8226;   <a href="#origin_cli.version">origin_cli.version</a>
 
   </div>
 
@@ -8209,6 +10761,306 @@ imported by:
  &#8226;   <a href="#stringprep">stringprep</a>
  &#8226;   <a href="#traceback">traceback</a>
  &#8226;   <a href="#urllib.parse">urllib.parse</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unittest"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/unittest/__init__.py" type="text/plain"><tt>unittest</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#unittest">unittest</a>
+ &#8226;   <a href="#unittest.async_case">unittest.async_case</a>
+ &#8226;   <a href="#unittest.case">unittest.case</a>
+ &#8226;   <a href="#unittest.loader">unittest.loader</a>
+ &#8226;   <a href="#unittest.main">unittest.main</a>
+ &#8226;   <a href="#unittest.result">unittest.result</a>
+ &#8226;   <a href="#unittest.runner">unittest.runner</a>
+ &#8226;   <a href="#unittest.signals">unittest.signals</a>
+ &#8226;   <a href="#unittest.suite">unittest.suite</a>
+ &#8226;   <a href="#unittest.util">unittest.util</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#origin_cli.test_version">origin_cli.test_version</a>
+ &#8226;   <a href="#unittest">unittest</a>
+ &#8226;   <a href="#unittest._log">unittest._log</a>
+ &#8226;   <a href="#unittest.async_case">unittest.async_case</a>
+ &#8226;   <a href="#unittest.case">unittest.case</a>
+ &#8226;   <a href="#unittest.loader">unittest.loader</a>
+ &#8226;   <a href="#unittest.main">unittest.main</a>
+ &#8226;   <a href="#unittest.mock">unittest.mock</a>
+ &#8226;   <a href="#unittest.result">unittest.result</a>
+ &#8226;   <a href="#unittest.runner">unittest.runner</a>
+ &#8226;   <a href="#unittest.signals">unittest.signals</a>
+ &#8226;   <a href="#unittest.suite">unittest.suite</a>
+ &#8226;   <a href="#unittest.util">unittest.util</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unittest._log"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/unittest/_log.py" type="text/plain"><tt>unittest._log</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#collections">collections</a>
+ &#8226;   <a href="#logging">logging</a>
+ &#8226;   <a href="#unittest">unittest</a>
+ &#8226;   <a href="#unittest.case">unittest.case</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unittest.case">unittest.case</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unittest.async_case"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/unittest/async_case.py" type="text/plain"><tt>unittest.async_case</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#contextvars">contextvars</a>
+ &#8226;   <a href="#inspect">inspect</a>
+ &#8226;   <a href="#unittest">unittest</a>
+ &#8226;   <a href="#unittest.case">unittest.case</a>
+ &#8226;   <a href="#warnings">warnings</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unittest">unittest</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unittest.case"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/unittest/case.py" type="text/plain"><tt>unittest.case</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#collections">collections</a>
+ &#8226;   <a href="#contextlib">contextlib</a>
+ &#8226;   <a href="#difflib">difflib</a>
+ &#8226;   <a href="#functools">functools</a>
+ &#8226;   <a href="#pprint">pprint</a>
+ &#8226;   <a href="#re">re</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#time">time</a>
+ &#8226;   <a href="#traceback">traceback</a>
+ &#8226;   <a href="#types">types</a>
+ &#8226;   <a href="#unittest">unittest</a>
+ &#8226;   <a href="#unittest._log">unittest._log</a>
+ &#8226;   <a href="#unittest.result">unittest.result</a>
+ &#8226;   <a href="#unittest.util">unittest.util</a>
+ &#8226;   <a href="#warnings">warnings</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unittest">unittest</a>
+ &#8226;   <a href="#unittest._log">unittest._log</a>
+ &#8226;   <a href="#unittest.async_case">unittest.async_case</a>
+ &#8226;   <a href="#unittest.loader">unittest.loader</a>
+ &#8226;   <a href="#unittest.runner">unittest.runner</a>
+ &#8226;   <a href="#unittest.suite">unittest.suite</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unittest.loader"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/unittest/loader.py" type="text/plain"><tt>unittest.loader</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#fnmatch">fnmatch</a>
+ &#8226;   <a href="#functools">functools</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#re">re</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#traceback">traceback</a>
+ &#8226;   <a href="#types">types</a>
+ &#8226;   <a href="#unittest">unittest</a>
+ &#8226;   <a href="#unittest.case">unittest.case</a>
+ &#8226;   <a href="#unittest.suite">unittest.suite</a>
+ &#8226;   <a href="#unittest.util">unittest.util</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unittest">unittest</a>
+ &#8226;   <a href="#unittest.main">unittest.main</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unittest.main"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/unittest/main.py" type="text/plain"><tt>unittest.main</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#argparse">argparse</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#unittest">unittest</a>
+ &#8226;   <a href="#unittest.loader">unittest.loader</a>
+ &#8226;   <a href="#unittest.runner">unittest.runner</a>
+ &#8226;   <a href="#unittest.signals">unittest.signals</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unittest">unittest</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unittest.mock"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/unittest/mock.py" type="text/plain"><tt>unittest.mock</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#_io">_io</a>
+ &#8226;   <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#builtins">builtins</a>
+ &#8226;   <a href="#contextlib">contextlib</a>
+ &#8226;   <a href="#functools">functools</a>
+ &#8226;   <a href="#inspect">inspect</a>
+ &#8226;   <a href="#io">io</a>
+ &#8226;   <a href="#pkgutil">pkgutil</a>
+ &#8226;   <a href="#pprint">pprint</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#threading">threading</a>
+ &#8226;   <a href="#types">types</a>
+ &#8226;   <a href="#unittest">unittest</a>
+ &#8226;   <a href="#unittest.util">unittest.util</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#origin_cli.test_version">origin_cli.test_version</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unittest.result"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/unittest/result.py" type="text/plain"><tt>unittest.result</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#functools">functools</a>
+ &#8226;   <a href="#io">io</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#traceback">traceback</a>
+ &#8226;   <a href="#unittest">unittest</a>
+ &#8226;   <a href="#unittest.util">unittest.util</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unittest">unittest</a>
+ &#8226;   <a href="#unittest.case">unittest.case</a>
+ &#8226;   <a href="#unittest.runner">unittest.runner</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unittest.runner"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/unittest/runner.py" type="text/plain"><tt>unittest.runner</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#sys">sys</a>
+ &#8226;   <a href="#time">time</a>
+ &#8226;   <a href="#unittest">unittest</a>
+ &#8226;   <a href="#unittest.case">unittest.case</a>
+ &#8226;   <a href="#unittest.result">unittest.result</a>
+ &#8226;   <a href="#unittest.signals">unittest.signals</a>
+ &#8226;   <a href="#warnings">warnings</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unittest">unittest</a>
+ &#8226;   <a href="#unittest.main">unittest.main</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unittest.signals"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/unittest/signals.py" type="text/plain"><tt>unittest.signals</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#functools">functools</a>
+ &#8226;   <a href="#signal">signal</a>
+ &#8226;   <a href="#unittest">unittest</a>
+ &#8226;   <a href="#weakref">weakref</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unittest">unittest</a>
+ &#8226;   <a href="#unittest.main">unittest.main</a>
+ &#8226;   <a href="#unittest.runner">unittest.runner</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unittest.suite"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/unittest/suite.py" type="text/plain"><tt>unittest.suite</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#sys">sys</a>
+ &#8226;   <a href="#unittest">unittest</a>
+ &#8226;   <a href="#unittest.case">unittest.case</a>
+ &#8226;   <a href="#unittest.util">unittest.util</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unittest">unittest</a>
+ &#8226;   <a href="#unittest.loader">unittest.loader</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unittest.util"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/unittest/util.py" type="text/plain"><tt>unittest.util</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#collections">collections</a>
+ &#8226;   <a href="#os.path">os.path</a>
+ &#8226;   <a href="#unittest">unittest</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unittest">unittest</a>
+ &#8226;   <a href="#unittest.case">unittest.case</a>
+ &#8226;   <a href="#unittest.loader">unittest.loader</a>
+ &#8226;   <a href="#unittest.mock">unittest.mock</a>
+ &#8226;   <a href="#unittest.result">unittest.result</a>
+ &#8226;   <a href="#unittest.suite">unittest.suite</a>
 
   </div>
 
@@ -8272,6 +11124,8 @@ imported by:
  &#8226;   <a href="#nturl2path">nturl2path</a>
  &#8226;   <a href="#pathlib._local">pathlib._local</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
+ &#8226;   <a href="#xml.sax.saxutils">xml.sax.saxutils</a>
+ &#8226;   <a href="#xmlrpc.client">xmlrpc.client</a>
 
   </div>
 
@@ -8318,6 +11172,7 @@ imports:
 imported by:
     <a href="#http.cookiejar">http.cookiejar</a>
  &#8226;   <a href="#origin_cli.install_pkg">origin_cli.install_pkg</a>
+ &#8226;   <a href="#xml.sax.saxutils">xml.sax.saxutils</a>
 
   </div>
 
@@ -8376,6 +11231,15 @@ imported by:
  &#8226;   <a href="#_strptime">_strptime</a>
  &#8226;   <a href="#argparse">argparse</a>
  &#8226;   <a href="#ast">ast</a>
+ &#8226;   <a href="#asyncio.base_events">asyncio.base_events</a>
+ &#8226;   <a href="#asyncio.base_subprocess">asyncio.base_subprocess</a>
+ &#8226;   <a href="#asyncio.events">asyncio.events</a>
+ &#8226;   <a href="#asyncio.proactor_events">asyncio.proactor_events</a>
+ &#8226;   <a href="#asyncio.selector_events">asyncio.selector_events</a>
+ &#8226;   <a href="#asyncio.sslproto">asyncio.sslproto</a>
+ &#8226;   <a href="#asyncio.streams">asyncio.streams</a>
+ &#8226;   <a href="#asyncio.unix_events">asyncio.unix_events</a>
+ &#8226;   <a href="#asyncio.windows_utils">asyncio.windows_utils</a>
  &#8226;   <a href="#calendar">calendar</a>
  &#8226;   <a href="#ctypes">ctypes</a>
  &#8226;   <a href="#email.utils">email.utils</a>
@@ -8385,6 +11249,7 @@ imported by:
  &#8226;   <a href="#gettext">gettext</a>
  &#8226;   <a href="#glob">glob</a>
  &#8226;   <a href="#gzip">gzip</a>
+ &#8226;   <a href="#hmac">hmac</a>
  &#8226;   <a href="#http.cookiejar">http.cookiejar</a>
  &#8226;   <a href="#importlib.abc">importlib.abc</a>
  &#8226;   <a href="#importlib.metadata">importlib.metadata</a>
@@ -8394,13 +11259,18 @@ imported by:
  &#8226;   <a href="#importlib.resources.readers">importlib.resources.readers</a>
  &#8226;   <a href="#locale">locale</a>
  &#8226;   <a href="#logging">logging</a>
+ &#8226;   <a href="#multiprocessing.forkserver">multiprocessing.forkserver</a>
+ &#8226;   <a href="#multiprocessing.pool">multiprocessing.pool</a>
+ &#8226;   <a href="#multiprocessing.resource_tracker">multiprocessing.resource_tracker</a>
  &#8226;   <a href="#os">os</a>
  &#8226;   <a href="#pathlib._local">pathlib._local</a>
+ &#8226;   <a href="#pkgutil">pkgutil</a>
  &#8226;   <a href="#platform">platform</a>
  &#8226;   <a href="#random">random</a>
  &#8226;   <a href="#re">re</a>
  &#8226;   <a href="#re._parser">re._parser</a>
  &#8226;   <a href="#run_origin.py">run_origin.py</a>
+ &#8226;   <a href="#runpy">runpy</a>
  &#8226;   <a href="#sre_compile">sre_compile</a>
  &#8226;   <a href="#sre_constants">sre_constants</a>
  &#8226;   <a href="#sre_parse">sre_parse</a>
@@ -8411,6 +11281,9 @@ imported by:
  &#8226;   <a href="#threading">threading</a>
  &#8226;   <a href="#traceback">traceback</a>
  &#8226;   <a href="#typing">typing</a>
+ &#8226;   <a href="#unittest.async_case">unittest.async_case</a>
+ &#8226;   <a href="#unittest.case">unittest.case</a>
+ &#8226;   <a href="#unittest.runner">unittest.runner</a>
  &#8226;   <a href="#urllib.parse">urllib.parse</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
  &#8226;   <a href="#zipfile">zipfile</a>
@@ -8437,13 +11310,26 @@ imports:
   <div class="import">
 imported by:
     <a href="#_threading_local">_threading_local</a>
+ &#8226;   <a href="#asyncio.base_events">asyncio.base_events</a>
+ &#8226;   <a href="#asyncio.selector_events">asyncio.selector_events</a>
+ &#8226;   <a href="#asyncio.streams">asyncio.streams</a>
+ &#8226;   <a href="#asyncio.tasks">asyncio.tasks</a>
+ &#8226;   <a href="#asyncio.windows_events">asyncio.windows_events</a>
+ &#8226;   <a href="#concurrent.futures.process">concurrent.futures.process</a>
+ &#8226;   <a href="#concurrent.futures.thread">concurrent.futures.thread</a>
  &#8226;   <a href="#copy">copy</a>
  &#8226;   <a href="#functools">functools</a>
  &#8226;   <a href="#gzip">gzip</a>
  &#8226;   <a href="#inspect">inspect</a>
  &#8226;   <a href="#logging">logging</a>
+ &#8226;   <a href="#multiprocessing.dummy">multiprocessing.dummy</a>
+ &#8226;   <a href="#multiprocessing.queues">multiprocessing.queues</a>
+ &#8226;   <a href="#multiprocessing.sharedctypes">multiprocessing.sharedctypes</a>
+ &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
  &#8226;   <a href="#run_origin.py">run_origin.py</a>
  &#8226;   <a href="#tempfile">tempfile</a>
+ &#8226;   <a href="#unittest.signals">unittest.signals</a>
+ &#8226;   <a href="#xml.sax.expatreader">xml.sax.expatreader</a>
 
   </div>
 
@@ -8468,6 +11354,242 @@ imported by:
 <span class="moduletype">MissingModule</span>  <div class="import">
 imported by:
     <a href="#origin_cli.test_main">origin_cli.test_main</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="xml"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/xml/__init__.py" type="text/plain"><tt>xml</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#xml.sax.expatreader">xml.sax.expatreader</a>
+ &#8226;   <a href="#xml.sax.xmlreader">xml.sax.xmlreader</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#xml.parsers">xml.parsers</a>
+ &#8226;   <a href="#xml.sax">xml.sax</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="xml.parsers"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/xml/parsers/__init__.py" type="text/plain"><tt>xml.parsers</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#xml">xml</a>
+ &#8226;   <a href="#xml.parsers.expat">xml.parsers.expat</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#xml.parsers.expat">xml.parsers.expat</a>
+ &#8226;   <a href="#xml.sax.expatreader">xml.sax.expatreader</a>
+ &#8226;   <a href="#xmlrpc.client">xmlrpc.client</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="xml.parsers.expat"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/xml/parsers/expat.py" type="text/plain"><tt>xml.parsers.expat</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#pyexpat">pyexpat</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#xml.parsers">xml.parsers</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#xml.parsers">xml.parsers</a>
+ &#8226;   <a href="#xml.sax.expatreader">xml.sax.expatreader</a>
+ &#8226;   <a href="#xmlrpc.client">xmlrpc.client</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="xml.sax"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/xml/sax/__init__.py" type="text/plain"><tt>xml.sax</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#io">io</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#xml">xml</a>
+ &#8226;   <a href="#xml.sax">xml.sax</a>
+ &#8226;   <a href="#xml.sax._exceptions">xml.sax._exceptions</a>
+ &#8226;   <a href="#xml.sax.expatreader">xml.sax.expatreader</a>
+ &#8226;   <a href="#xml.sax.handler">xml.sax.handler</a>
+ &#8226;   <a href="#xml.sax.saxutils">xml.sax.saxutils</a>
+ &#8226;   <a href="#xml.sax.xmlreader">xml.sax.xmlreader</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#xml.sax">xml.sax</a>
+ &#8226;   <a href="#xml.sax._exceptions">xml.sax._exceptions</a>
+ &#8226;   <a href="#xml.sax.expatreader">xml.sax.expatreader</a>
+ &#8226;   <a href="#xml.sax.handler">xml.sax.handler</a>
+ &#8226;   <a href="#xml.sax.saxutils">xml.sax.saxutils</a>
+ &#8226;   <a href="#xml.sax.xmlreader">xml.sax.xmlreader</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="xml.sax._exceptions"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/xml/sax/_exceptions.py" type="text/plain"><tt>xml.sax._exceptions</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#xml.sax">xml.sax</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#xml.sax">xml.sax</a>
+ &#8226;   <a href="#xml.sax.expatreader">xml.sax.expatreader</a>
+ &#8226;   <a href="#xml.sax.xmlreader">xml.sax.xmlreader</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="xml.sax.expatreader"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/xml/sax/expatreader.py" type="text/plain"><tt>xml.sax.expatreader</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#_weakref">_weakref</a>
+ &#8226;   <a href="#weakref">weakref</a>
+ &#8226;   <a href="#xml.parsers">xml.parsers</a>
+ &#8226;   <a href="#xml.parsers.expat">xml.parsers.expat</a>
+ &#8226;   <a href="#xml.sax">xml.sax</a>
+ &#8226;   <a href="#xml.sax._exceptions">xml.sax._exceptions</a>
+ &#8226;   <a href="#xml.sax.handler">xml.sax.handler</a>
+ &#8226;   <a href="#xml.sax.saxutils">xml.sax.saxutils</a>
+ &#8226;   <a href="#xml.sax.xmlreader">xml.sax.xmlreader</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#xml">xml</a>
+ &#8226;   <a href="#xml.sax">xml.sax</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="xml.sax.handler"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/xml/sax/handler.py" type="text/plain"><tt>xml.sax.handler</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#xml.sax">xml.sax</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#xml.sax">xml.sax</a>
+ &#8226;   <a href="#xml.sax.expatreader">xml.sax.expatreader</a>
+ &#8226;   <a href="#xml.sax.saxutils">xml.sax.saxutils</a>
+ &#8226;   <a href="#xml.sax.xmlreader">xml.sax.xmlreader</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="xml.sax.saxutils"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/xml/sax/saxutils.py" type="text/plain"><tt>xml.sax.saxutils</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#codecs">codecs</a>
+ &#8226;   <a href="#io">io</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#urllib.parse">urllib.parse</a>
+ &#8226;   <a href="#urllib.request">urllib.request</a>
+ &#8226;   <a href="#xml.sax">xml.sax</a>
+ &#8226;   <a href="#xml.sax.handler">xml.sax.handler</a>
+ &#8226;   <a href="#xml.sax.xmlreader">xml.sax.xmlreader</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#xml.sax">xml.sax</a>
+ &#8226;   <a href="#xml.sax.expatreader">xml.sax.expatreader</a>
+ &#8226;   <a href="#xml.sax.xmlreader">xml.sax.xmlreader</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="xml.sax.xmlreader"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/xml/sax/xmlreader.py" type="text/plain"><tt>xml.sax.xmlreader</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#xml.sax">xml.sax</a>
+ &#8226;   <a href="#xml.sax._exceptions">xml.sax._exceptions</a>
+ &#8226;   <a href="#xml.sax.handler">xml.sax.handler</a>
+ &#8226;   <a href="#xml.sax.saxutils">xml.sax.saxutils</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#xml">xml</a>
+ &#8226;   <a href="#xml.sax">xml.sax</a>
+ &#8226;   <a href="#xml.sax.expatreader">xml.sax.expatreader</a>
+ &#8226;   <a href="#xml.sax.saxutils">xml.sax.saxutils</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="xmlrpc"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/xmlrpc/__init__.py" type="text/plain"><tt>xmlrpc</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imported by:
+    <a href="#xmlrpc.client">xmlrpc.client</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="xmlrpc.client"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/xmlrpc/client.py" type="text/plain"><tt>xmlrpc.client</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#base64">base64</a>
+ &#8226;   <a href="#datetime">datetime</a>
+ &#8226;   <a href="#decimal">decimal</a>
+ &#8226;   <a href="#errno">errno</a>
+ &#8226;   <a href="#gzip">gzip</a>
+ &#8226;   <a href="#http.client">http.client</a>
+ &#8226;   <a href="#io">io</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#time">time</a>
+ &#8226;   <a href="#urllib.parse">urllib.parse</a>
+ &#8226;   <a href="#xml.parsers">xml.parsers</a>
+ &#8226;   <a href="#xml.parsers.expat">xml.parsers.expat</a>
+ &#8226;   <a href="#xmlrpc">xmlrpc</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#multiprocessing.connection">multiprocessing.connection</a>
 
   </div>
 
@@ -8502,6 +11624,7 @@ imported by:
     <a href="#importlib.metadata">importlib.metadata</a>
  &#8226;   <a href="#importlib.resources.readers">importlib.resources.readers</a>
  &#8226;   <a href="#origin_cli.install_pkg">origin_cli.install_pkg</a>
+ &#8226;   <a href="#origin_cli.test_version">origin_cli.test_version</a>
  &#8226;   <a href="#pyi_rth_inspect.py">pyi_rth_inspect.py</a>
  &#8226;   <a href="#shutil">shutil</a>
  &#8226;   <a href="#zipfile._path">zipfile._path</a>
@@ -8555,6 +11678,32 @@ imported by:
 </div>
 
 <div class="node">
+  <a name="zipimport"></a>
+  <a target="code" href="///C:/Users/smile/AppData/Local/Programs/Python/Python313/Lib/zipimport.py" type="text/plain"><tt>zipimport</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#_frozen_importlib">_frozen_importlib</a>
+ &#8226;   <a href="#_frozen_importlib_external">_frozen_importlib_external</a>
+ &#8226;   <a href="#_imp">_imp</a>
+ &#8226;   <a href="#_io">_io</a>
+ &#8226;   <a href="#_warnings">_warnings</a>
+ &#8226;   <a href="#importlib.readers">importlib.readers</a>
+ &#8226;   <a href="#marshal">marshal</a>
+ &#8226;   <a href="#struct">struct</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#time">time</a>
+ &#8226;   <a href="#zlib">zlib</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#pkgutil">pkgutil</a>
+
+  </div>
+
+</div>
+
+<div class="node">
   <a name="zlib"></a>
   <tt>zlib</tt> <span class="moduletype"><i>(builtin module)</i></span>  <div class="import">
 imported by:
@@ -8563,6 +11712,7 @@ imported by:
  &#8226;   <a href="#shutil">shutil</a>
  &#8226;   <a href="#tarfile">tarfile</a>
  &#8226;   <a href="#zipfile">zipfile</a>
+ &#8226;   <a href="#zipimport">zipimport</a>
 
   </div>
 

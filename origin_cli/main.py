@@ -2,6 +2,7 @@
 # origin doctor
 # origin version
 
+import re
 from pathlib import Path
 
 from . import ui
@@ -12,7 +13,7 @@ from .lexer import lex
 from .parser import Parser
 from .classes import ExitNode
 from .interpret import interpret, clear_screen
-
+import subprocess as sp
 
 def cli():
     ui.enable_ansi()
@@ -28,11 +29,13 @@ def cli():
             if not user_input:
                 continue
 
-            tokens = lex([user_input])
-            if tokens[0].type != "ORIGIN":
-                print(ui.error(f"Unknown command prefix. Did you mean '{user_input}'?"))
+            # If the sentence doesn't start with "origin", default to running
+            # it as a PowerShell command.
+            if not re.match(r"^origin(?=\s|$)", user_input):
+                sp.run(["powershell.exe", "-Command", user_input])
                 continue
 
+            tokens = lex([user_input])
             node = Parser(tokens).command()
             if isinstance(node, ExitNode):
                 print(ui.dim("Exiting..."))
