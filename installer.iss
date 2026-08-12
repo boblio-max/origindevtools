@@ -1,6 +1,6 @@
 #define MyAppName "Origin CLI"
 #define MyAppNameLower "origin"
-#define MyAppVersion "2.0.0"
+#define MyAppVersion "2.1.0"
 #define MyAppPublisher "Origin Labs"
 #define MyAppExeName "origin.exe"
 #define MyAppURL "https://github.com/boblio-max/origindevtools"

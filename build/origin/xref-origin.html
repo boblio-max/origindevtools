@@ -216,6 +216,7 @@ imports:
  &#8226;   <a href="#origin_cli.cli">origin_cli.cli</a>
  &#8226;   <a href="#origin_cli.create_venv">origin_cli.create_venv</a>
  &#8226;   <a href="#origin_cli.folder_gen">origin_cli.folder_gen</a>
+ &#8226;   <a href="#origin_cli.handle_ai">origin_cli.handle_ai</a>
  &#8226;   <a href="#origin_cli.handle_code">origin_cli.handle_code</a>
  &#8226;   <a href="#origin_cli.handle_java">origin_cli.handle_java</a>
  &#8226;   <a href="#origin_cli.handle_origin">origin_cli.handle_origin</a>
@@ -226,6 +227,7 @@ imports:
  &#8226;   <a href="#origin_cli.lexer">origin_cli.lexer</a>
  &#8226;   <a href="#origin_cli.main">origin_cli.main</a>
  &#8226;   <a href="#origin_cli.main_statements">origin_cli.main_statements</a>
+ &#8226;   <a href="#origin_cli.mcp">origin_cli.mcp</a>
  &#8226;   <a href="#origin_cli.parser">origin_cli.parser</a>
  &#8226;   <a href="#origin_cli.test">origin_cli.test</a>
  &#8226;   <a href="#origin_cli.test_main">origin_cli.test_main</a>
@@ -7323,7 +7325,9 @@ imported by:
  &#8226;   <a href="#json.decoder">json.decoder</a>
  &#8226;   <a href="#json.encoder">json.encoder</a>
  &#8226;   <a href="#json.scanner">json.scanner</a>
+ &#8226;   <a href="#origin_cli.handle_ai">origin_cli.handle_ai</a>
  &#8226;   <a href="#origin_cli.install_pkg">origin_cli.install_pkg</a>
+ &#8226;   <a href="#origin_cli.mcp">origin_cli.mcp</a>
  &#8226;   <a href="#origin_cli.test_version">origin_cli.test_version</a>
 
   </div>
@@ -8545,6 +8549,7 @@ imported by:
  &#8226;   <a href="#origin_cli.cli">origin_cli.cli</a>
  &#8226;   <a href="#origin_cli.create_venv">origin_cli.create_venv</a>
  &#8226;   <a href="#origin_cli.folder_gen">origin_cli.folder_gen</a>
+ &#8226;   <a href="#origin_cli.handle_ai">origin_cli.handle_ai</a>
  &#8226;   <a href="#origin_cli.handle_code">origin_cli.handle_code</a>
  &#8226;   <a href="#origin_cli.handle_java">origin_cli.handle_java</a>
  &#8226;   <a href="#origin_cli.handle_origin">origin_cli.handle_origin</a>
@@ -8555,6 +8560,7 @@ imported by:
  &#8226;   <a href="#origin_cli.lexer">origin_cli.lexer</a>
  &#8226;   <a href="#origin_cli.main">origin_cli.main</a>
  &#8226;   <a href="#origin_cli.main_statements">origin_cli.main_statements</a>
+ &#8226;   <a href="#origin_cli.mcp">origin_cli.mcp</a>
  &#8226;   <a href="#origin_cli.parser">origin_cli.parser</a>
  &#8226;   <a href="#origin_cli.test">origin_cli.test</a>
  &#8226;   <a href="#origin_cli.test_main">origin_cli.test_main</a>
@@ -8645,6 +8651,33 @@ imported by:
     <a href="#origin_cli.create_venv">origin_cli.create_venv</a>
  &#8226;   <a href="#origin_cli.interpret">origin_cli.interpret</a>
  &#8226;   <a href="#origin_cli.main_statements">origin_cli.main_statements</a>
+ &#8226;   <a href="#run_origin.py">run_origin.py</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="origin_cli.handle_ai"></a>
+  <a target="code" href="///C:/Users/smile/OneDrive/Documents/GitHub/origindevtools/origin_cli/handle_ai.py" type="text/plain"><tt>origin_cli.handle_ai</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#json">json</a>
+ &#8226;   <a href="#origin_cli">origin_cli</a>
+ &#8226;   <a href="#origin_cli.mcp">origin_cli.mcp</a>
+ &#8226;   <a href="#origin_cli.ui">origin_cli.ui</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#platform">platform</a>
+ &#8226;   <a href="#shutil">shutil</a>
+ &#8226;   <a href="#subprocess">subprocess</a>
+ &#8226;   <a href="#tempfile">tempfile</a>
+ &#8226;   <a href="#time">time</a>
+ &#8226;   <a href="#urllib.request">urllib.request</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#origin_cli.interpret">origin_cli.interpret</a>
  &#8226;   <a href="#run_origin.py">run_origin.py</a>
 
   </div>
@@ -8792,11 +8825,13 @@ imports:
  &#8226;   <a href="#origin_cli.classes">origin_cli.classes</a>
  &#8226;   <a href="#origin_cli.create_venv">origin_cli.create_venv</a>
  &#8226;   <a href="#origin_cli.folder_gen">origin_cli.folder_gen</a>
+ &#8226;   <a href="#origin_cli.handle_ai">origin_cli.handle_ai</a>
  &#8226;   <a href="#origin_cli.handle_java">origin_cli.handle_java</a>
  &#8226;   <a href="#origin_cli.handle_origin">origin_cli.handle_origin</a>
  &#8226;   <a href="#origin_cli.handle_python">origin_cli.handle_python</a>
  &#8226;   <a href="#origin_cli.install_lang">origin_cli.install_lang</a>
  &#8226;   <a href="#origin_cli.install_pkg">origin_cli.install_pkg</a>
+ &#8226;   <a href="#origin_cli.mcp">origin_cli.mcp</a>
  &#8226;   <a href="#origin_cli.ui">origin_cli.ui</a>
  &#8226;   <a href="#origin_cli.working_dir">origin_cli.working_dir</a>
  &#8226;   <a href="#os">os</a>
@@ -8888,6 +8923,31 @@ imported by:
 </div>
 
 <div class="node">
+  <a name="origin_cli.mcp"></a>
+  <a target="code" href="///C:/Users/smile/OneDrive/Documents/GitHub/origindevtools/origin_cli/mcp.py" type="text/plain"><tt>origin_cli.mcp</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#json">json</a>
+ &#8226;   <a href="#origin_cli">origin_cli</a>
+ &#8226;   <a href="#origin_cli.ui">origin_cli.ui</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#platform">platform</a>
+ &#8226;   <a href="#shutil">shutil</a>
+ &#8226;   <a href="#subprocess">subprocess</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#origin_cli.handle_ai">origin_cli.handle_ai</a>
+ &#8226;   <a href="#origin_cli.interpret">origin_cli.interpret</a>
+ &#8226;   <a href="#origin_cli.test_version">origin_cli.test_version</a>
+ &#8226;   <a href="#run_origin.py">run_origin.py</a>
+
+  </div>
+
+</div>
+
+<div class="node">
   <a name="origin_cli.parser"></a>
   <a target="code" href="///C:/Users/smile/OneDrive/Documents/GitHub/origindevtools/origin_cli/parser.py" type="text/plain"><tt>origin_cli.parser</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
@@ -8956,6 +9016,7 @@ imports:
  &#8226;   <a href="#origin_cli.classes">origin_cli.classes</a>
  &#8226;   <a href="#origin_cli.install_pkg">origin_cli.install_pkg</a>
  &#8226;   <a href="#origin_cli.lexer">origin_cli.lexer</a>
+ &#8226;   <a href="#origin_cli.mcp">origin_cli.mcp</a>
  &#8226;   <a href="#origin_cli.parser">origin_cli.parser</a>
  &#8226;   <a href="#origin_cli.version">origin_cli.version</a>
  &#8226;   <a href="#os">os</a>
@@ -8990,8 +9051,10 @@ imports:
   <div class="import">
 imported by:
     <a href="#origin_cli">origin_cli</a>
+ &#8226;   <a href="#origin_cli.handle_ai">origin_cli.handle_ai</a>
  &#8226;   <a href="#origin_cli.interpret">origin_cli.interpret</a>
  &#8226;   <a href="#origin_cli.main">origin_cli.main</a>
+ &#8226;   <a href="#origin_cli.mcp">origin_cli.mcp</a>
  &#8226;   <a href="#run_origin.py">run_origin.py</a>
 
   </div>
@@ -9118,10 +9181,12 @@ imported by:
  &#8226;   <a href="#ntpath">ntpath</a>
  &#8226;   <a href="#origin_cli.create_venv">origin_cli.create_venv</a>
  &#8226;   <a href="#origin_cli.folder_gen">origin_cli.folder_gen</a>
+ &#8226;   <a href="#origin_cli.handle_ai">origin_cli.handle_ai</a>
  &#8226;   <a href="#origin_cli.handle_origin">origin_cli.handle_origin</a>
  &#8226;   <a href="#origin_cli.install_pkg">origin_cli.install_pkg</a>
  &#8226;   <a href="#origin_cli.interpret">origin_cli.interpret</a>
  &#8226;   <a href="#origin_cli.main_statements">origin_cli.main_statements</a>
+ &#8226;   <a href="#origin_cli.mcp">origin_cli.mcp</a>
  &#8226;   <a href="#origin_cli.test_main">origin_cli.test_main</a>
  &#8226;   <a href="#origin_cli.test_version">origin_cli.test_version</a>
  &#8226;   <a href="#origin_cli.ui">origin_cli.ui</a>
@@ -9341,6 +9406,8 @@ imports:
   <div class="import">
 imported by:
     <a href="#origin_cli.create_venv">origin_cli.create_venv</a>
+ &#8226;   <a href="#origin_cli.handle_ai">origin_cli.handle_ai</a>
+ &#8226;   <a href="#origin_cli.mcp">origin_cli.mcp</a>
  &#8226;   <a href="#origin_cli.ui">origin_cli.ui</a>
 
   </div>
@@ -9883,10 +9950,12 @@ imports:
 imported by:
     <a href="#argparse">argparse</a>
  &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
+ &#8226;   <a href="#origin_cli.handle_ai">origin_cli.handle_ai</a>
  &#8226;   <a href="#origin_cli.handle_java">origin_cli.handle_java</a>
  &#8226;   <a href="#origin_cli.handle_origin">origin_cli.handle_origin</a>
  &#8226;   <a href="#origin_cli.handle_python">origin_cli.handle_python</a>
  &#8226;   <a href="#origin_cli.install_pkg">origin_cli.install_pkg</a>
+ &#8226;   <a href="#origin_cli.mcp">origin_cli.mcp</a>
  &#8226;   <a href="#origin_cli.ui">origin_cli.ui</a>
  &#8226;   <a href="#tarfile">tarfile</a>
  &#8226;   <a href="#tempfile">tempfile</a>
@@ -10213,11 +10282,13 @@ imported by:
  &#8226;   <a href="#asyncio.windows_utils">asyncio.windows_utils</a>
  &#8226;   <a href="#multiprocessing.popen_spawn_win32">multiprocessing.popen_spawn_win32</a>
  &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
+ &#8226;   <a href="#origin_cli.handle_ai">origin_cli.handle_ai</a>
  &#8226;   <a href="#origin_cli.handle_java">origin_cli.handle_java</a>
  &#8226;   <a href="#origin_cli.handle_origin">origin_cli.handle_origin</a>
  &#8226;   <a href="#origin_cli.install_lang">origin_cli.install_lang</a>
  &#8226;   <a href="#origin_cli.main">origin_cli.main</a>
  &#8226;   <a href="#origin_cli.main_statements">origin_cli.main_statements</a>
+ &#8226;   <a href="#origin_cli.mcp">origin_cli.mcp</a>
  &#8226;   <a href="#os">os</a>
  &#8226;   <a href="#platform">platform</a>
  &#8226;   <a href="#pyi_rth_multiprocessing.py">pyi_rth_multiprocessing.py</a>
@@ -10413,6 +10484,7 @@ imported by:
  &#8226;   <a href="#multiprocessing.heap">multiprocessing.heap</a>
  &#8226;   <a href="#multiprocessing.synchronize">multiprocessing.synchronize</a>
  &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
+ &#8226;   <a href="#origin_cli.handle_ai">origin_cli.handle_ai</a>
  &#8226;   <a href="#origin_cli.install_pkg">origin_cli.install_pkg</a>
  &#8226;   <a href="#origin_cli.test_version">origin_cli.test_version</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
@@ -10534,6 +10606,7 @@ imported by:
  &#8226;   <a href="#multiprocessing.pool">multiprocessing.pool</a>
  &#8226;   <a href="#multiprocessing.queues">multiprocessing.queues</a>
  &#8226;   <a href="#multiprocessing.synchronize">multiprocessing.synchronize</a>
+ &#8226;   <a href="#origin_cli.handle_ai">origin_cli.handle_ai</a>
  &#8226;   <a href="#origin_cli.install_pkg">origin_cli.install_pkg</a>
  &#8226;   <a href="#queue">queue</a>
  &#8226;   <a href="#random">random</a>
@@ -11171,6 +11244,7 @@ imports:
   <div class="import">
 imported by:
     <a href="#http.cookiejar">http.cookiejar</a>
+ &#8226;   <a href="#origin_cli.handle_ai">origin_cli.handle_ai</a>
  &#8226;   <a href="#origin_cli.install_pkg">origin_cli.install_pkg</a>
  &#8226;   <a href="#xml.sax.saxutils">xml.sax.saxutils</a>
 

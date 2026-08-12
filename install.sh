@@ -20,12 +20,12 @@ usage() {
     echo "Usage: install.sh [options]"
     echo ""
     echo "Options:"
-    echo "  -v, --version VERSION   Install a specific version (e.g. v2.0.0)"
+    echo "  -v, --version VERSION   Install a specific version (e.g. v2.1.0)"
     echo "  -h, --help              Show this help message"
     echo ""
     echo "Examples:"
     echo "  install.sh                  Install latest version"
-    echo "  install.sh -v v2.0.0        Install version v2.0.0"
+    echo "  install.sh -v v2.1.0        Install version v2.1.0"
     exit 0
 }
 

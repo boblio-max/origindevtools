@@ -38,7 +38,7 @@ CROSS = "\u2715"
 WARN = "\u26a0"
 DOT = "\u00b7"
 
-VERSION = "2.0.0"
+VERSION = "2.1.0"
 
 _ANSI_RE = re.compile(r"\033\[[0-9;]*m")
 
