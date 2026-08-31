@@ -13,9 +13,10 @@ import sys
 import os
 import subprocess
 from multiprocessing import Process
-from classes import *
-from lexer import lex
-from parser import Parser
+from pathlib import Path
+from .classes import *
+from .lexer import lex
+from .parser import Parser
 class Interpreter:
     """Generate Python source from the AST."""
 
@@ -25,7 +26,58 @@ class Interpreter:
         self.CONST_VARS = {}
         self.imports = []
         self.classes = {}
-        self.original_imports = {"calc": "/lib/calc.or"}
+        self.original_imports = {}
+        # Track whether we're generating code inside a class body
+        self._class_depth = 0
+        self._module_vars = set()
+
+    def _collect_module_vars(self, node):
+        """First pass: collect all variable names declared at module level."""
+        for stmt in node.statements:
+            if isinstance(stmt, MultAssignNode):
+                names = stmt.names if isinstance(stmt.names, list) else [stmt.names]
+                for n in names:
+                    self._module_vars.add(n)
+            elif isinstance(stmt, (AssignNode, ConstAssignNode)) and not isinstance(stmt.value, FuncNode):
+                self._module_vars.add(stmt.name)
+
+    def _get_global_vars_in_func(self, node):
+        """Find variables inside a function body that shadow module-level vars."""
+        if node is None:
+            return set()
+        result = set()
+        if isinstance(node, BlockNode):
+            for stmt in node.statements:
+                result |= self._get_global_vars_in_func(stmt)
+        elif isinstance(node, AssignNode):
+            if node.name in self._module_vars:
+                result.add(node.name)
+        elif isinstance(node, MultAssignNode):
+            names = node.names if isinstance(node.names, list) else [node.names]
+            for n in names:
+                if n in self._module_vars:
+                    result.add(n)
+        elif isinstance(node, FuncNode):
+            result |= self._get_global_vars_in_func(node.body)
+        elif isinstance(node, IfNode):
+            result |= self._get_global_vars_in_func(node.then_body)
+            for elif_n in node.elif_nodes:
+                result |= self._get_global_vars_in_func(elif_n.then_body)
+            if node.else_body:
+                result |= self._get_global_vars_in_func(node.else_body)
+        elif isinstance(node, WhileNode):
+            result |= self._get_global_vars_in_func(node.body)
+        elif isinstance(node, ForNode):
+            result |= self._get_global_vars_in_func(node.body)
+        elif isinstance(node, TryNode):
+            result |= self._get_global_vars_in_func(node.try_body)
+            for exc in node.except_body:
+                result |= self._get_global_vars_in_func(exc)
+            if node.else_body:
+                result |= self._get_global_vars_in_func(node.else_body)
+        elif isinstance(node, ParallelNode):
+            result |= self._get_global_vars_in_func(node.body)
+        return result
     def get_type(self, node):
         """Infer the type of an AST node."""
         if hasattr(node, 'type') and node.type is not None:
@@ -52,6 +104,7 @@ class Interpreter:
             line_marker = f"globals()['_origin_runtime_line'] = {node.line}\n"
 
         if isinstance(node, ProgramNode):
+            self._collect_module_vars(node)
             return "\n".join(self.generate(stmt) for stmt in node.statements)
 
         elif isinstance(node, BlockNode):
@@ -76,6 +129,9 @@ class Interpreter:
             return node.code
 
         elif isinstance(node, AssignNode):
+            if isinstance(node.value, ImuNode):
+                return f"from {node.value.name} import {node.value.name}\n{node.name} = {self.generate(node.value)}"
+
             if node.name in self.CONST_VARS:
                 raise RuntimeError(f"Cannot reassign constant '{node.name}'")
 
@@ -104,13 +160,41 @@ class Interpreter:
 
             return assign_code
 
+        elif isinstance(node, MultAssignNode):
+            names = node.names if isinstance(node.names, list) else [node.names]
+            values = node.value if isinstance(node.value, list) else [node.value]
+            annotations = node.type if isinstance(node.type, list) else [node.type]
+            if len(names) != len(values):
+                raise RuntimeError("Type Mismatch: number of names and values in multi-assignment must match")
+            for name in names:
+                if name in self.CONST_VARS:
+                    raise RuntimeError(f"Cannot reassign constant '{name}'")
+            value_codes = []
+            for i, name in enumerate(names):
+                value = values[i]
+                val_type = self.get_type(value)
+                annotation = annotations[i] if i < len(annotations) else None
+                code = self.generate(value)
+                if annotation and val_type and annotation != val_type:
+                    code = f"{annotation}({code})"
+                if annotation:
+                    self.variable_types[name] = annotation
+                elif val_type:
+                    self.variable_types[name] = val_type
+                value_codes.append(code)
+            return ", ".join(names) + " = " + ", ".join(value_codes)
+
         elif isinstance(node, ConstAssignNode):
             if node.name in self.CONST_VARS:
                 raise RuntimeError(f"Cannot reassign constant '{node.name}'")
             val_str = self.generate(node.value)
-            val_type = self.get_type(self.generate(node.value))
+            val_type = self.get_type(node.value)
             if node.type and val_type and node.type != val_type:
                 raise TypeError(f"Type Mismatch: {node.name} is {node.type} but got {val_type}")
+            if node.type:
+                self.variable_types[node.name] = node.type
+            elif val_type:
+                self.variable_types[node.name] = val_type
             self.CONST_VARS[node.name] = val_str
             return f"{node.name} = {val_str}"
 
@@ -126,6 +210,8 @@ class Interpreter:
             return f"({self.generate(node.left)} {node.op} {self.generate(node.right)})"
 
         elif isinstance(node, UnaryOpNode):
+            if node.op in ("not", "!"):
+                return f"(not {self.generate(node.node)})"
             return f"({node.op}{self.generate(node.node)})"
 
         elif isinstance(node, LogicOpNode):
@@ -151,7 +237,7 @@ class Interpreter:
             return code
 
         elif isinstance(node, ForNode):
-            code = f"for {node.var_name} in {self.generate(node.iterable)}:\n"
+            code = f"for {self.generate(node.var)} in {self.generate(node.iterable)}:\n"
             code += self.indent_block(self.generate(node.body))
             return code
 
@@ -167,19 +253,46 @@ class Interpreter:
             return code
 
         elif isinstance(node, FuncNode):
-            params = ", ".join(node.params)
+            params = []
+            for p in node.params:
+                ptype = (node.param_types or {}).get(p)
+                if ptype in ("int", "float", "str", "bool"):
+                    params.append(f"{p}: {ptype}")
+                else:
+                    params.append(p)
+            params = ", ".join(params) if params else ""
+            # If inside a class, ensure 'self' is the first parameter (unless already declared)
+            if getattr(self, "_class_depth", 0) > 0 and (not node.params or node.params[0] != "self"):
+                params = "self" if not params else "self, " + params
             code = f"def {node.name}({params}):\n"
-            code += self.indent_block(self.generate(node.body) or "pass")
+            body_code = self.generate(node.body) or "pass"
+            global_vars = self._get_global_vars_in_func(node.body)
+            if global_vars:
+                global_line = "global " + ", ".join(sorted(global_vars)) + "\n"
+                body_code = global_line + body_code
+            code += self.indent_block(body_code)
             return code
 
         elif isinstance(node, ClassNode):
-            # Make fields optional by defaulting to None
-            params = ", ".join(f"{f}=None" for f in node.fields)
+            # Make fields optional by defaulting to None, with type annotations when given
+            params = []
+            for f in node.fields:
+                ftype = (node.field_types or {}).get(f)
+                if ftype in ("int", "float", "str", "bool"):
+                    params.append(f"{f}: {ftype} = None")
+                else:
+                    params.append(f"{f}=None")
+            params = ", ".join(params)
             code = f"class {node.name}:\n"
             # Body of __init__ must be indented further (8 spaces total)
             init_body = "\n".join(f"        self.{f} = {f}" for f in node.fields) or "        pass"
-            code += f"    def __init__(self, {params}):\n{init_body}\n"
-            code += self.indent_block(self.generate(node.body))
+            init_sig = ("self, " + params) if params else "self"
+            code += f"    def __init__({init_sig}):\n{init_body}\n"
+            # Generate class body with class-depth tracking so methods get 'self'
+            self._class_depth += 1
+            body_code = self.generate(node.body)
+            self._class_depth -= 1
+            code += self.indent_block(body_code)
             return code
 
         
@@ -194,13 +307,30 @@ class Interpreter:
             return f"{self.generate(node.obj)}.{node.attr} = {self.generate(node.value)}"
 
         elif isinstance(node, PrintNode):
-            return f"print({self.generate(node.expr)})"
+            # Support multiple print arguments (TupleNode or ListNode) without printing a tuple
+            expr = node.expr
+            if isinstance(expr, TupleNode) or isinstance(expr, ListNode):
+                args = ", ".join(self.generate(e) for e in expr.elements)
+                return f"print({args})"
+            return f"print({self.generate(expr)})"
 
         elif isinstance(node, NumberNode):
             return str(node.value)
 
         elif isinstance(node, StringNode):
             return repr(node.value)
+
+        elif isinstance(node, FormattedStringNode):
+            # Emit concatenation of parts, converting expressions to str()
+            parts = []
+            for p in node.parts:
+                if isinstance(p, StringNode):
+                    parts.append(repr(p.value))
+                else:
+                    parts.append(f"str({self.generate(p)})")
+            if not parts:
+                return "''"
+            return "(" + " + ".join(parts) + ")"
 
         elif isinstance(node, BoolNode):
             return str(node.value)
@@ -227,8 +357,15 @@ class Interpreter:
         elif isinstance(node, IndexAssignNode):
             return f"{self.generate(node.collection)}[{self.generate(node.index)}] = {self.generate(node.value)}"
 
+        elif isinstance(node, ImuNode):
+            return f"{node.name}({node.address})"
+        
+        elif isinstance(node, ImuFromNode):
+            return f"{node.name}.get_{node.value}()"
+        
         elif isinstance(node, ParallelNode):
-            code = "import threading\n"
+            code = ""
+            code += "import threading\n"
             code += "_threads = []\n"
             if node.threads > 0:
                 code += "def _parallel_block():\n"
@@ -265,14 +402,25 @@ class Interpreter:
         elif isinstance(node, ImportNode):
             if node.name in self.original_imports:
                 path = self.original_imports[node.name]
-                code = ""
-                
                 with open(path, "r", encoding="utf-8") as f:
                     code = f.read()
                 _lex = lex(code.splitlines())
                 _parse = Parser(_lex).program()
                 return self.generate(_parse)
-                
+
+            lib_dir = Path(__file__).resolve().parent / "lib"
+            or_path = lib_dir / f"{node.name}.or"
+            py_path = lib_dir / f"{node.name}.py"
+            if or_path.exists():
+                lib_path = str(lib_dir).replace("\\", "\\\\")
+                preamble = f"import sys as _sys\nif r'{lib_path}' not in _sys.path:\n    _sys.path.insert(0, r'{lib_path}')\n"
+                with open(or_path, encoding="utf-8") as f:
+                    code = [line.rstrip("\n") for line in f]
+                _lex = lex(code)
+                _parse = Parser(_lex).program()
+                return preamble + self.generate(_parse)
+            elif py_path.exists():
+                return f"exec(open({str(py_path)!r}).read())"
             else:
                 return f"import {node.name}"
 
@@ -280,7 +428,7 @@ class Interpreter:
             return f"import {node.name} as {node.alias}"
 
         elif isinstance(node, ImportFromNode):
-            return f"from {node.lib} import {node.name}"
+            return f"from {node.name} import {node.lib}"
 
         elif isinstance(node, ReturnNode):
             return f"return {self.generate(node.value)}"
@@ -304,23 +452,44 @@ class Interpreter:
 
         elif isinstance(node, SpecialOpNode):
             if node.op == "??":
-                if node.left is not None:
-                    return node.left
-                else:
-                    return node.right
+                left = self.generate(node.left)
+                right = self.generate(node.right)
+                return f"(lambda _v: _v if _v is not None else ({right}))({left})"
                 
         elif isinstance(node, HardwarePrimitiveNode):
             args = ", ".join(self.generate(arg) for arg in node.args)
             return f"_execute_{node.namespace}_{node.method}({args})"
 
         elif isinstance(node, RangeNode):
+            if node.step is not None:
+                return f"range({self.generate(node.start)}, {self.generate(node.end)}, {self.generate(node.step)})"
             return f"range({self.generate(node.start)}, {self.generate(node.end)})"
 
+        elif isinstance(node, ReadNode):
+            if node.count == -1:
+                return f"open({repr(node.file_name)}).read()"
+            else:
+                return f"open({repr(node.file_name)}).read({node.count})"
+        
+        elif isinstance(node, WriteNode):
+            fname = node.file[1:-1] if node.file[:1] in ('"', "'") else node.file
+            content = self.generate(node.contents)
+            return f"open({repr(fname)}, 'w').write({content})"
+        
+        elif isinstance(node, AppendNode):
+            fname = node.file[1:-1] if node.file[:1] in ('"', "'") else node.file
+            content = self.generate(node.contents)
+            return f"open({repr(fname)}, 'a').write({content})"
+        
         elif isinstance(node, LenNode):
             return f"len({self.generate(node.value)})"
 
         elif isinstance(node, SqrtNode):
             return f"math.sqrt({self.generate(node.value)})"
+
+        elif isinstance(node, MathNode):
+            py_func = {"abs": "abs", "floor": "math.floor", "ceil": "math.ceil"}.get(node.func, node.func)
+            return f"{py_func}({self.generate(node.value)})"
 
         elif isinstance(node, RandNumNode):
             return f"random.randint({self.generate(node.start)}, {self.generate(node.end)})"
@@ -331,7 +500,22 @@ class Interpreter:
         elif isinstance(node, InputNode):
             prompt = self.generate(node.prompt) if node.prompt else ""
             return f"input({prompt})"
-
+        
+        elif isinstance(node, CommandNode):
+            # Generate Python code that runs at runtime, not at compile time.
+            # Handle both str and Token storage for command (with or without quotes)
+            cmd = node.command
+            if hasattr(cmd, 'value'):
+                cmd = cmd.value
+            if isinstance(cmd, str) and len(cmd) >= 2 and cmd[0] in ('"', "'") and cmd[-1] == cmd[0]:
+                cmd = cmd[1:-1]
+            # flags may be stored as .flags or legacy .params
+            flags = getattr(node, 'flags', getattr(node, 'params', None))
+            # If flags is a dict, expand as kwargs; BlockNode/list flags are ignored for now
+            if isinstance(flags, dict) and flags:
+                kwargs = ", ".join(f"{k}={repr(v)}" for k, v in flags.items())
+                return f"__import__('subprocess').run({repr(cmd)}.split(), {kwargs})"
+            return f"__import__('subprocess').run({repr(cmd)}.split())"
         else:
             raise RuntimeError(f"Unknown node type: {type(node)}")
 

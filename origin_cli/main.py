@@ -59,7 +59,9 @@ def main():
     import sys
     if len(sys.argv) > 1:
         file_to_run = sys.argv[1]
-        if file_to_run.endswith(".py"):
+        if file_to_run == "cli":
+            cli()
+        elif file_to_run.endswith(".py"):
             handle_python_file(file_to_run)
         elif file_to_run.endswith(".java") or file_to_run.endswith(".class"):
             handle_java_file(file_to_run, "run")
@@ -67,8 +69,10 @@ def main():
             handle_origin_file(file_to_run)
         else:
             print(f"Error: Unknown file type '{file_to_run}'")
+            print("Usage: origin <file>.or | origin <file>.py | origin cli")
     else:
-        cli()
+        print("Usage: origin <file>.or | origin <file>.py | origin cli")
+        print("Run 'origin cli' to start the interactive CLI.")
 
 
 if __name__ == "__main__":

@@ -42,7 +42,7 @@ class PyNode(ASTNode):
         self.code = code
     def __repr__(self):
         return f"PyNode({self.code!r})"
-
+    
 class NumberNode(ASTNode):
     """Numeric literal (integer or float)."""
     def __init__(self, value, _type):
@@ -60,6 +60,14 @@ class StringNode(ASTNode):
         self.type = _type
     def __repr__(self): 
         return f"StringNode({self.value!r}, {self.type})"
+
+class FormattedStringNode(ASTNode):
+    """Formatted string with interleaved text and expression parts."""
+    def __init__(self, parts):
+        super().__init__()
+        self.parts = parts  # list of StringNode or expression nodes
+    def __repr__(self):
+        return f"FormattedStringNode({self.parts})"
 
 class BoolNode(ASTNode):
     """Boolean literal (True/False)."""
@@ -94,6 +102,15 @@ class VarNode(ASTNode):
     def __repr__(self):
         return f"VarNode({self.name}, {self.type})"
 
+class CommandNode(ASTNode):
+    def __init__(self, command, flags=None):
+        super().__init__()
+        self.command = command
+        self.flags = flags if flags is not None else []
+        # backward-compat alias (interpreter historically used .params)
+        self.params = self.flags
+    def __repr__(self):
+        return f"CommandNode({self.command!r}, {self.flags!r})"
 class AssignNode(ASTNode):
     """Assignment operation (let)."""
     def __init__(self, name, value, _type=None):
@@ -102,6 +119,13 @@ class AssignNode(ASTNode):
     def __repr__(self):
         return f"AssignNode({self.name}, {self.value}, {self.type})"
 
+class MultAssignNode(ASTNode):
+    def __init__(self, names, value, _type=None):
+        super().__init__()
+        self.names, self.value, self.type = names, value, _type
+    def __repr__(self):
+        return f"MultAssignNode({self.names}, {self.value}, {self.type})"
+    
 class ConstAssignNode(ASTNode):
     """Constant declaration (const)."""
     def __init__(self, name, value, _type=None):
@@ -204,14 +228,14 @@ class WhileNode(ASTNode):
         return f"WhileNode({self.condition}, {self.body})"
 
 class ForNode(ASTNode):
-    """For-each loop."""
-    def __init__(self, var_name, iterable, body):
+    """For-each loop. `var` may be a single `VarNode` or a `TupleNode`/`ListNode` of `VarNode`s for unpacking."""
+    def __init__(self, var, iterable, body):
         super().__init__()
-        self.var_name = var_name
+        self.var = var
         self.iterable = iterable
         self.body = body
     def __repr__(self):
-        return f"ForNode({self.var_name}, {self.iterable}, {self.body})"
+        return f"ForNode({self.var}, {self.iterable}, {self.body})"
 
 class TryNode(ASTNode): 
     """Try-except block."""
@@ -225,23 +249,25 @@ class TryNode(ASTNode):
 
 class FuncNode(ASTNode):
     """Function definition."""
-    def __init__(self, name, params, body):
+    def __init__(self, name, params, body, param_types=None):
         super().__init__()
         self.name = name
         self.params = params
         self.body = body
+        self.param_types = param_types or {}
     def __repr__(self):
-        return f"FuncNode({self.name}, {self.params}, {self.body})"
+        return f"FuncNode({self.name}, {self.params}, {self.param_types}, {self.body})"
 
 class ClassNode(ASTNode):
     """Class definition."""
-    def __init__(self, name, fields, body):
+    def __init__(self, name, fields, body, field_types=None):
         super().__init__()
         self.name = name
         self.fields = fields
         self.body = body
+        self.field_types = field_types or {}
     def __repr__(self):
-        return f"ClassNode({self.name}, {self.fields}, {self.body})"
+        return f"ClassNode({self.name}, {self.fields}, {self.field_types}, {self.body})"
 
 class CallNode(ASTNode):
     """Function or method call."""
@@ -341,6 +367,15 @@ class SqrtNode(ASTNode):
     def __repr__(self):
         return f"SqrtNode({self.value})"
 
+class MathNode(ASTNode):
+    """Unary math operation (abs, floor, ceil) evaluated at runtime."""
+    def __init__(self, func, value):
+        super().__init__()
+        self.func = func
+        self.value = value
+    def __repr__(self):
+        return f"MathNode({self.func!r}, {self.value})"
+
 class RandNumNode(ASTNode):
     """Random number generation."""
     def __init__(self, start, end):
@@ -386,12 +421,13 @@ class CastNode(ASTNode):
 
 class RangeNode(ASTNode):
     """Numeric range generator."""
-    def __init__(self, start, end):
+    def __init__(self, start, end, step=None):
         super().__init__()
         self.start = start
         self.end = end
+        self.step = step
     def __repr__(self):
-        return f"RangeNode({self.start}, {self.end})"
+        return f"RangeNode({self.start}, {self.end},{self.step})"
 
 class ParallelNode(ASTNode):
     """Parallel processing context."""
@@ -432,10 +468,10 @@ class ImportNode(ASTNode):
 
 class ImportFromNode(ASTNode):
     """'from ... import' statement."""
-    def __init__(self, name, library):
+    def __init__(self, name, libraries):
         super().__init__()
         self.name = name
-        self.lib = library
+        self.lib = ", ".join(libraries)
     def __repr__(self):
         return f"ImportFromNode({self.name}, {self.lib})"
 
@@ -473,3 +509,65 @@ class YieldNode(ASTNode):
         self.value = value
     def __repr__(self):
         return f"YieldNode({self.value})"
+    
+class ReadNode(ASTNode):
+    """Converts file to string"""
+    def __init__(self, file, count):
+        super().__init__()
+        self.file = file
+        self.count = count
+    def __repr__(self):
+        return f"ReadNode({self.file}, {self.count})"
+
+class WriteNode(ASTNode):
+    """Writes to a file"""
+    def __init__(self, file, contents):
+        super().__init__()
+        self.file = file
+        self.contents = contents
+    def __repr__(self):
+        return f"WriteNode({self.file}, {self.contents})"
+
+class AppendNode(ASTNode):
+    """Writes to a file"""
+    def __init__(self, file, contents):
+        super().__init__()
+        self.file = file
+        self.contents = contents
+    def __repr__(self):
+        return f"WriteNode({self.file}, {self.contents})"
+
+class ImuNode(ASTNode):
+    """IMU data"""
+    def __init__(self, name, address):
+        super().__init__()
+        self.name = name
+        self.address = address
+    def __repr__(self):
+        return f"ImuNode({self.name}, {self.address})"
+    
+class ImuFromNode(ASTNode):
+    """IMU data"""
+    def __init__(self, value, name):
+        super().__init__()
+        self.value = value
+        self.name = name
+    def __repr__(self):
+        return f"ImuFromNode({self.value}, {self.name})"
+class CopyNode(ASTNode):
+    """Copy operation (copy variable value)."""
+    def __init__(self, src, dst):
+        super().__init__()
+        self.src = src
+        self.dst = dst
+    def __repr__(self):
+        return f"CopyNode({self.src}, {self.dst})"
+
+class MoveNode(ASTNode):
+    """Move operation (move variable value, clear source)."""
+    def __init__(self, src, dst):
+        super().__init__()
+        self.src = src
+        self.dst = dst
+    def __repr__(self):
+        return f"MoveNode({self.src}, {self.dst})"
