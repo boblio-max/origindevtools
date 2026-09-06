@@ -1,7 +1,0 @@
-nn/
-    tensor.or     
-    layers.or    
-    losses.or      
-    optimizers.or  
-    autograd.or    
-    nn.or 

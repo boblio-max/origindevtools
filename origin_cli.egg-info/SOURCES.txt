@@ -4,6 +4,7 @@ origin_cli/classes.py
 origin_cli/cli.py
 origin_cli/create_venv.py
 origin_cli/folder_gen.py
+origin_cli/handle_ai.py
 origin_cli/handle_code.py
 origin_cli/handle_java.py
 origin_cli/handle_origin.py
@@ -14,6 +15,7 @@ origin_cli/interpret.py
 origin_cli/lexer.py
 origin_cli/main.py
 origin_cli/main_statements.py
+origin_cli/mcp.py
 origin_cli/parser.py
 origin_cli/test.py
 origin_cli/test_main.py
