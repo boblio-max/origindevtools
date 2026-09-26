@@ -60,12 +60,14 @@ def load_registry():
         save_registry(data)
         return data
     except (json.JSONDecodeError, OSError):
-        return {"connectors": {}, "given": {}}
+        return {"connectors": dict(PRESET_CONNECTORS), "given": {}}
 
 
 def save_registry(data):
-    os.makedirs(REGISTRY_DIR, exist_ok=True)
-    with open(_registry_path(), "w", encoding="utf-8") as f:
+    path = _registry_path()
+    parent = os.path.dirname(os.path.abspath(path))
+    os.makedirs(parent, exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2)
 
 

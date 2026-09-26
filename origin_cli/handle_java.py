@@ -3,14 +3,15 @@ import shutil
 from pathlib import Path
 
 
-def run_command(cmd, file_path):
+def run_command(cmd, file_path, cwd=None):
     try:
         print(f"Running {file_path}...")
         result = subprocess.run(
             cmd,
             capture_output=True,
             text=True,
-            check=False
+            check=False,
+            cwd=cwd,
         )
         if result.stdout:
             print(result.stdout)
@@ -42,12 +43,20 @@ def handle_java_file(file, action):
             compile_result = subprocess.run([javac_executable, str(file_path)], capture_output=True, text=True)
             if compile_result.returncode == 0:
                 print("Compilation successful.")
-                run_command([java_executable, file_path.stem], file_path.with_suffix(".class"))
+                run_command(
+                    [java_executable, "-cp", str(file_path.parent), file_path.stem],
+                    file_path.with_suffix(".class"),
+                    cwd=str(file_path.parent),
+                )
             else:
                 print("Compilation failed:")
                 print(compile_result.stderr)
         elif file.endswith(".class"):
-            run_command([java_executable, file_path.stem], file_path)
+            run_command(
+                [java_executable, "-cp", str(file_path.parent), file_path.stem],
+                file_path,
+                cwd=str(file_path.parent),
+            )
         else:
             print("Error: Expected .java or .class file.")
 

@@ -30,6 +30,11 @@ def show_help():
 
 def interpret(node):
     """Execute an AST node by dispatching to the appropriate handler."""
+    if isinstance(node, ProgramNode):
+        for stmt in node.statements:
+            interpret(stmt)
+        return
+
     if isinstance(node, InstallNode):
         if node.type == "install":
             if node.lang.strip().lower() in LANG_MAP:

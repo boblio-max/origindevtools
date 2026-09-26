@@ -133,6 +133,12 @@ class Parser:
         else:
             raise SyntaxError(f"Unexpected token {tok}")
 
+        extra = self.current_token()
+        if extra.type not in ("NEWLINE", "EOF"):
+            raise SyntaxError(
+                f"Unexpected argument '{extra.value}' ({extra.type}) at {extra.line}:{extra.col}"
+            )
+
         return self._set_line(node, line)
 
     def program(self):

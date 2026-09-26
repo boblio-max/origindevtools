@@ -63,34 +63,37 @@ def _map_lang(lang: str) -> str | None:
     return pkg
 
 def install_lang(lang: str) -> None:
-    if check_lang(lang):
-        if lang.lower() == "origin":
-            subprocess.run([LANG_MAP["origin"]], check=True)
-            print("Origin installed successfully via pip.")
-            return
-        pkg = _map_lang(lang)
-        if pkg:
-            _winget_cmd("install", pkg)
+    if lang.strip().lower() == "origin":
+        subprocess.run(["py", "-m", "pip", "install", "origin-or"], check=True)
+        print("Origin installed successfully via pip.")
+        return
+    pkg = _map_lang(lang)
+    if pkg:
+        _winget_cmd("install", pkg)
 
 def uninstall_lang(lang: str) -> None:
-    if check_lang(lang):
-        if lang.lower() == "origin":
-            subprocess.run(["py", "-m", "pip", "uninstall", "origin-or"], check=True)
-            print("Origin uninstalled successfully via pip.")
-        pkg = _map_lang(lang)
-        if pkg:
-            _winget_cmd("uninstall", pkg)
+    if lang.strip().lower() == "origin":
+        subprocess.run(["py", "-m", "pip", "uninstall", "-y", "origin-or"], check=True)
+        print("Origin uninstalled successfully via pip.")
+        return
+    pkg = _map_lang(lang)
+    if pkg:
+        _winget_cmd("uninstall", pkg)
 
 def update_lang(lang: str) -> None:
-    if check_lang(lang):
-        if lang.lower() == "origin":
-            subprocess.run(["py", "-m", "pip", "install", "--upgrade", "origin-or"], check=True)
-            print("Origin updated successfully via pip.")
-        pkg = _map_lang(lang)
-        if pkg:
-            _winget_cmd("upgrade", pkg)
-    else:
-        subprocess.run(["irm", "https://docs-origin.onrender.com/cliinstall.ps1", "|", "iex"], check=True)
+    if lang.strip().lower() == "origin":
+        subprocess.run(["py", "-m", "pip", "install", "--upgrade", "origin-or"], check=True)
+        print("Origin updated successfully via pip.")
+        return
+    if lang.strip().lower() == "cli":
+        subprocess.run(
+            ["powershell", "-Command", "irm https://docs-origin.onrender.com/cliinstall.ps1 | iex"],
+            check=True,
+        )
+        return
+    pkg = _map_lang(lang)
+    if pkg:
+        _winget_cmd("upgrade", pkg)
 
 def check_lang(lang: str) -> bool:
     pkg = _map_lang(lang)

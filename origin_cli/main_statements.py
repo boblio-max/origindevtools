@@ -69,10 +69,6 @@ def cli():
                 print(f"Unknown command prefix. Did you mean 'origin {user_input}'?")
                 continue
 
-            if parts[0] == "oe":
-                print("Exiting...")
-                break
-
             if len(parts) < 2:
                 run_repl()
                 continue
@@ -83,8 +79,8 @@ def cli():
             if cmd_or_file == "help":
                 show_help()
 
-            # Command: exit
-            elif cmd_or_file == "exit":
+            # Command: exit (origin exit / origin oe)
+            elif cmd_or_file in ("exit", "oe"):
                 print("Exiting...")
                 running = False
 
@@ -156,8 +152,8 @@ def cli():
                     print("Error: Please use the format: origin create <file_with_structure>.otxt <location>")
                 else:
                     handle_folder_gen(parts[2], parts[3])
-            elif parts[1] is None:
-                run_repl()
+            else:
+                print(f"Unknown command '{cmd_or_file}'. Type 'origin help' for a list of commands.")
         except EOFError:
             print("\nExiting...")
             break

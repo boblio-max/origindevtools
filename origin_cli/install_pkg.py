@@ -14,10 +14,10 @@ PKG_MAP = {
 }
 
 def _venv_root():
-    env = os.environ.get("ORIGIN_ENV", "")
+    env = (os.environ.get("ORIGIN_ENV") or "").strip().rstrip("/\\")
     if not env:
         return None
-    if os.path.basename(env) == "scripts":
+    if os.path.basename(env).lower() == "scripts":
         return os.path.dirname(env)
     return env
 
@@ -92,6 +92,9 @@ def install_pkg(pkg_spec: str) -> None:
         return
 
     venv_root = _venv_root()
+    if not venv_root:
+        print("Error: No Origin virtual environment is active. Run 'origin activate <venv_name>' first.")
+        return
     packages_dir = os.path.join(venv_root, "packages")
     os.makedirs(packages_dir, exist_ok=True)
     pkg_dir = os.path.join(packages_dir, spec.name.lower())

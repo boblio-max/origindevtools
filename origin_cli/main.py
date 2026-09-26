@@ -15,6 +15,17 @@ from .classes import ExitNode
 from .interpret import interpret, clear_screen
 import subprocess as sp
 
+
+def run_shell_command(user_input: str):
+    """Run a non-origin line in the system shell (portable)."""
+    import os
+    import shutil
+    if os.name == "nt":
+        powershell = shutil.which("pwsh") or shutil.which("powershell") or "powershell.exe"
+        sp.run([powershell, "-Command", user_input])
+    else:
+        sp.run(user_input, shell=True)
+
 def cli():
     ui.enable_ansi()
     clear_screen()
@@ -30,9 +41,9 @@ def cli():
                 continue
 
             # If the sentence doesn't start with "origin", default to running
-            # it as a PowerShell command.
+            # it as a shell command.
             if not re.match(r"^origin(?=\s|$)", user_input):
-                sp.run(["powershell.exe", "-Command", user_input])
+                run_shell_command(user_input)
                 continue
 
             tokens = lex([user_input])
@@ -43,7 +54,7 @@ def cli():
                 continue
 
             interpret(node)
-            print(ui.status_bar(cwd, ui.active_venv()))
+            print(ui.status_bar(str(Path.cwd()), ui.active_venv()))
         except SyntaxError as e:
             print(ui.error(f"Syntax error: {e}"))
         except EOFError:

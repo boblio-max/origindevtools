@@ -38,7 +38,11 @@ CROSS = "\u2715"
 WARN = "\u26a0"
 DOT = "\u00b7"
 
-VERSION = "2.1.0"
+try:
+    from . import __version__ as _PKG_VERSION
+    VERSION = _PKG_VERSION
+except Exception:
+    VERSION = "2.1.1"
 
 _ANSI_RE = re.compile(r"\033\[[0-9;]*m")
 
@@ -103,11 +107,11 @@ def success(text):
 
 def active_venv():
     """Return the active Origin venv name, or None."""
-    env = os.environ.get("ORIGIN_ENV", "")
+    env = (os.environ.get("ORIGIN_ENV") or "").strip().rstrip("/\\")
     if not env:
         return None
-    if os.path.basename(env) == "scripts":
-        return os.path.basename(os.path.dirname(env))
+    if os.path.basename(env).lower() == "scripts":
+        return os.path.basename(os.path.dirname(env.rstrip("/\\")))
     return os.path.basename(env)
 
 

@@ -1,7 +1,11 @@
 import os
 import sys
+import tempfile
 
-sys.stdout.reconfigure(encoding="utf-8")
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+except Exception:
+    pass
 
 
 def clean_line(line: str) -> str:
@@ -44,7 +48,11 @@ def create_structure(file_path: str, base_path: str):
     os.makedirs(base_path, exist_ok=True)
 
     if not file_path.endswith(".otxt"):
-        print("Use otxt files instead por favor")
+        print("Error: folder structure must be described in a .otxt file.")
+        return
+
+    if not os.path.isfile(file_path):
+        print(f"Error: structure file '{file_path}' not found.")
         return
 
     with open(file_path, "r", encoding="utf-8") as f:
@@ -55,11 +63,14 @@ def create_structure(file_path: str, base_path: str):
     stack = [(-1, base_path)]
 
     for i, raw_line in enumerate(lines):
-        name = clean_line(raw_line)
+        name = clean_line(raw_line).rstrip("/")
+        if not name:
+            continue
         depth = get_indent_level(raw_line, unit)
 
-        # Determine if this line is a directory
-        is_directory = False
+        # Determine if this line is a directory: explicit trailing slash
+        # in the .otxt file, or a deeper-indented line follows it.
+        is_directory = is_dir(clean_line(raw_line))
 
         if i + 1 < len(lines):
             next_depth = get_indent_level(lines[i + 1], unit)
@@ -89,11 +100,16 @@ def run(file_name: str, location: str):
     create_structure(file_name.strip('"'), location.strip('"'))
 
 def run_from_str(structure_str: str, location: str):
-    temp_file = "temp_structure.otxt"
-    with open(temp_file, "w", encoding="utf-8") as f:
-        f.write(structure_str)
-    run(temp_file, location)
-    os.remove(temp_file)
+    fd, temp_file = tempfile.mkstemp(suffix=".otxt", prefix="origin_structure_")
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as f:
+            f.write(structure_str)
+        run(temp_file, location)
+    finally:
+        try:
+            os.remove(temp_file)
+        except OSError:
+            pass
 
 if __name__ == "__main__":
     if len(sys.argv) < 3:
