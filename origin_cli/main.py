@@ -82,9 +82,11 @@ def main():
             print(f"Error: Unknown file type '{file_to_run}'")
             print("Usage: origin <file>.or | origin <file>.py | origin cli")
     else:
-        print("Usage: origin <file>.or | origin <file>.py | origin cli")
-        print("Run 'origin cli' to start the interactive CLI.")
+        cli()
 
+
+def entry():
+    main()
 
 if __name__ == "__main__":
     main()

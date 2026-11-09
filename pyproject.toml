@@ -13,7 +13,7 @@ authors = [
 ]
 
 [project.scripts]
-origin = "origin_cli.main:main"
+origin = "origin_cli.main:entry"
 
 [project.urls]
 Homepage = "https://github.com/boblio-max/origindevtools"

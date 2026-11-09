@@ -1,5 +1,7 @@
+README.md
 pyproject.toml
 origin_cli/__init__.py
+origin_cli/__main__.py
 origin_cli/classes.py
 origin_cli/cli.py
 origin_cli/create_venv.py
